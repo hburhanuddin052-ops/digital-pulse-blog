@@ -1,4 +1,7 @@
 import { Article } from '../types/blog';
+import aiMarketingImg from '../assets/images/images/photos/how-ai-is-changing-digital-marketing.jpg';
+import instagramMarketingImg from '../assets/images/images/photos/instagram-marketing-for-small-businesses.jpg';
+import shortFormVideoImg from '../assets/images/images/photos/why-short-form-video-is-so-powerful.jpg';
 
 export const ARTICLES_PART_2: Article[] = [
   {
@@ -22,17 +25,11 @@ export const ARTICLES_PART_2: Article[] = [
     readingTimeMinutes: 9,
     featured: false,
     popularRank: 4,
-    image: '/images/photos/how-ai-is-changing-digital-marketing.jpg',
+    image: aiMarketingImg,
     imageAlt:
       'High-resolution monitor displaying data dashboards, predictive metrics, and performance graphs',
     imageCaption:
       'Fig. 4 — Artificial intelligence accelerates data synthesis and campaign testing, but strategic positioning requires human judgment.',
-    imageCredit: {
-      photographer: 'Luke Chesser',
-      photographerUrl: 'https://unsplash.com/@lukechesser',
-      sourceName: 'Unsplash',
-      sourceUrl: 'https://unsplash.com/photos/JKUTrJ4vK00',
-    },
     excerpt:
       'From automated bid management to customer support triage, artificial intelligence has reshaped marketing execution. Here is where AI delivers real efficiency—and where human thinking cannot be replaced.',
     introduction: [
@@ -188,17 +185,11 @@ export const ARTICLES_PART_2: Article[] = [
     readingTimeMinutes: 10,
     featured: false,
     popularRank: 5,
-    image: '/images/photos/instagram-marketing-for-small-businesses.jpg',
+    image: instagramMarketingImg,
     imageAlt:
       'Small business owner holding a tablet at a retail counter while managing online store orders and social media',
     imageCaption:
       'Fig. 5 — On Instagram, Reels drive discovery among non-followers while Carousels and Stories nurture trust and conversions.',
-    imageCredit: {
-      photographer: 'Blake Wisz',
-      photographerUrl: 'https://unsplash.com/@blakewisz',
-      sourceName: 'Unsplash',
-      sourceUrl: 'https://unsplash.com/photos/tE6th1h6Bfk',
-    },
     excerpt:
       'You do not need to post three times a day to win customers on Instagram. Learn how to optimize your bio, assign clear jobs to Reels, Carousels, and Stories, and track metrics that drive sales.',
     introduction: [
@@ -355,17 +346,11 @@ export const ARTICLES_PART_2: Article[] = [
     readingTimeMinutes: 9,
     featured: false,
     popularRank: 6,
-    image: '/images/photos/why-short-form-video-is-so-powerful.jpg',
+    image: shortFormVideoImg,
     imageAlt:
       'Video creator holding a professional camera rig while filming studio video content',
     imageCaption:
       'Fig. 6 — Full-screen vertical video combines visual demonstration, spoken voice, and on-screen text to communicate fast.',
-    imageCredit: {
-      photographer: 'Jakob Owens',
-      photographerUrl: 'https://unsplash.com/@jakobowens1',
-      sourceName: 'Unsplash',
-      sourceUrl: 'https://unsplash.com/photos/DQPP9rVLYGQ',
-    },
     excerpt:
       'TikTok, Instagram Reels, and YouTube Shorts changed how the internet discovers ideas and products. Examine the psychology, algorithmic mechanics, and storytelling structures behind vertical video.',
     introduction: [

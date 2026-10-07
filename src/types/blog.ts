@@ -83,7 +83,7 @@ export interface Article {
   image: string;
   imageAlt: string;
   imageCaption: string;
-  imageCredit: ArticleImageCredit;
+  imageCredit?: ArticleImageCredit;
   excerpt: string;
   introduction: string[];
   sections: ArticleSection[];

@@ -1,4 +1,6 @@
 import { Article } from '../types/blog';
+import socialAlgorithmsImg from '../assets/images/images/photos/how-social-media-algorithms-work.jpg';
+import seoBeginnersImg from '../assets/images/images/photos/seo-for-beginners-how-google-ranks-websites.jpg';
 
 export const ARTICLES_PART_1: Article[] = [
   {
@@ -233,17 +235,11 @@ export const ARTICLES_PART_1: Article[] = [
     readingTimeMinutes: 9,
     featured: false,
     popularRank: 2,
-    image: '/images/photos/how-social-media-algorithms-work.jpg',
+    image: socialAlgorithmsImg,
     imageAlt:
       'Person holding a smartphone browsing mobile social media applications and feed notifications',
     imageCaption:
       'Fig. 2 — Social platforms do not use a single master algorithm; they run distinct ranking models for feeds, stories, reels, and search.',
-    imageCredit: {
-      photographer: 'William Hook',
-      photographerUrl: 'https://unsplash.com/@williamhook',
-      sourceName: 'Unsplash',
-      sourceUrl: 'https://unsplash.com/photos/9e9PD9blAto',
-    },
     excerpt:
       'Social media platforms do not rely on a single secret formula. Here is how recommendation systems score watch time, shares, saves, and user history to rank your feed.',
     introduction: [
@@ -429,17 +425,11 @@ export const ARTICLES_PART_1: Article[] = [
     readingTimeMinutes: 10,
     featured: false,
     popularRank: 3,
-    image: '/images/photos/seo-for-beginners-how-google-ranks-websites.jpg',
+    image: seoBeginnersImg,
     imageAlt:
       'Marketer working on a laptop displaying Google Analytics and search engine traffic data',
     imageCaption:
       'Fig. 3 — Search Engine Optimization combines technical crawlability with clear, intent-focused content.',
-    imageCredit: {
-      photographer: 'Campaign Creators',
-      photographerUrl: 'https://unsplash.com/@campaign_creators',
-      sourceName: 'Unsplash',
-      sourceUrl: 'https://unsplash.com/photos/pypeCEaJeZY',
-    },
     excerpt:
       'Search Engine Optimization does not have to feel like a black box. Learn the three stages of Google Search—crawling, indexing, and ranking—and how to build pages that earn organic traffic.',
     introduction: [
