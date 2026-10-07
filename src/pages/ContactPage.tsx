@@ -185,7 +185,7 @@ export const ContactPage: React.FC = () => {
                     General &amp; Reader Inquiries
                   </p>
                   <p className="text-xs text-neutral-600 dark:text-slate-400 mt-0.5">
-                    editorial@digitalpulse.publication
+                    masterhola64@gmail.co
                   </p>
                 </div>
               </div>
