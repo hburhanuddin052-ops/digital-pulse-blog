@@ -1,0 +1,8 @@
+# robots.txt for Digital Pulse
+# Allows search engine crawlers full access to public pages and articles
+
+User-agent: *
+Allow: /
+
+# Sitemap location (Update domain to your final live Vercel URL after deployment)
+Sitemap: https://digitalpulse.vercel.app/sitemap.xml
