@@ -25,7 +25,7 @@ export function updatePageSEO(config: PageSEOConfig) {
   const origin =
     typeof window !== 'undefined' && window.location.origin
       ? window.location.origin
-      : 'https://digitalpulse.vercel.app';
+      : 'https://digital-pulse-blog.vercel.app';
   const cleanPathname = config.pathname === '/' ? '/' : config.pathname.replace(/\/+$/, '');
   const fullUrl = `${origin}${cleanPathname}`;
   const imageUrl = config.image

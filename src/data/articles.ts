@@ -19,7 +19,14 @@ export const ALL_ARTICLES: Article[] = [
 export { AUTHORS, CATEGORIES };
 
 export function getArticleBySlug(slug: string): Article | undefined {
-  return ALL_ARTICLES.find((article) => article.slug === slug);
+  const cleanSlug = decodeURIComponent(slug)
+    .trim()
+    .toLowerCase()
+    .replace(/^\/+|\/+$/g, '')
+    .replace(/^blog\//, '')
+    .replace(/\/index\.html$/i, '')
+    .replace(/\.html$/i, '');
+  return ALL_ARTICLES.find((article) => article.slug.toLowerCase() === cleanSlug);
 }
 
 export function getFeaturedArticle(): Article {

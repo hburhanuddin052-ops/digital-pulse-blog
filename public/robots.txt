@@ -4,5 +4,5 @@
 User-agent: *
 Allow: /
 
-# Sitemap location (Update domain to your final live Vercel URL after deployment)
-Sitemap: https://digitalpulse.vercel.app/sitemap.xml
+# Sitemap location for Digital Pulse production deployment
+Sitemap: https://digital-pulse-blog.vercel.app/sitemap.xml

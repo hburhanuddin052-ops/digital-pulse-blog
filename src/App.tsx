@@ -15,7 +15,12 @@ import { TermsPage } from './pages/TermsPage';
 
 function normalizePath(rawPath: string): string {
   if (!rawPath || rawPath === '/') return '/';
-  return rawPath.replace(/\/+$/, '');
+  const cleaned = rawPath
+    .trim()
+    .replace(/\/index\.html$/i, '')
+    .replace(/\.html$/i, '')
+    .replace(/\/+$/, '');
+  return cleaned || '/';
 }
 
 export default function App() {

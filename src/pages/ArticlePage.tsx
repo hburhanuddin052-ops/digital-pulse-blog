@@ -32,7 +32,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
   const origin =
     typeof window !== 'undefined' && window.location.origin
       ? window.location.origin
-      : 'https://digitalpulse.vercel.app';
+      : 'https://digital-pulse-blog.vercel.app';
   const canonicalUrl = `${origin}/blog/${article.slug}`;
 
   const handleCopyUrl = async () => {
