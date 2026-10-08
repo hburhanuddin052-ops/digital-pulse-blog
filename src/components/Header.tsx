@@ -56,7 +56,15 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-neutral-200 dark:border-slate-800 bg-[#FAFAFA]/95 dark:bg-[#0B0F17]/95 backdrop-blur-sm">
+      {/* Keyboard Accessibility Skip Link */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-700 focus:text-white focus:rounded-lg focus:text-xs focus:font-semibold"
+      >
+        Skip to main content
+      </a>
+
+      <header className="sticky top-0 z-40 border-b border-neutral-200/80 dark:border-slate-800/80 glass-header transition-colors duration-150">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           {/* Zone 1: Single text element wordmark */}
           <a
@@ -81,6 +89,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <a
                   key={item.path}
                   href={item.path}
+                  aria-current={isActive ? 'page' : undefined}
                   onClick={(e) => handleLinkClick(e, item.path)}
                   className={`py-1 whitespace-nowrap shrink-0 transition-colors border-b-2 ${
                     isActive
@@ -100,9 +109,9 @@ export const Header: React.FC<HeaderProps> = ({
               type="button"
               onClick={() => setSearchModalOpen((prev) => !prev)}
               aria-label="Search articles"
-              className="inline-flex items-center gap-2 px-3 py-2 text-xs font-medium text-neutral-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-neutral-200 dark:border-slate-800 rounded-lg hover:border-neutral-300 dark:hover:border-slate-700 transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-2 px-3 py-2 text-xs font-medium text-neutral-700 dark:text-slate-200 glass-panel border border-neutral-200/90 dark:border-slate-700/90 rounded-lg hover:border-blue-600 dark:hover:border-blue-400 transition-colors whitespace-nowrap shrink-0 cursor-pointer"
             >
-              <Search className="w-3.5 h-3.5" />
+              <Search className="w-3.5 h-3.5" aria-hidden="true" />
               <span className="hidden sm:inline">Search articles</span>
             </button>
 
@@ -110,9 +119,13 @@ export const Header: React.FC<HeaderProps> = ({
               type="button"
               onClick={onToggleDarkMode}
               aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-              className="p-2 text-neutral-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-neutral-200 dark:border-slate-800 rounded-lg hover:border-neutral-300 dark:hover:border-slate-700 transition-colors shrink-0 cursor-pointer"
+              className="p-2 text-neutral-700 dark:text-slate-200 glass-panel border border-neutral-200/90 dark:border-slate-700/90 rounded-lg hover:border-blue-600 dark:hover:border-blue-400 transition-colors shrink-0 cursor-pointer"
             >
-              {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {darkMode ? (
+                <Sun className="w-4 h-4" aria-hidden="true" />
+              ) : (
+                <Moon className="w-4 h-4" aria-hidden="true" />
+              )}
             </button>
 
             <button
@@ -120,16 +133,20 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => setMobileMenuOpen((prev) => !prev)}
               aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={mobileMenuOpen}
-              className="md:hidden p-2 text-neutral-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-neutral-200 dark:border-slate-800 rounded-lg"
+              className="md:hidden p-2 text-neutral-700 dark:text-slate-200 glass-panel border border-neutral-200/90 dark:border-slate-700/90 rounded-lg"
             >
-              {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+              {mobileMenuOpen ? (
+                <X className="w-4 h-4" aria-hidden="true" />
+              ) : (
+                <Menu className="w-4 h-4" aria-hidden="true" />
+              )}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-neutral-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-4 py-4 space-y-3">
+          <div className="md:hidden border-t border-neutral-200 dark:border-slate-800 glass-panel px-4 py-4 space-y-3">
             <nav aria-label="Mobile Navigation" className="flex flex-col space-y-1">
               {navItems.map((item) => {
                 const isActive =
@@ -140,6 +157,7 @@ export const Header: React.FC<HeaderProps> = ({
                   <a
                     key={item.path}
                     href={item.path}
+                    aria-current={isActive ? 'page' : undefined}
                     onClick={(e) => handleLinkClick(e, item.path)}
                     className={`px-3 py-2.5 rounded-lg text-sm font-medium ${
                       isActive
@@ -163,10 +181,13 @@ export const Header: React.FC<HeaderProps> = ({
             role="dialog"
             aria-modal="true"
             aria-label="Search Digital Pulse articles"
-            className="w-full max-w-2xl bg-white dark:bg-slate-900 border border-neutral-200 dark:border-slate-800 rounded-xl shadow-xl overflow-hidden"
+            className="w-full max-w-2xl glass-card border border-neutral-200 dark:border-slate-700 rounded-xl shadow-xl overflow-hidden animate-fade-in"
           >
-            <form onSubmit={handleSearchSubmit} className="flex items-center px-4 border-b border-neutral-200 dark:border-slate-800">
-              <Search className="w-4 h-4 text-neutral-400 shrink-0" />
+            <form
+              onSubmit={handleSearchSubmit}
+              className="flex items-center px-4 border-b border-neutral-200 dark:border-slate-800"
+            >
+              <Search className="w-4 h-4 text-neutral-400 shrink-0" aria-hidden="true" />
               <input
                 ref={searchInputRef}
                 type="search"
@@ -190,7 +211,7 @@ export const Header: React.FC<HeaderProps> = ({
                 aria-label="Close search"
                 className="p-1.5 text-neutral-500 hover:text-neutral-900 dark:hover:text-white rounded-lg cursor-pointer"
               >
-                <X className="w-4 h-4" />
+                <X className="w-4 h-4" aria-hidden="true" />
               </button>
             </form>
 
@@ -201,18 +222,23 @@ export const Header: React.FC<HeaderProps> = ({
                     Popular search topics:
                   </p>
                   <div className="flex flex-wrap justify-center gap-2">
-                    {['SEO for beginners', 'Algorithms', 'Short-form video', 'AI marketing', 'Online reviews', 'Misinformation'].map(
-                      (term) => (
-                        <button
-                          key={term}
-                          type="button"
-                          onClick={() => onGlobalSearchChange(term)}
-                          className="px-3 py-1.5 text-xs font-medium bg-neutral-100 dark:bg-slate-800 text-neutral-700 dark:text-slate-300 rounded-md hover:bg-neutral-200 dark:hover:bg-slate-700 transition-colors cursor-pointer"
-                        >
-                          {term}
-                        </button>
-                      )
-                    )}
+                    {[
+                      'SEO for beginners',
+                      'Algorithms',
+                      'Short-form video',
+                      'AI marketing',
+                      'Online reviews',
+                      'Misinformation',
+                    ].map((term) => (
+                      <button
+                        key={term}
+                        type="button"
+                        onClick={() => onGlobalSearchChange(term)}
+                        className="px-3 py-1.5 text-xs font-medium bg-neutral-100 dark:bg-slate-800 text-neutral-700 dark:text-slate-300 rounded-md hover:bg-neutral-200 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+                      >
+                        {term}
+                      </button>
+                    ))}
                   </div>
                 </div>
               ) : quickResults.length > 0 ? (
@@ -249,13 +275,14 @@ export const Header: React.FC<HeaderProps> = ({
                       className="inline-flex items-center gap-1 text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline cursor-pointer"
                     >
                       <span>View all results on Blog page</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                     </button>
                   </div>
                 </div>
               ) : (
                 <p className="py-6 text-center text-sm text-neutral-500 dark:text-slate-400">
-                  No articles matched "{globalSearchQuery}". Try searching for "SEO", "Instagram", "AI", or "Reviews".
+                  No articles matched "{globalSearchQuery}". Try searching for "SEO", "Instagram",
+                  "AI", or "Reviews".
                 </p>
               )}
             </div>

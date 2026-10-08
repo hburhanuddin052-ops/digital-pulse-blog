@@ -23,7 +23,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
   const filteredArticles = filterAndSearchArticles(selectedCategory, searchQuery);
 
   return (
-    <div>
+    <div className="animate-fade-in">
       {/* Archive Header & Search / Filter Controls */}
       <section className="border-b border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#0E1420] py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -32,12 +32,13 @@ export const BlogPage: React.FC<BlogPageProps> = ({
               Complete Editorial Archive · 10 Original Guides
             </p>
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-950 dark:text-white mb-3">
-              All Digital Pulse Articles
+              All Digital Marketing Articles, SEO Tutorials &amp; Social Media Guides
             </h1>
             <p className="text-base text-neutral-600 dark:text-slate-300 leading-relaxed">
-              Browse all 10 long-form, research-backed articles on digital marketing trends, social
-              media recommendation algorithms, beginner SEO, artificial intelligence, Instagram
-              growth, short-form video, online reviews, personal branding, and misinformation.
+              Explore all 10 long-form digital marketing articles, step-by-step SEO tutorials, and
+              social media guides covering recommendation algorithms, artificial intelligence
+              workflows, Instagram growth, short-form video, online reviews, personal branding, and
+              misinformation defense.
             </p>
           </div>
 
@@ -77,9 +78,12 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             {/* Live Search Bar */}
             <div className="relative w-full lg:w-80">
               <label htmlFor="blog-search-input" className="sr-only">
-                Search articles
+                Search digital marketing articles
               </label>
-              <Search className="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <Search
+                className="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
+                aria-hidden="true"
+              />
               <input
                 id="blog-search-input"
                 type="search"
@@ -95,7 +99,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                   aria-label="Clear search query"
                   className="absolute right-2.5 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-700 dark:hover:text-white cursor-pointer"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-4 h-4" aria-hidden="true" />
                 </button>
               )}
             </div>
@@ -104,27 +108,38 @@ export const BlogPage: React.FC<BlogPageProps> = ({
       </section>
 
       {/* Articles Grid */}
-      <section className="py-14 px-4 sm:px-6 lg:px-8">
+      <section className="py-14 px-4 sm:px-6 lg:px-8" aria-labelledby="archive-grid-heading">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-6 text-xs text-neutral-500 dark:text-slate-400 tabular-nums">
-            <p>
-              Showing <span className="font-semibold text-neutral-900 dark:text-white">{filteredArticles.length}</span> of{' '}
-              {ALL_ARTICLES.length} published articles
-              {selectedCategory !== 'All' ? ` in ${selectedCategory}` : ''}
-              {searchQuery.trim() ? ` matching "${searchQuery}"` : ''}
-            </p>
-            {(selectedCategory !== 'All' || searchQuery.trim() !== '') && (
-              <button
-                type="button"
-                onClick={() => {
-                  onSelectCategory('All');
-                  onSearchChange('');
-                }}
-                className="font-semibold text-blue-700 dark:text-blue-400 hover:underline cursor-pointer"
-              >
-                Reset filters
-              </button>
-            )}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+            <h2
+              id="archive-grid-heading"
+              className="text-xl font-bold tracking-tight text-neutral-950 dark:text-white"
+            >
+              Browse Digital Marketing Articles &amp; Guides
+            </h2>
+            <div className="flex items-center gap-4 text-xs text-neutral-500 dark:text-slate-400 tabular-nums">
+              <p>
+                Showing{' '}
+                <span className="font-semibold text-neutral-900 dark:text-white">
+                  {filteredArticles.length}
+                </span>{' '}
+                of {ALL_ARTICLES.length} published articles
+                {selectedCategory !== 'All' ? ` in ${selectedCategory}` : ''}
+                {searchQuery.trim() ? ` matching "${searchQuery}"` : ''}
+              </p>
+              {(selectedCategory !== 'All' || searchQuery.trim() !== '') && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    onSelectCategory('All');
+                    onSearchChange('');
+                  }}
+                  className="font-semibold text-blue-700 dark:text-blue-400 hover:underline cursor-pointer"
+                >
+                  Reset filters
+                </button>
+              )}
+            </div>
           </div>
 
           {filteredArticles.length > 0 ? (
@@ -134,10 +149,10 @@ export const BlogPage: React.FC<BlogPageProps> = ({
               ))}
             </div>
           ) : (
-            <div className="border border-neutral-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-xl p-12 text-center max-w-lg mx-auto my-8">
-              <h2 className="text-lg font-bold text-neutral-900 dark:text-white mb-2">
+            <div className="border border-neutral-200 dark:border-slate-800 glass-card rounded-xl p-12 text-center max-w-lg mx-auto my-8">
+              <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2">
                 No matching articles found
-              </h2>
+              </h3>
               <p className="text-sm text-neutral-600 dark:text-slate-400 mb-6">
                 We could not find an article matching "{searchQuery}" in {selectedCategory}. Try
                 clearing your filter or searching for another marketing term.

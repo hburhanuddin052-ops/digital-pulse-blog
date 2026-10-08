@@ -2,14 +2,14 @@ import React from 'react';
 
 export const PrivacyPolicyPage: React.FC = () => {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto bg-white dark:bg-[#111827] border border-neutral-200 dark:border-slate-800 rounded-xl p-8 sm:p-12 space-y-8">
+    <div className="py-16 px-4 sm:px-6 lg:px-8 animate-fade-in">
+      <div className="max-w-3xl mx-auto glass-card border border-neutral-200/90 dark:border-slate-800/90 rounded-xl p-8 sm:p-12 space-y-8">
         <div className="border-b border-neutral-200 dark:border-slate-800 pb-6">
           <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 mb-2">
             Legal &amp; Data Transparency · Effective Date: January 1, 2026
           </p>
           <h1 className="text-3xl font-bold tracking-tight text-neutral-950 dark:text-white">
-            Privacy Policy
+            Digital Pulse Privacy Policy
           </h1>
           <p className="text-sm text-neutral-500 dark:text-slate-400 mt-2">
             Last updated: September 1, 2026
@@ -19,13 +19,13 @@ export const PrivacyPolicyPage: React.FC = () => {
         <div className="space-y-6 text-sm sm:text-base text-neutral-700 dark:text-slate-300 leading-relaxed">
           <section className="space-y-2">
             <h2 className="text-lg font-bold text-neutral-950 dark:text-white">
-              1. Overview
+              1. Overview of Our First-Party Data Privacy Standards
             </h2>
             <p>
-              Digital Pulse (“we,” “our,” or “us”) respects your privacy and is committed to
-              protecting the personal information you share with our publication. This Privacy
-              Policy explains what information we collect, how we use it, and your choices regarding
-              your data when you visit Digital Pulse.
+              This Digital Pulse privacy policy explains our commitment to first-party data privacy
+              and protecting the personal information you share with our publication. Below we break
+              down what information we collect, how we use it, and your newsletter subscriber rights
+              when you visit Digital Pulse.
             </p>
           </section>
 

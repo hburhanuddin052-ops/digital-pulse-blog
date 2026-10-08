@@ -40,21 +40,22 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectCategory
   };
 
   return (
-    <div>
+    <div className="animate-fade-in">
       {/* 1. Editorial Hero & Lead Featured Story (3-Tier Salience) */}
       <section className="border-b border-neutral-200 dark:border-slate-800 pt-10 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Masthead Kicker & Introduction */}
           <div className="max-w-3xl mb-10">
             <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 mb-2">
-              Independent Digital Publication · 2026 Edition
+              Independent Digital Marketing Blog · 2026 Edition
             </p>
             <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 dark:text-white leading-[1.12] mb-4">
-              Evidence-based reporting on digital marketing, search, and online business.
+              An independent digital marketing blog for search, social media strategy, and online business.
             </h1>
             <p className="text-base sm:text-lg text-neutral-600 dark:text-slate-300 leading-relaxed">
-              Practical guides and research-backed breakdowns written for college students, young
-              entrepreneurs, digital marketers, and small business owners.
+              Digital Pulse is a research-backed digital marketing blog delivering actionable social
+              media strategy, beginner SEO tutorials, and online business insights for college
+              students, young entrepreneurs, digital marketers, and small business owners.
             </p>
           </div>
 
@@ -69,6 +70,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectCategory
               >
                 <EditorialImage
                   src={featuredArticle.image}
+                  webpSrc={featuredArticle.webpImage}
                   alt={featuredArticle.imageAlt}
                   category={featuredArticle.category}
                   title={featuredArticle.title}
@@ -144,14 +146,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectCategory
             {/* Popular Articles Rail (4 cols) */}
             <aside
               aria-labelledby="popular-articles-heading"
-              className="lg:col-span-4 border border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#111827] rounded-xl p-6"
+              className="lg:col-span-4 border border-neutral-200/90 dark:border-slate-800/90 glass-card rounded-xl p-6"
             >
               <div className="flex items-center justify-between pb-4 mb-5 border-b border-neutral-200 dark:border-slate-800">
                 <h2
                   id="popular-articles-heading"
                   className="text-sm font-bold tracking-tight text-neutral-950 dark:text-white"
                 >
-                  Most Read on Digital Pulse
+                  Most Read on Our Digital Marketing Blog
                 </h2>
                 <span className="text-xs text-neutral-500 dark:text-slate-400 tabular-nums">
                   Top 4
@@ -199,8 +201,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectCategory
                   onClick={handleViewAllBlog}
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline whitespace-nowrap"
                 >
-                  <span>Browse all 10 complete articles</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <span>Browse all 10 digital marketing articles</span>
+                  <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                 </a>
               </div>
             </aside>
@@ -217,7 +219,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectCategory
                 Recent Reporting &amp; Guides
               </p>
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-950 dark:text-white">
-                Latest Articles
+                Latest Digital Marketing Blog Articles &amp; Guides
               </h2>
             </div>
 
@@ -259,10 +261,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectCategory
             <a
               href="/blog"
               onClick={handleViewAllBlog}
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-neutral-900 dark:text-white bg-white dark:bg-slate-900 border border-neutral-300 dark:border-slate-700 rounded-lg hover:border-blue-600 dark:hover:border-blue-500 transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-neutral-900 dark:text-white glass-card border border-neutral-300 dark:border-slate-700 rounded-lg hover:border-blue-600 dark:hover:border-blue-500 transition-colors whitespace-nowrap"
             >
-              <span>View All 10 Articles in Archive</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>View All 10 Digital Marketing Articles in Archive</span>
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -276,11 +278,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectCategory
               Topic Desks
             </p>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-950 dark:text-white mb-2">
-              Explore by Subject Category
+              Explore Social Media Strategy &amp; Online Business Insights by Category
             </h2>
             <p className="text-sm text-neutral-600 dark:text-slate-300">
-              Every article on Digital Pulse is organized into five core subject desks with verified
-              primary citations.
+              Every guide on Digital Pulse is organized into five core subject desks with verified
+              primary citations and practical examples.
             </p>
           </div>
 
@@ -288,14 +290,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectCategory
             {CATEGORIES.map((cat, idx) => {
               const count = ALL_ARTICLES.filter((a) => a.category === cat.name).length;
               return (
-                <button
+                <a
                   key={cat.slug}
-                  type="button"
-                  onClick={() => {
+                  href="/blog"
+                  onClick={(e) => {
+                    e.preventDefault();
                     onSelectCategory(cat.name);
                     onNavigate('/blog');
                   }}
-                  className="text-left p-5 rounded-xl border border-neutral-200 dark:border-slate-800 bg-[#FAFAFA] dark:bg-slate-900/80 hover:border-blue-600 dark:hover:border-blue-500 transition-colors flex flex-col justify-between cursor-pointer group"
+                  className="text-left p-5 rounded-xl border border-neutral-200/90 dark:border-slate-800/90 glass-card hover:border-blue-600 dark:hover:border-blue-500 transition-colors flex flex-col justify-between cursor-pointer group"
                 >
                   <div>
                     <div className="text-xs font-mono text-neutral-400 dark:text-slate-500 mb-2 tabular-nums">
@@ -310,10 +313,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectCategory
                   </div>
 
                   <div className="mt-4 pt-3 border-t border-neutral-200/70 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-blue-700 dark:text-blue-400">
-                    <span>Read desk</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                    <span>Explore {cat.name}</span>
+                    <ArrowRight
+                      className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5"
+                      aria-hidden="true"
+                    />
                   </div>
-                </button>
+                </a>
               );
             })}
           </div>

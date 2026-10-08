@@ -22,23 +22,24 @@ export const NewsletterSection: React.FC = () => {
     <section
       id="newsletter"
       aria-labelledby="newsletter-heading"
-      className="border-y border-neutral-200 dark:border-slate-800 bg-neutral-100/70 dark:bg-slate-900/60 py-16 px-4 sm:px-6 lg:px-8"
+      className="border-y border-neutral-200/80 dark:border-slate-800/80 bg-neutral-100/70 dark:bg-slate-900/60 py-16 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto glass-card border border-neutral-200/90 dark:border-slate-800/90 rounded-2xl p-6 sm:p-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7">
             <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 mb-2">
-              Weekly Editorial Briefing
+              Weekly Digital Marketing Strategy Briefing
             </p>
             <h2
               id="newsletter-heading"
               className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-white mb-3"
             >
-              Get practical marketing and search research in your inbox every Thursday.
+              Get practical SEO and marketing research in your inbox every Thursday.
             </h2>
             <p className="text-sm sm:text-base text-neutral-600 dark:text-slate-300 leading-relaxed">
               Written for students, founders, and small business marketers. Every issue breaks down
-              one algorithm change, one SEO test, and one actionable case study. No spam, ever.
+              one algorithm shift, one search engine optimization test, and one actionable case
+              study.
             </p>
           </div>
 
@@ -46,7 +47,10 @@ export const NewsletterSection: React.FC = () => {
             {submittedEmail ? (
               <div className="p-5 rounded-xl border border-emerald-200 dark:border-emerald-900/60 bg-white dark:bg-slate-900 text-left">
                 <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle2
+                    className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"
+                    aria-hidden="true"
+                  />
                   <div>
                     <p className="text-sm font-semibold text-neutral-900 dark:text-white">
                       Subscription confirmed
@@ -58,7 +62,7 @@ export const NewsletterSection: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setSubmittedEmail('')}
-                      className="mt-3 text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline whitespace-nowrap"
+                      className="mt-3 text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline whitespace-nowrap cursor-pointer"
                     >
                       Register another address
                     </button>
@@ -69,7 +73,7 @@ export const NewsletterSection: React.FC = () => {
               <form onSubmit={handleSubmit} noValidate className="space-y-3">
                 <div>
                   <label htmlFor="newsletter-email" className="sr-only">
-                    Email address
+                    Email address for newsletter subscription
                   </label>
                   <input
                     id="newsletter-email"
@@ -91,7 +95,7 @@ export const NewsletterSection: React.FC = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-5 py-3 text-sm font-semibold text-white bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 rounded-lg transition-colors whitespace-nowrap cursor-pointer"
+                  className="w-full px-5 py-3 text-sm font-semibold text-white bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 rounded-lg transition-all duration-150 whitespace-nowrap cursor-pointer"
                 >
                   Subscribe to Briefing
                 </button>

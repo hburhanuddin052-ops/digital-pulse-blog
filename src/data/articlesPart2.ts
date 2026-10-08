@@ -1,109 +1,124 @@
 import { Article } from '../types/blog';
 import aiMarketingImg from '../assets/images/images/photos/how-ai-is-changing-digital-marketing.jpg';
+import aiMarketingWebp from '../assets/images/images/photos/how-ai-is-changing-digital-marketing.webp';
 import instagramMarketingImg from '../assets/images/images/photos/instagram-marketing-for-small-businesses.jpg';
+import instagramMarketingWebp from '../assets/images/images/photos/instagram-marketing-for-small-businesses.webp';
 import shortFormVideoImg from '../assets/images/images/photos/why-short-form-video-is-so-powerful.jpg';
+import shortFormVideoWebp from '../assets/images/images/photos/why-short-form-video-is-so-powerful.webp';
 
 export const ARTICLES_PART_2: Article[] = [
   {
     id: 4,
     slug: 'how-ai-is-changing-digital-marketing',
     title: 'How AI Is Changing Digital Marketing',
-    seoTitle: 'How AI Is Changing Digital Marketing Workflows | Digital Pulse',
+    seoTitle: 'AI in Digital Marketing: Workflows, Benefits & Key Risks',
     metaDescription:
-      'Examine how artificial intelligence is reshaping content workflows, ad targeting, customer service, and data analysis—and why human judgment remains irreplaceable.',
-    primaryKeyword: 'how AI is changing digital marketing',
-    secondaryKeywords: [
-      'AI marketing automation',
-      'AI content tools risks',
-      'predictive analytics marketing',
-      'human creativity vs AI',
-    ],
+      'Explore how AI in digital marketing improves marketing workflow automation, ad targeting, and data analysis while still requiring human editorial oversight.',
+    primaryKeyword: 'AI in digital marketing',
+    secondaryKeywords: ['marketing workflow automation', 'human editorial oversight'],
     category: 'Technology & AI',
     authorId: 'lucas-vance',
     publishedAt: 'September 8, 2026',
     isoDate: '2026-09-08',
-    readingTimeMinutes: 9,
+    readingTimeMinutes: 10,
     featured: false,
     popularRank: 4,
     image: aiMarketingImg,
+    webpImage: aiMarketingWebp,
     imageAlt:
       'High-resolution monitor displaying data dashboards, predictive metrics, and performance graphs',
     imageCaption:
-      'Fig. 4 — Artificial intelligence accelerates data synthesis and campaign testing, but strategic positioning requires human judgment.',
+      'Fig. 4 — Artificial intelligence accelerates data synthesis and campaign testing, while human judgment directs strategy.',
     excerpt:
       'From automated bid management to customer support triage, artificial intelligence has reshaped marketing execution. Here is where AI delivers real efficiency—and where human thinking cannot be replaced.',
     introduction: [
-      'Artificial intelligence is not a brand-new guest in digital marketing. Machine learning models have powered search engine rankings, email spam filters, and automated ad bidding on Google and Meta for over a decade. What changed in recent years is accessibility: generative text, audio, and visual tools moved out of engineering departments and onto the everyday laptops of students, freelancers, and small business owners.',
-      'This accessibility has created two opposite reactions. Some marketers treat AI as a magic button that can write entire blogs, run ad campaigns, and replace creative teams overnight. Others avoid it completely out of fear of sounding robotic. Both extremes miss the mark.',
-      'Used thoughtfully, AI reduces repetitive busywork—like sorting spreadsheet rows, transcribing video interviews, or testing ad variations—so marketers can spend more time talking to customers and refining brand strategy. This article examines how AI is practically changing digital marketing, the real risks teams must manage, and why AI must support rather than replace human critical thinking.',
+      'Applying AI in digital marketing effectively begins with recognizing that machine learning has powered search engine rankings, email spam filters, and automated ad bidding for over a decade. What changed recently is accessibility: generative text, audio, and analytical tools moved out of engineering teams and onto the laptops of students, freelancers, and small business owners.',
+      'This accessibility has sparked two opposite mistakes. Some marketers treat AI as an autopilot button that can write entire websites without human review, while others avoid it entirely. Both extremes miss the practical reality.',
+      'Used responsibly, marketing workflow automation reduces repetitive busywork—such as transcribing interviews, sorting survey data, or testing ad variations—while human editorial oversight ensures accuracy, originality, and customer empathy. Here is how AI in digital marketing works across core channels and where human judgment remains irreplaceable.',
     ],
     sections: [
       {
         id: 'ai-content-tools-and-editorial-workflows',
-        heading: 'AI Content Tools: Research Assistant, Not Autopilot',
+        heading: 'How Should Marketers Use AI Content Tools Without Losing Quality?',
         paragraphs: [
-          'Generative writing and editing tools can outline topics, summarize long PDFs, suggest headline variations, and check grammar in seconds. For a solo business owner or student marketer juggling ten responsibilities, that speed helps overcome the "blank page" problem.',
-          'However, relying on language models to write finished articles from scratch creates an immediate problem: language models predict statistically probable word sequences based on existing training data. They do not conduct original interviews, test physical products, or verify whether a claim is current. When brands publish unedited AI text, their articles sound identical to every other competitor using the same prompt.',
+          'Marketers should use AI content tools as research and formatting assistants—for outlining topics, transcribing audio, and drafting headline variations—rather than publishing unedited machine-generated text. Because language models predict statistically average word patterns from existing training data, unedited output lacks original reporting and sounds generic.',
+          'When a human strategist interviews a subject-matter expert or runs an original experiment, AI tools can quickly turn that raw recording into structured outlines, newsletter summaries, and social snippets. The human editor then rewrites, verifies facts, and injects real brand perspective.',
         ],
         bullets: [
-          'Effective Use: Transcribing a 20-minute founder interview and asking an AI tool to extract five key talking points for a newsletter.',
-          'Effective Use: Rewriting a product description into three length formats (a 150-character meta description, a 50-word email blurb, and a video caption).',
-          'Ineffective Use: Generating 50 blog posts on topics your team knows nothing about and publishing them without fact-checking or original examples.',
+          'Effective Use: Transcribing a 20-minute founder interview and extracting five key talking points for a weekly newsletter.',
+          'Effective Use: Adapting a verified product specification into a 155-character meta description, an email blurb, and a video caption.',
+          'Ineffective Use: Generating 50 unverified articles on topics your team has never tested and publishing them without fact-checking.',
         ],
         internalLink: {
-          contextPrefix: 'Understand how search engines evaluate automated content in our guide to',
+          contextPrefix: 'Learn how search engines evaluate automated pages in our guide on',
           anchorText: 'SEO for beginners and Google’s helpful content standards',
           slug: 'seo-for-beginners-how-google-ranks-websites',
         },
       },
       {
         id: 'personalization-and-recommendation-engines',
-        heading: 'Dynamic Personalization at Scale',
+        heading: 'How Does AI Improve Personalization in Email and E-Commerce?',
         paragraphs: [
-          'In e-commerce and media, machine learning models analyze browsing patterns, past purchases, and cart behavior to recommend relevant items or articles in real time. Instead of sending the exact same Tuesday morning email blast to 25,000 subscribers, modern email platforms use predictive models to adjust send times and product blocks based on what each subscriber has actually clicked.',
-          'For small businesses, this does not require building custom algorithms. Built-in recommendation blocks inside standard e-commerce and email tools allow small stores to show relevant complementary items—such as suggesting replacement filters 60 days after a customer buys a water pitcher.',
+          'AI improves personalization in email and e-commerce by analyzing first-party purchase history, browsing context, and declared customer preferences to recommend relevant items at optimal send times. Small businesses can use built-in predictive blocks in standard email and e-commerce platforms without writing custom code.',
+          'Instead of sending the exact same promotional blast to every subscriber at 9:00 AM on Tuesday, modern email tools predict when each individual reader is most likely to open their inbox and dynamically populate product recommendations based on past orders—such as reminding a customer to reorder water pitcher replacement filters 60 days after their initial purchase.',
         ],
       },
       {
         id: 'customer-service-and-triage',
-        heading: 'Customer Service: Instant Answers vs. Human Escalation',
+        heading: 'When Should Customer Service Use AI Chat vs. Human Support?',
         paragraphs: [
-          'Customer support is a crucial touchpoint in online business. Modern AI-assisted support agents—grounded in a company’s verified help center documentation and order database—can immediately answer routine questions at 2:00 a.m., such as "Where is my package?", "How do I exchange a size?", or "Does this software integrate with Google Calendar?"',
-          'The mistake many companies make is trapping frustrated customers inside an endless chatbot loop with no way to reach a real person. Best practice in conversational support is clear triage: let automated systems resolve straightforward logistical questions instantly, and provide an immediate, frictionless handoff to a human support specialist whenever an issue involves billing disputes, damaged goods, or nuanced advice.',
+          'Customer service should use AI chat agents for instant logistical answers—such as order tracking, store hours, and return policies—while providing a direct, frictionless handoff to a human specialist for billing disputes, damaged orders, or complex advice. Trapping frustrated customers inside an endless bot loop damages brand trust.',
+          'Most customer support inquiries fall into predictable, repetitive categories. Automating those routine lookups frees human support representatives to spend quality time resolving nuanced problems that require empathy and discretion.',
         ],
+        comparisonTable: {
+          caption: 'AI Marketing Workflow Automation vs. Human Editorial Oversight',
+          headers: ['Marketing Function', 'Best Handled by AI Automation', 'Requires Human Editorial Oversight'],
+          rows: [
+            ['Content & Copywriting', 'Interview transcription, outlines, headline A/B options', 'Fact-checking, original examples, brand voice, ethics'],
+            ['Customer Support', '24/7 order status lookups, standard FAQ routing', 'Complex troubleshooting, billing issues, empathy'],
+            ['Paid Advertising', 'Real-time auction bid adjustments, placement testing', 'Creative direction, offer positioning, budget limits'],
+          ],
+        },
       },
       {
         id: 'paid-advertising-and-media-buying',
-        heading: 'Paid Advertising and Automated Campaign Optimization',
+        heading: 'How Has Machine Learning Changed Paid Advertising Campaigns?',
         paragraphs: [
-          'Digital advertising platforms—including Google Ads (Performance Max) and Meta Ads (Advantage+)—rely heavily on machine learning to allocate budgets, adjust real-time auction bids, and test combinations of headlines, images, and videos across placements.',
-          'Because ad platforms now automate much of the granular audience targeting that media buyers used to configure manually, the marketer’s job has shifted toward creative strategy and conversion tracking accuracy. If you feed an automated ad system clear conversion signals and five distinct, well-crafted video hooks, the system can efficiently find buyers. If you feed it weak creative and inaccurate tracking data, automation simply wastes your budget faster.',
+          'Machine learning has automated real-time bid adjustments and audience placement across Google Ads and Meta Ads, shifting the marketer’s primary responsibility toward creative strategy and accurate conversion tracking. When you supply strong video hooks and clean first-party conversion signals, automated ad delivery finds buyers efficiently.',
+          'Ten years ago, media buyers spent hours manually adjusting keyword bids by a few cents and slicing audiences into tiny demographic groups. Today, ad platforms use real-time auction models to test creative assets across broad audiences, making your video storytelling and landing page clarity the main drivers of return on ad spend.',
         ],
         exampleBox: {
           title: 'Real-World Advertising Shift',
           content:
-            'Instead of manually creating 15 separate ad sets targeting narrow interest checkboxes, a small skincare brand uploads four distinct video angles (dermatologist explanation, texture close-up, travel routine, and sensitive-skin testimonial) and lets the platform’s delivery system match each creative angle to the viewers most likely to respond.',
+            'Instead of manually creating 15 separate ad sets targeting narrow interest checkboxes, a small skincare brand uploads four distinct video angles (dermatologist explanation, texture close-up, travel routine, and sensitive-skin testimonial) and lets the platform’s delivery system match each angle to likely buyers.',
         },
       },
       {
         id: 'data-analysis-and-marketing-automation',
-        heading: 'Faster Data Analysis and Workflow Automation',
+        heading: 'How Can Small Teams Use AI for Marketing Data Analysis?',
         paragraphs: [
-          'Small business owners often collect plenty of data—website analytics, customer reviews, email open rates, and sales spreadsheets—but lack the time to interpret it. AI analysis tools help marketers spot patterns across messy qualitative data.',
-          'For example, a marketer can export 400 customer support tickets or product reviews and classify them by theme in minutes, discovering that 28% of pre-sale questions ask whether a backpack fits a 16-inch laptop. That single insight tells the team exactly what to highlight on the product page and in next week’s social video.',
+          'Small teams can use AI data analysis tools to categorize hundreds of customer reviews, survey responses, or support tickets by theme in minutes. Spotting recurring customer questions directly informs product page copy, FAQ sections, and social video topics.',
+          'For instance, clustering 400 pre-sale inquiries might reveal that 28% of shoppers ask whether a backpack fits a 16-inch laptop—telling the marketing team exactly what to highlight in their next product photo and bullet list.',
         ],
       },
       {
         id: 'risks-and-limitations',
-        heading: 'Real Risks Marketers Must Manage',
+        heading: 'What Are the Main Risks of Using AI in Digital Marketing?',
         paragraphs: [
-          'Adopting AI tools without guardrails introduces serious operational, legal, and reputational risks. Frameworks like the NIST Artificial Intelligence Risk Management Framework (AI RMF) and FTC business guidance highlight several core challenges:',
+          'The main risks of using AI in digital marketing are factual hallucinations (invented statistics or citations), customer data privacy leaks, copyright disputes, and brand homogenization. Every factual claim must be verified against authoritative primary sources before publication.',
+          'Understanding these limitations is essential for protecting your company’s reputation and legal compliance:',
         ],
+        supportingImage: {
+          src: '/images/supporting/human-editor-reviewing-marketing-copy.jpg',
+          webpSrc: '/images/supporting/human-editor-reviewing-marketing-copy.webp',
+          alt: 'Editorial team member reviewing and fact-checking marketing copy on a laptop',
+          caption: 'Fig. 4.1 — Human editorial oversight prevents fabricated claims and preserves authentic brand positioning.',
+        },
         bullets: [
-          'Factual Hallucinations: Generative models can confidently invent statistics, quotes, case studies, or citations that do not exist. Every factual claim must be verified against primary sources before publication.',
-          'Data Privacy & Confidentiality: Pasting customer email lists, private financial numbers, or proprietary company documents into public AI tools can expose sensitive information.',
-          'Intellectual Property & Copyright Questions: Using unvetted synthetic images or imitative voice clones can trigger copyright disputes and erode audience trust.',
-          'Brand Homogenization: Over-reliance on automated copywriting strips away the specific humor, local perspective, and point of view that make a small brand memorable.',
+          'Factual Hallucinations: Generative models can invent statistics, quotes, or studies that do not exist.',
+          'Data Privacy & Confidentiality: Pasting customer email lists or private financial records into public prompts exposes sensitive data.',
+          'Regulatory Scrutiny: The FTC warns businesses against making exaggerated or unsubstantiated claims about AI products.',
+          'Brand Homogenization: Over-reliance on automated copywriting strips away the specific perspective that makes a small brand memorable.',
         ],
         pullQuote: {
           quote:
@@ -111,17 +126,17 @@ export const ARTICLES_PART_2: Article[] = [
           context: 'Editorial & Strategic Responsibility',
         },
         internalLink: {
-          contextPrefix: 'Explore how synthetic falsehoods affect public trust in our research piece on',
-          anchorText: 'fake news, misinformation, and how they damage a brand’s reputation',
+          contextPrefix: 'Examine how synthetic falsehoods affect public trust in our research guide on',
+          anchorText: 'misinformation and brand reputation crisis defense',
           slug: 'fake-news-misinformation-brand-reputation',
         },
       },
       {
         id: 'human-creativity-vs-ai',
-        heading: 'Why AI Must Support—Never Replace—Critical Thinking',
+        heading: 'Balancing AI Speed With Human Editorial Judgment',
         paragraphs: [
-          'The most valuable parts of marketing are deeply human: empathy for a customer’s frustration, ethical judgment, taste, cultural awareness, and original experimentation. An AI tool can generate twenty slogan options in five seconds, but it takes a thoughtful marketer who understands their audience to know which option builds lasting trust and which one feels tone-deaf.',
-          'Treat AI like a junior research calculator. Let it handle repetitive formatting, initial brainstorming, transcript cleanup, and data sorting—while you retain full ownership over strategy, fact-checking, creative direction, and the final words attached to your brand name.',
+          'The most resilient marketing teams treat artificial intelligence as a fast research calculator rather than a creative director. Strategy, ethical judgment, cultural awareness, and genuine customer empathy cannot be automated.',
+          'Before adopting any automated workflow, establish a clear editorial rule: a human team member must review, fact-check, and sign off on every customer-facing message before it goes live.',
         ],
       },
     ],
@@ -130,7 +145,7 @@ export const ARTICLES_PART_2: Article[] = [
       'In paid advertising, machine learning handles bid optimization, making creative quality and accurate first-party conversion data your most important levers.',
       'Combine automated customer support for simple logistical questions with fast, accessible human escalation for complex issues.',
       'Verify every statistic, quote, and factual claim against authoritative primary sources to prevent AI hallucinations from damaging your credibility.',
-      'Keep human critical thinking, empathy, and editorial standards at the center of every campaign.',
+      'Keep human editorial oversight, critical thinking, and empathy at the center of every campaign.',
     ],
     sources: [
       {
@@ -168,16 +183,11 @@ export const ARTICLES_PART_2: Article[] = [
     id: 5,
     slug: 'instagram-marketing-for-small-businesses',
     title: 'Instagram Marketing for Small Businesses: A Practical Guide',
-    seoTitle: 'Instagram Marketing for Small Businesses: Practical Guide',
+    seoTitle: 'Instagram Marketing for Small Businesses: Complete Guide',
     metaDescription:
-      'A step-by-step Instagram marketing guide for small businesses covering profile optimization, Reels, Stories, Carousels, captions, UGC, and Instagram Insights.',
+      'A practical guide to Instagram marketing for small businesses covering bio optimization, Instagram Reels strategy, carousel engagement tips, UGC, and Insights.',
     primaryKeyword: 'Instagram marketing for small businesses',
-    secondaryKeywords: [
-      'Instagram profile optimization',
-      'Instagram Reels vs Carousels',
-      'user-generated content Instagram',
-      'small business social media strategy',
-    ],
+    secondaryKeywords: ['Instagram Reels strategy', 'carousel engagement tips'],
     category: 'Social Media',
     authorId: 'priya-patel',
     publishedAt: 'August 29, 2026',
@@ -186,6 +196,7 @@ export const ARTICLES_PART_2: Article[] = [
     featured: false,
     popularRank: 5,
     image: instagramMarketingImg,
+    webpImage: instagramMarketingWebp,
     imageAlt:
       'Small business owner holding a tablet at a retail counter while managing online store orders and social media',
     imageCaption:
@@ -193,108 +204,111 @@ export const ARTICLES_PART_2: Article[] = [
     excerpt:
       'You do not need to post three times a day to win customers on Instagram. Learn how to optimize your bio, assign clear jobs to Reels, Carousels, and Stories, and track metrics that drive sales.',
     introduction: [
-      'For many small businesses—from local coffee shops and independent clothing labels to freelance designers and tutoring services—Instagram acts as a second homepage. Before visiting a physical store or clicking a checkout link, prospective customers often check a brand’s Instagram profile to see if the business is active, legitimate, and trusted by real people.',
-      'Yet many small business owners burn out on Instagram because they treat every format the same, post without a clear goal, or obsess over follower counts that never turn into paying customers.',
-      'A sustainable Instagram strategy assigns a specific job to each feature on the platform: Reels to reach new people, Carousels to educate and earn saves, Stories to build daily familiarity with existing followers, and your profile grid to convert visitors into buyers. Here is how to build a practical Instagram system for a small business.',
+      'Effective Instagram marketing for small businesses treats your profile as a visual storefront and customer trust engine. Before visiting a local cafe, booking a service, or ordering from an independent shop, buyers routinely inspect a brand’s Instagram page to confirm the business is active, legitimate, and reviewed by real customers.',
+      'Many small business owners burn out because they post without a clear goal or chase vanity follower counts that never convert into sales.',
+      'A sustainable system assigns a distinct role to each format: an Instagram Reels strategy to reach new non-followers, carousel engagement tips to educate and earn saves, Stories to converse with existing followers, and an optimized profile grid to convert visitors.',
     ],
     sections: [
       {
         id: 'profile-optimization',
-        heading: '1. Profile Optimization: Turning Profile Visits Into Action',
+        heading: 'How Should a Small Business Optimize Its Instagram Profile Bio?',
         paragraphs: [
-          'Reaching 50,000 people with a Reel does very little for your business if visitors tap onto your profile, cannot tell what you sell within three seconds, and leave. Your profile header should answer three immediate questions: Who are you, who do you help, and what should a visitor do next?',
+          'A small business should optimize its Instagram bio by placing searchable category and location keywords in the Name field, stating a clear one-sentence value proposition, linking to a fast mobile landing page, and pinning three overview posts to the top of the grid. These elements turn casual profile visitors into followers and customers within five seconds.',
+          'Because Instagram’s search bar indexes both your @username and your bold Name field, adding your core service and city makes your business discoverable when locals search for what you sell. Complete these five profile essentials before worrying about posting frequency:',
         ],
         bullets: [
-          'Searchable Name Field: Include your primary service or location alongside your brand name (for example, "Loom & Leaf | Austin Plant Shop" instead of just "Loom & Leaf"). Instagram’s search bar indexes the Name field heavily.',
-          'Clear Value Proposition Bio: Write one clear sentence explaining what you offer and what makes it distinct, followed by social proof or store hours.',
-          'Focused Call-to-Action Link: Point your bio link to a fast, mobile-friendly landing page with no more than three clear options (e.g., Shop Best Sellers, Book a Consultation, Join Newsletter).',
-          'Pinned Posts: Pin three strategic posts to the top of your grid: (1) an introduction to your founder or story, (2) your flagship product or service breakdown, and (3) customer reviews or before-and-after results.',
-          'Story Highlights: Organize 4 to 5 clean Story Highlights covering FAQs, Pricing/Services, Customer Reviews, and Behind the Scenes.',
+          'Searchable Name Field: Include your primary service and city alongside your brand name (e.g., "Loom & Leaf | Austin Plant Shop").',
+          'Clear Value Proposition Bio: Explain what you offer, who it is for, and your store hours or shipping policy.',
+          'Focused Call-to-Action Link: Point your bio link to a clean mobile landing page with no more than three top actions.',
+          'Three Pinned Posts: Pin (1) a founder or brand story introduction, (2) your flagship product breakdown, and (3) verified customer testimonials.',
+          'Story Highlights: Organize 4 to 5 clean Highlights covering FAQs, Pricing, Reviews, and Behind the Scenes.',
         ],
       },
       {
         id: 'reels-stories-carousels',
-        heading: '2. Matching the Format to the Goal: Reels, Carousels, and Stories',
+        heading: 'When Should You Use Instagram Reels vs. Carousels vs. Stories?',
         paragraphs: [
-          'Instagram officially confirms that each surface in the app uses its own ranking system. Instead of guessing what to post, match the format to your marketing objective:',
+          'Use Instagram Reels to reach new people who do not follow your business yet, Carousels to share multi-step educational guides or product lookbooks that earn saves, and Stories to nurture daily familiarity and direct link clicks among existing followers. Assigning each format a specific job prevents wasted effort.',
+          'Trying to close a high-ticket sale in a 15-second Reel to cold strangers rarely works, just as posting only 24-hour Stories will never introduce your shop to new non-followers. Combining all three formats creates a complete marketing funnel inside the app:',
         ],
-        subSections: [
-          {
-            subHeading: 'Reels: Top-of-Funnel Discovery',
-            paragraphs: [
-              'Reels are designed to reach people who do not follow you yet. Keep most business Reels between 15 and 45 seconds. Show your product in motion, demonstrate a before-and-after transformation, or answer a common misconception in your niche.',
-            ],
-          },
-          {
-            subHeading: 'Carousels: Depth, Education, and Saves',
-            paragraphs: [
-              'Multi-slide photo or graphic Carousels (up to 10–20 slides) are ideal for step-by-step tutorials, comparisons, lookbooks, and detailed breakdowns. Furthermore, if a follower sees your Carousel once and scrolls past without swiping, Instagram often shows them the post a second time starting on Slide 2—giving you a built-in second chance at engagement.',
-            ],
-          },
-          {
-            subHeading: 'Stories: Retention, Polls, and Direct Conversions',
-            paragraphs: [
-              'Stories appear almost exclusively to your existing followers. Use Stories for casual behind-the-scenes updates, interactive poll and question stickers, limited-time restock links, and answering customer questions.',
-            ],
-          },
-        ],
+        comparisonTable: {
+          caption: 'Matching Instagram Formats to Small Business Marketing Goals',
+          headers: ['Instagram Format', 'Primary Audience Reached', 'Best Business Use Case & Key Metric'],
+          rows: [
+            ['Reels (15–45 sec vertical video)', 'Unconnected non-followers via discovery feed', 'Product demos, hooks, behind-the-scenes (Watch time & shares)'],
+            ['Carousels (Up to 10–20 slides)', 'Mix of followers and interest-matched viewers', 'Step-by-step tutorials, comparisons, lookbooks (Saves & swipes)'],
+            ['Stories (24-hour vertical frames)', 'Existing followers at the top of the app', 'Polls, Q&A stickers, restock links, DM replies (Link taps & DMs)'],
+          ],
+        },
         exampleBox: {
-          title: 'Example Weekly Schedule for a Busy Small Business (4 Posts + Stories)',
+          title: 'Example Weekly Schedule for a Busy Small Business (3–4 Feed Posts + Stories)',
           content:
-            'Tuesday: 30-second Reel demonstrating a product use case. Thursday: 7-slide educational Carousel answering a customer FAQ (optimized for saves). Saturday: Photo/video Carousel highlighting a customer review and behind-the-scenes packaging. Daily (3–4 frames): Casual Stories with a poll sticker or link sticker.',
+            'Tuesday: 30-second Reel demonstrating a product use case. Thursday: 7-slide educational Carousel answering a customer FAQ (optimized for saves). Saturday: Photo/video Carousel highlighting a customer review. Daily (3–4 frames): Casual Stories with a poll sticker or link sticker.',
         },
         internalLink: {
-          contextPrefix: 'Learn how Instagram scores these formats in our guide on',
-          anchorText: 'how social media algorithms decide what you see',
+          contextPrefix: 'Learn how Instagram scores each format in our breakdown of',
+          anchorText: 'how social media algorithms work and rank your content',
           slug: 'how-social-media-algorithms-work',
         },
       },
       {
         id: 'captions-and-hashtags',
-        heading: '3. Writing Captions and Using Keywords & Hashtags Effectively',
+        heading: 'Do Hashtags Still Work on Instagram or Are Keywords Better?',
         paragraphs: [
-          'A strong caption complements your visual rather than repeating it word-for-word. Start the first line of your caption with a specific hook before the "...more" truncation cutoff. Break paragraphs into readable two-sentence chunks, and end with a single clear prompt—such as asking a specific question or inviting readers to DM a keyword for a guide.',
-          'What about hashtags? According to Instagram’s official @creators guidance, hashtags do not magically force a post to go viral, Instead, hashtags and caption keywords act as categorization labels that help Instagram’s search and recommendation systems understand what your post is about. Use 3 to 5 specific, relevant hashtags (e.g., #handmadeceramicsmug, #smallbatchpottery) alongside natural keywords in your caption text rather than pasting 30 generic tags like #love or #instagood.',
+          'Natural keywords in your caption and spoken audio matter more than long blocks of hashtags, though 3 to 5 specific hashtags still help Instagram categorize your post topic. According to Instagram’s official creator guidance, hashtags act as topic labels for search and recommendations rather than a guaranteed reach multiplier.',
+          'Instead of pasting 30 generic tags like "#love" or "#entrepreneur" at the bottom of a post, write clear captions that naturally include the exact phrases your buyers search for. Start the first line of your caption with a strong hook before the "...more" cutoff, break text into short two-sentence paragraphs, and end with one specific question or call to action.',
         ],
       },
       {
         id: 'engagement-and-ugc',
-        heading: '4. Community Engagement and User-Generated Content (UGC)',
+        heading: 'How Does User-Generated Content (UGC) Build Customer Trust?',
         paragraphs: [
-          'Social media works best as a two-way conversation. Replying thoughtfully to comments within the first hour of posting, answering Direct Messages promptly, and leaving genuine comments on local partners’ or customers’ posts builds community goodwill.',
-          'User-Generated Content (UGC)—photos and videos filmed by real customers using your product—is one of the highest-converting assets a small business can share. Prospective buyers trust a video filmed in a real customer’s kitchen far more than a studio graphic.',
+          'User-Generated Content (UGC)—photos and videos filmed by real customers using your product—builds trust because prospective buyers find peer demonstrations far more credible than polished studio advertisements. Reposting customer tags (with permission) provides authentic social proof while reducing your content production workload.',
+          'Small businesses can encourage a steady stream of customer content and community engagement through three simple habits:',
         ],
+        supportingImage: {
+          src: '/images/supporting/small-business-product-photography-setup.jpg',
+          webpSrc: '/images/supporting/small-business-product-photography-setup.webp',
+          alt: 'Small business owner arranging retail merchandise in natural window light',
+          caption: 'Fig. 5.1 — Authentic product photography and customer-filmed clips consistently outperform generic promotional banners.',
+        },
         bullets: [
-          'Encourage customers to tag your account when their order arrives by including a simple printed insert card.',
-          'Always ask for explicit permission before reposting a customer’s photo or video to your feed or using it in ads.',
-          'Use Instagram’s "Collab" post feature when partnering with local businesses, events, or creators so the post appears on both profiles and shares unified engagement.',
-        ],
-      },
-      {
-        id: 'influencer-collaborations',
-        heading: '5. Collaborating With Niche Creators and Local Partners',
-        paragraphs: [
-          'Small businesses rarely need large influencer budgets. Partnering with local micro-creators, campus ambassadors, or complementary neighborhood businesses often delivers stronger returns. For instance, a local running shoe store can co-host a Saturday morning 5K run with a local run-club creator and publish a shared Collab Reel recap.',
-          'Remember: whenever you provide free products, discounts, or payment to a creator in exchange for content, require them to use Instagram’s built-in "Paid partnership" label and clear "#ad" disclosure to comply with platform policies and FTC endorsement rules.',
+          'Encourage customers to tag your account when their order arrives by including a printed thank-you insert.',
+          'Reply to comments within the first hour of publishing to spark conversation.',
+          'Use Instagram’s "Collab" post feature when partnering with local businesses or creators so the post shares unified engagement across both profiles.',
         ],
       },
       {
         id: 'instagram-analytics',
-        heading: '6. Reading Instagram Insights: Metrics That Actually Matter',
+        heading: 'Which Instagram Insights Metrics Actually Measure Business Growth?',
         paragraphs: [
-          'Switch your account to a free Professional (Business or Creator) profile to unlock Instagram Insights. Instead of fixating on follower count or raw likes, track these four business-oriented metrics monthly:',
+          'The four Instagram Insights metrics that measure real business growth are non-follower reach, saves and DM shares per reach, profile visits to external website link taps, and Direct Message inquiries started. Raw follower counts and passive likes do not pay the bills if viewers never visit your store or inquire about your services.',
+          'Review your Instagram Professional Dashboard once a week and track these four indicators:',
         ],
         bullets: [
-          'Accounts Reached (Follower vs. Non-Follower Split): Tells you whether your Reels and Carousels are successfully introducing your brand to new people.',
-          'Saves and Shares (Sends per Reach): Indicates which topics your audience finds genuinely useful or worth recommending to friends.',
-          'Profile Visits and External Link Taps: Measures how effectively your content convinces viewers to check out your business and visit your website.',
-          'Direct Message Conversations Started: Tracks warm leads asking about pricing, availability, or services.',
+          'Accounts Reached (Follower vs. Non-Follower Split): Shows whether your Reels and Carousels are introducing your brand to new buyers.',
+          'Saves and Shares (Sends per Reach): Reveals which topics your audience finds worth bookmarking or sending to friends.',
+          'Profile Visits and External Link Taps: Measures how effectively your bio converts viewers into website visitors.',
+          'Direct Message Conversations Started: Tracks warm prospects asking about pricing or availability.',
+        ],
+        internalLink: {
+          contextPrefix: 'Avoid common social media missteps by reading our guide on',
+          anchorText: '10 small business digital marketing mistakes to avoid',
+          slug: 'common-digital-marketing-mistakes-small-businesses',
+        },
+      },
+      {
+        id: 'influencer-collaborations',
+        heading: 'Local Creator Collaborations and FTC Disclosure Rules',
+        paragraphs: [
+          'Small businesses do not need five-figure celebrity budgets to run effective creator campaigns. Partnering with local micro-creators, campus club leaders, or neighboring businesses through co-hosted events, product gifting, and shared Instagram Collab posts introduces your shop to warm local audiences.',
+          'Whenever you provide free products, discounts, or payment to a creator in exchange for a post, require them to use Instagram’s built-in "Paid partnership" label and a clear "#ad" disclosure in compliance with FTC endorsement guidelines.',
         ],
       },
     ],
     keyTakeaways: [
       'Optimize your Instagram Name field with searchable keywords describing your product category and location, and pin three high-impact posts to the top of your grid.',
-      'Use Reels to reach non-followers, Carousels to educate and earn saves, and Stories to converse with and convert your warmest followers.',
+      'Use an Instagram Reels strategy to reach non-followers, Carousels to educate and earn saves, and Stories to convert your warmest followers.',
       'Use 3 to 5 specific, relevant hashtags alongside natural keywords in your caption to help Instagram categorize your content accurately.',
       'Leverage User-Generated Content (UGC) and Instagram Collab posts to build authentic social proof.',
       'Measure success through saves, DM shares, profile visits, and website link taps rather than vanity like counts.',
@@ -329,24 +343,20 @@ export const ARTICLES_PART_2: Article[] = [
     id: 6,
     slug: 'why-short-form-video-is-so-powerful',
     title: 'Why Short-Form Video Has Become So Powerful',
-    seoTitle: 'Why Short-Form Video Is So Powerful for Brands | Digital Pulse',
+    seoTitle: 'Short-Form Video Marketing: Why Vertical Video Converts',
     metaDescription:
-      'Discover why short-form vertical video across TikTok, Instagram Reels, and YouTube Shorts dominates attention, how retention hooks work, and mistakes to avoid.',
-    primaryKeyword: 'why short-form video is so powerful',
-    secondaryKeywords: [
-      'TikTok Reels YouTube Shorts strategy',
-      'short-form video retention hooks',
-      'educational vs entertainment content',
-      'vertical video marketing',
-    ],
+      'Learn why short-form video marketing dominates attention, how vertical video retention works on TikTok, Reels, and Shorts, and how to write strong video hooks.',
+    primaryKeyword: 'short-form video marketing',
+    secondaryKeywords: ['vertical video retention', 'TikTok Reels Shorts hooks'],
     category: 'Social Media',
     authorId: 'priya-patel',
     publishedAt: 'August 21, 2026',
     isoDate: '2026-08-21',
-    readingTimeMinutes: 9,
+    readingTimeMinutes: 10,
     featured: false,
     popularRank: 6,
     image: shortFormVideoImg,
+    webpImage: shortFormVideoWebp,
     imageAlt:
       'Video creator holding a professional camera rig while filming studio video content',
     imageCaption:
@@ -354,37 +364,47 @@ export const ARTICLES_PART_2: Article[] = [
     excerpt:
       'TikTok, Instagram Reels, and YouTube Shorts changed how the internet discovers ideas and products. Examine the psychology, algorithmic mechanics, and storytelling structures behind vertical video.',
     introduction: [
-      'Less than a decade ago, vertical video was treated as an amateur mistake. Today, full-screen 9:16 short-form video is the default visual language of mobile internet culture. Across TikTok, Instagram Reels, and YouTube Shorts, billions of viewers watch vertical clips daily to learn recipes, compare software tools, research study tips, and discover new brands.',
-      'Why did clips lasting between 15 and 90 seconds overtake static photos and traditional horizontal commercials so decisively? The answer lies at the intersection of mobile ergonomics, cognitive pacing, and interest-based recommendation systems.',
-      'This article explores why short-form video works so effectively, how TikTok, Reels, and YouTube Shorts differ, how to structure a high-retention hook and story arc, and the common mistakes brands should avoid.',
+      'Short-form video marketing has become the dominant discovery format online because full-screen 9:16 video matches how people hold smartphones and combines visual proof, voice, and captions simultaneously. Across TikTok, Instagram Reels, and YouTube Shorts, billions of viewers use vertical clips to learn skills, compare products, and evaluate brands.',
+      'Why do clips lasting between 15 and 90 seconds outperform static images and horizontal commercials so consistently? The answer lies in mobile ergonomics, fast cognitive value assessment, and interest-based recommendation systems.',
+      'This guide explains how vertical video retention works, how TikTok, Reels, and YouTube Shorts compare, how to script TikTok Reels Shorts hooks, and the mistakes brands should avoid.',
     ],
     sections: [
       {
         id: 'mobile-ergonomics-and-multi-sensory-attention',
-        heading: 'Full-Screen Immersion and Multi-Sensory Communication',
+        heading: 'Why Do Short-Form Vertical Videos Hold Attention Better Than Static Posts?',
         paragraphs: [
-          'Smartphones are held vertically more than 90% of the time. A 9:16 vertical video occupies the entire mobile screen, eliminating competing sidebar links or surrounding posts. More importantly, short-form video engages multiple senses simultaneously: viewers see facial expressions and physical movement, hear vocal tone and pacing, and read on-screen captions at the same time.',
-          'When someone reads a text post about a sturdy travel backpack, they have to imagine how the zippers work. When they watch a 20-second video of someone packing a week’s worth of clothes into that backpack and sliding it under an airplane seat, comprehension and product confidence happen almost instantly.',
+          'Short-form vertical videos hold attention better than static posts because they occupy 100% of the mobile screen and engage sight, hearing, and reading simultaneously. Watching a 20-second demonstration of a product in motion builds faster comprehension and buyer confidence than reading a block of text.',
+          'People hold their smartphones vertically more than 90% of the time. Full-screen 9:16 video eliminates competing sidebar distractions, while spoken voice tone, facial expressions, and on-screen subtitles reinforce the message even if the viewer is in a noisy environment.',
         ],
       },
       {
         id: 'tiktok-reels-shorts-comparison',
-        heading: 'TikTok, Instagram Reels, and YouTube Shorts: How the Big Three Compare',
+        heading: 'How Do TikTok, Instagram Reels, and YouTube Shorts Compare for Brands?',
         paragraphs: [
-          'While all three platforms use vertical 9:16 video and swipe-based discovery feeds, user habits and ecosystem connections differ slightly on each platform:',
+          'TikTok excels at interest-based storytelling and search discovery, Instagram Reels excels at Direct Message shares and profile conversions, and YouTube Shorts connects vertical discovery directly to long-form YouTube videos. While all three use 9:16 vertical video, their surrounding ecosystems serve distinct stages of the marketing funnel.',
+          'Understanding these platform differences allows a creator or small business to repurpose one core video idea across all three networks with minor adjustments:',
         ],
-        bullets: [
-          'TikTok: Built from day one around the interest graph and audio/search discovery. Viewers on TikTok are unusually receptive to longer short-form storytelling (60 to 120 seconds), raw behind-the-scenes explanations, and comment-reply videos.',
-          'Instagram Reels: Tightly integrated with social sharing via Direct Messages, Stories, and profile grids. Reels excel at visually polished demonstrations, relatable niche humor, and driving viewers to DM conversations or profile carousels.',
-          'YouTube Shorts: Connected directly to the world’s largest long-form video and search ecosystem. According to Pew Research Center surveys on teen and adult platform usage, YouTube remains the most widely used online platform across demographics. Shorts allow creators to introduce a quick concept in 45 seconds and link directly to a 15-minute deep-dive YouTube video.',
-        ],
+        comparisonTable: {
+          caption: 'Comparing TikTok, Instagram Reels, and YouTube Shorts for Marketing',
+          headers: ['Platform', 'Sweet-Spot Video Length', 'Core Ecosystem Strength'],
+          rows: [
+            ['TikTok', '30 to 90 seconds', 'Deep interest-graph discovery, search queries, and comment-reply videos'],
+            ['Instagram Reels', '15 to 45 seconds', 'High DM share velocity ("sends") and direct profile/Carousel conversion'],
+            ['YouTube Shorts', '20 to 60 seconds', 'Bridges short-form viewers directly into 10–20 minute long-form YouTube videos'],
+          ],
+        },
+        internalLink: {
+          contextPrefix: 'Understand how recommendation pipelines rank these clips in our guide on',
+          anchorText: 'how social media algorithms work across feeds and video',
+          slug: 'how-social-media-algorithms-work',
+        },
       },
       {
         id: 'attention-spans-and-pacing',
-        heading: 'The Myth of "Short Attention Spans" vs. Fast Value Assessment',
+        heading: 'Have Human Attention Spans Shrunk, or Have Filters Gotten Faster?',
         paragraphs: [
-          'It is popular to claim that human attention spans have shrunk to a few seconds. Yet the exact same people who swipe past a dull 10-second video will happily watch a three-hour podcast or binge an eight-hour documentary series. People have not lost the ability to focus; rather, given an infinite supply of content, they have developed a much faster filter for deciding whether a video is worth their time.',
-          'In short-form video, the first two to three seconds serve as an audition. Viewers subconsciously ask: "Is this relevant to me, and is it getting to the point?"',
+          'Human attention spans have not shrunk; rather, viewers have developed a much faster two-second filter for deciding whether a piece of content is relevant and worth their time. The same person who swipes past a slow video intro will happily watch a two-hour podcast or tutorial once hooked.',
+          'Because viewers have unlimited content choices one thumb-swipe away, they no longer tolerate 10-second animated logo intros or vague throat-clearing. Respecting the viewer’s time from the very first frame is the key to earning their attention.',
         ],
         pullQuote: {
           quote:
@@ -394,36 +414,44 @@ export const ARTICLES_PART_2: Article[] = [
       },
       {
         id: 'anatomy-of-a-high-retention-video',
-        heading: 'Anatomy of a High-Retention Short-Form Video: Hook, Body, Payoff',
+        heading: 'How Do You Structure TikTok, Reels, and Shorts Hooks for High Retention?',
         paragraphs: [
-          'Even a 30-second video needs story structure. Clips that hold high average watch time and completion rates almost always follow a three-part framework:',
+          'To maximize vertical video retention, structure every clip into three parts: a 3-second visual and verbal Hook that states the problem, a concise Value Body that switches visual angles every 4 to 6 seconds, and a crisp Payoff with one next step. Removing dead air at the beginning and end of your clip keeps completion rates high.',
+          'Use this repeatable three-part script framework when filming vertical videos for your brand:',
         ],
+        supportingImage: {
+          src: '/images/supporting/vertical-video-smartphone-tripod-setup.jpg',
+          webpSrc: '/images/supporting/vertical-video-smartphone-tripod-setup.webp',
+          alt: 'Video editing timeline and production equipment on a studio desk',
+          caption: 'Fig. 6.1 — Tight editing that removes dead air in the first three seconds dramatically improves completion rates.',
+        },
         subSections: [
           {
             subHeading: '1. The Hook (Seconds 0–3)',
             paragraphs: [
-              'Combine a spoken opening statement, a clear text headline on screen, and immediate visual motion. Avoid starting with "Hey guys, happy Tuesday, today I wanted to talk about..." Instead, open directly with the problem or curiosity gap: "Here are three resume mistakes that get college internship applications rejected in 10 seconds."',
+              'Combine a spoken opening statement, a clear text headline on screen, and immediate visual motion. Skip slow greetings ("Hey guys, happy Tuesday") and open directly with the value: "Here are three resume mistakes that get internship applications rejected in 10 seconds."',
             ],
           },
           {
             subHeading: '2. The Value Delivery / Story Body (Seconds 3–35)',
             paragraphs: [
-              'Deliver on the promise of your hook concisely. Use visual pattern interrupts—such as switching camera angles, showing close-up B-roll footage of the product or screen, or pointing to on-screen diagrams—every 4 to 6 seconds so the visual frame stays active.',
+              'Deliver on the promise of your hook concisely. Use visual pattern interrupts—switching camera angles, showing close-up B-roll footage, or pointing to diagrams—every 4 to 6 seconds.',
             ],
           },
           {
             subHeading: '3. The Payoff and Next Step (Final 3–5 Seconds)',
             paragraphs: [
-              'Satisfy the viewer’s curiosity first, then offer a natural next step (e.g., "Save this checklist before your next interview" or "Read the full breakdown linked in our bio"). Avoid signaling that the video is ending 10 seconds early ("Well, that’s all for today!"), which causes viewers to swipe away immediately and lowers your completion rate.',
+              'Satisfy the viewer’s curiosity first, then offer one natural next step (such as "Save this checklist before your next interview"). Avoid signaling that the video is ending 10 seconds early, which triggers premature swipe-aways.',
             ],
           },
         ],
       },
       {
         id: 'educational-vs-entertainment-content',
-        heading: 'Educational vs. Entertainment Content: Which Should Brands Create?',
+        heading: 'Should Small Businesses Create Educational or Entertainment Videos?',
         paragraphs: [
-          'Brands often think short-form video requires dancing or chasing comedy skits. While pure entertainment can rack up millions of broad views, those viewers rarely care about your specific product. For most small businesses and professional creators, "edutainment"—practical education delivered in an engaging, visually clear style—drives far better business results.',
+          'Small businesses should prioritize educational and behind-the-scenes videos ("edutainment") over broad comedy skits because educational clips attract viewers who actually need your product or service. High view counts from unrelated memes rarely convert into paying customers.',
+          'When you teach a specific skill, answer a common customer question, or show how your product is crafted, the recommendation algorithm matches your video with people actively interested in your category.',
         ],
         exampleBox: {
           title: 'Educational vs. Broad Entertainment Example',
@@ -433,29 +461,29 @@ export const ARTICLES_PART_2: Article[] = [
       },
       {
         id: 'mistakes-brands-should-avoid',
-        heading: '5 Short-Form Video Mistakes Brands Should Avoid',
+        heading: 'Five Short-Form Video Production Mistakes Brands Should Avoid',
         paragraphs: [
-          'When small businesses struggle with Reels, TikTok, or Shorts, one of these five fixable habits is usually to blame:',
+          'You do not need an expensive studio to film effective short-form video, but basic technical missteps can cause viewers to swipe away immediately. Avoid these five common production errors when publishing on TikTok, Reels, and Shorts:',
         ],
         bullets: [
-          'Uploading horizontal TV-style commercials with giant black bars above and below the frame.',
-          'Ignoring audio quality: Viewers will forgive smartphone camera grain, but they will immediately scroll past muffled, echoey, or distorted microphone audio.',
-          'Omitting on-screen captions: Many people scroll in quiet environments like libraries, transit, or offices; clear captions ensure your message lands even on mute.',
-          'Placing text in the bottom 20% or right edge of the frame where platform usernames, captions, and like/share buttons cover the words.',
-          'Making every single video a hard sales pitch ("Buy now! 20% off!") instead of demonstrating usefulness, craftsmanship, or expertise.',
+          'Uploading horizontal 16:9 commercials with large black bars above and below the frame.',
+          'Ignoring microphone quality: Viewers forgive smartphone camera grain, but they immediately swipe past echoey or distorted audio.',
+          'Omitting on-screen captions for viewers scrolling on mute.',
+          'Placing text in the bottom 20% or right edge where platform UI icons block readability.',
+          'Cross-posting videos with visible TikTok or Reels watermarks instead of exporting the clean master file.',
         ],
         internalLink: {
-          contextPrefix: 'Discover how to integrate short-form video into a broader multi-channel strategy in our article on',
-          anchorText: '10 digital marketing trends businesses should watch in 2026',
-          slug: 'digital-marketing-trends-2026',
+          contextPrefix: 'See how vertical video fits into a complete channel plan in our',
+          anchorText: 'guide to Instagram marketing for small businesses',
+          slug: 'instagram-marketing-for-small-businesses',
         },
       },
     ],
     keyTakeaways: [
-      'Short-form vertical video succeeds because it fills the mobile screen and combines visual proof, voice, and text simultaneously.',
+      'Short-form video marketing succeeds because 9:16 vertical video fills the mobile screen and combines visual proof, voice, and captions.',
       'TikTok excels at interest-based storytelling and search discovery, Instagram Reels excels at DM shares and profile conversions, and YouTube Shorts bridges viewers to long-form video.',
       'Structure every short video around a 3-second Hook, a concise Value Body with visual variety, and a clean Payoff.',
-      'Prioritize clear microphone audio, burned-in or native captions, and safe-zone text placement.',
+      'Prioritize clear microphone audio, on-screen captions, and safe-zone text placement.',
       'Focus on niche educational and behind-the-scenes content rather than chasing unrelated viral comedy trends.',
     ],
     sources: [

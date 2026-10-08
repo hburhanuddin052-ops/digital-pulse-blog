@@ -9,8 +9,13 @@ interface AboutPageProps {
 export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
   const authorsList = Object.values(AUTHORS);
 
+  const handleInternalLink = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    e.preventDefault();
+    onNavigate(path);
+  };
+
   return (
-    <div>
+    <div className="animate-fade-in">
       {/* Header Section */}
       <section className="border-b border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#0E1420] py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
@@ -18,12 +23,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             About the Publication
           </p>
           <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 dark:text-white leading-tight mb-5">
-            Practical, evidence-based journalism for the next generation of builders and marketers.
+            An independent digital marketing publication for students, founders, and marketers.
           </h1>
           <p className="text-base sm:text-lg text-neutral-600 dark:text-slate-300 leading-relaxed">
-            Digital Pulse is an independent digital publication dedicated to demystifying how
-            modern search engines, social media recommendation algorithms, marketing tools, and
-            online businesses actually work.
+            Digital Pulse is an independent digital marketing publication dedicated to primary-source
+            editorial standards and practical marketing education for students, young entrepreneurs,
+            and small business owners.
           </p>
         </div>
       </section>
@@ -36,7 +41,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             <div className="md:col-span-4">
               <p className="text-xs font-mono text-blue-700 dark:text-blue-400 mb-1">01. Mission</p>
               <h2 className="text-xl font-bold text-neutral-950 dark:text-white">
-                What Digital Pulse Is
+                What Our Digital Marketing Publication Covers
               </h2>
             </div>
             <div className="md:col-span-8 space-y-4 text-base text-neutral-700 dark:text-slate-300 leading-relaxed">
@@ -47,11 +52,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                 budgets.
               </p>
               <p>
-                Digital Pulse was created to bridge that gap. We publish structured, plain-English
-                guides that explain the underlying mechanics of digital platforms—such as how
-                Googlebot crawls and indexes a website, why short-form video feeds prioritize
-                completion rate and DM shares, and how small businesses can build sustainable
-                customer acquisition engines without resorting to spam or deceptive tactics.
+                As an independent digital marketing publication, Digital Pulse bridges that gap. We
+                publish structured, plain-English guides that explain the underlying mechanics of
+                digital platforms—such as how Googlebot crawls and indexes a website, why short-form
+                video feeds prioritize completion rate and DM shares, and how small businesses can
+                build sustainable customer acquisition engines without resorting to spam.
               </p>
             </div>
           </div>
@@ -63,11 +68,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                 02. Readership
               </p>
               <h2 className="text-xl font-bold text-neutral-950 dark:text-white">
-                Who We Write For
+                Marketing Education for Students &amp; Founders
               </h2>
             </div>
             <div className="md:col-span-8 space-y-4 text-base text-neutral-700 dark:text-slate-300 leading-relaxed">
-              <p>Our articles and case breakdowns are written specifically for five groups:</p>
+              <p>
+                Our marketing education for students, founders, and practitioners is tailored for
+                five core reader groups:
+              </p>
               <ul className="space-y-3 pl-5 list-disc marker:text-blue-600">
                 <li>
                   <span className="font-semibold text-neutral-900 dark:text-white">
@@ -122,7 +130,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               {CATEGORIES.map((cat) => (
                 <div
                   key={cat.slug}
-                  className="p-4 rounded-xl border border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#111827]"
+                  className="p-4 rounded-xl border border-neutral-200/90 dark:border-slate-800/90 glass-card"
                 >
                   <h3 className="text-sm font-bold text-neutral-950 dark:text-white mb-1.5">
                     {cat.name}
@@ -142,14 +150,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                 04. Standards
               </p>
               <h2 className="text-xl font-bold text-neutral-950 dark:text-white">
-                Our Editorial Approach
+                Our Editorial Standards &amp; Fact-Checking
               </h2>
             </div>
             <div className="md:col-span-8 space-y-4 text-base text-neutral-700 dark:text-slate-300 leading-relaxed">
               <p>
                 Digital marketing is full of myths—claims that posting at 3:14 p.m. guarantees
                 virality, or that repeating a keyword twenty times tricks Google. At Digital Pulse,
-                we do not publish unverified hacks or invented statistics.
+                our editorial standards prohibit unverified hacks or invented statistics.
               </p>
               <p>
                 Every article on Digital Pulse adheres to three strict editorial standards:
@@ -203,9 +211,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               {authorsList.map((author) => (
                 <div
                   key={author.id}
-                  className="p-6 rounded-xl border border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#111827] flex items-start gap-4"
+                  className="p-6 rounded-xl border border-neutral-200/90 dark:border-slate-800/90 glass-card flex items-start gap-4"
                 >
-                  <div className="w-11 h-11 rounded-full bg-blue-700 text-white font-bold text-sm flex items-center justify-center shrink-0">
+                  <div
+                    aria-hidden="true"
+                    className="w-11 h-11 rounded-full bg-blue-700 text-white font-bold text-sm flex items-center justify-center shrink-0"
+                  >
                     {author.initials}
                   </div>
                   <div>
@@ -224,20 +235,20 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <button
-                type="button"
-                onClick={() => onNavigate('/blog')}
+              <a
+                href="/blog"
+                onClick={(e) => handleInternalLink(e, '/blog')}
                 className="px-5 py-2.5 text-xs font-semibold text-white bg-blue-700 hover:bg-blue-800 rounded-lg transition-colors cursor-pointer"
               >
-                Explore All 10 Articles
-              </button>
-              <button
-                type="button"
-                onClick={() => onNavigate('/contact')}
-                className="px-5 py-2.5 text-xs font-semibold text-neutral-800 dark:text-slate-200 bg-white dark:bg-slate-900 border border-neutral-300 dark:border-slate-700 rounded-lg hover:border-blue-600 transition-colors cursor-pointer"
+                Explore All 10 Digital Marketing Articles
+              </a>
+              <a
+                href="/contact"
+                onClick={(e) => handleInternalLink(e, '/contact')}
+                className="px-5 py-2.5 text-xs font-semibold text-neutral-800 dark:text-slate-200 glass-card border border-neutral-300 dark:border-slate-700 rounded-lg hover:border-blue-600 transition-colors cursor-pointer"
               >
-                Contact the Editorial Desk
-              </button>
+                Contact the Digital Pulse Editorial Team
+              </a>
             </div>
           </div>
         </div>

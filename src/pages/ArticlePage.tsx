@@ -5,8 +5,6 @@ import {
   Check,
   Copy,
   Share2,
-  ChevronDown,
-  ChevronUp,
 } from 'lucide-react';
 import { Article, CategoryName } from '../types/blog';
 import { AUTHORS, estimateArticleWordCount, getRelatedArticles } from '../data/articles';
@@ -26,7 +24,6 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
   onSelectCategory,
 }) => {
   const [copiedLink, setCopiedLink] = useState(false);
-  const [showSeoInspector, setShowSeoInspector] = useState(false);
 
   const author = AUTHORS[article.authorId];
   const relatedArticles = getRelatedArticles(article);
@@ -73,9 +70,9 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
   )}`;
 
   return (
-    <article className="bg-[#FAFAFA] dark:bg-[#0B0F17]">
+    <article className="bg-[#FAFAFA] dark:bg-[#0B0F17] animate-fade-in">
       {/* Top Article Header */}
-      <header className="border-b border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#0E1420] pt-8 pb-12 px-4 sm:px-6 lg:px-8">
+      <header className="border-b border-neutral-200/80 dark:border-slate-800/80 bg-white dark:bg-[#0E1420] pt-8 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Breadcrumb & Back Link */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-6 text-xs text-neutral-500 dark:text-slate-400">
@@ -110,7 +107,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
               onClick={(e) => handleInternalLink(e, '/blog')}
               className="inline-flex items-center gap-1.5 font-medium text-neutral-600 dark:text-slate-300 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
             >
-              <ArrowLeft className="w-3.5 h-3.5" />
+              <ArrowLeft className="w-3.5 h-3.5" aria-hidden="true" />
               <span>All Articles</span>
             </a>
           </div>
@@ -141,7 +138,10 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
           {/* Author Byline & Social Share Bar */}
           <div className="pt-6 border-t border-neutral-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
             <div className="flex items-center gap-3.5">
-              <div className="w-10 h-10 rounded-full bg-blue-700 text-white font-bold text-xs flex items-center justify-center shrink-0">
+              <div
+                aria-hidden="true"
+                className="w-10 h-10 rounded-full bg-blue-700 text-white font-bold text-xs flex items-center justify-center shrink-0"
+              >
                 {author?.initials || 'DP'}
               </div>
               <div>
@@ -157,22 +157,25 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
             {/* Social Sharing Controls */}
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-xs text-neutral-500 dark:text-slate-400 mr-1 inline-flex items-center gap-1">
-                <Share2 className="w-3.5 h-3.5" />
+                <Share2 className="w-3.5 h-3.5" aria-hidden="true" />
                 <span>Share:</span>
               </span>
               <button
                 type="button"
                 onClick={handleCopyUrl}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-neutral-200 dark:border-slate-700 bg-[#FAFAFA] dark:bg-slate-800 text-neutral-800 dark:text-slate-200 hover:border-blue-600 transition-colors cursor-pointer whitespace-nowrap"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-neutral-200 dark:border-slate-700 glass-panel text-neutral-800 dark:text-slate-200 hover:border-blue-600 transition-colors cursor-pointer whitespace-nowrap"
               >
                 {copiedLink ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                    <Check
+                      className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"
+                      aria-hidden="true"
+                    />
                     <span>Link Copied</span>
                   </>
                 ) : (
                   <>
-                    <Copy className="w-3.5 h-3.5" />
+                    <Copy className="w-3.5 h-3.5" aria-hidden="true" />
                     <span>Copy URL</span>
                   </>
                 )}
@@ -181,7 +184,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                 href={xShareUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-1.5 text-xs font-medium rounded-lg border border-neutral-200 dark:border-slate-700 bg-[#FAFAFA] dark:bg-slate-800 text-neutral-800 dark:text-slate-200 hover:border-blue-600 transition-colors whitespace-nowrap"
+                className="px-3 py-1.5 text-xs font-medium rounded-lg border border-neutral-200 dark:border-slate-700 glass-panel text-neutral-800 dark:text-slate-200 hover:border-blue-600 transition-colors whitespace-nowrap"
               >
                 X / Twitter
               </a>
@@ -189,13 +192,13 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                 href={linkedInShareUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-1.5 text-xs font-medium rounded-lg border border-neutral-200 dark:border-slate-700 bg-[#FAFAFA] dark:bg-slate-800 text-neutral-800 dark:text-slate-200 hover:border-blue-600 transition-colors whitespace-nowrap"
+                className="px-3 py-1.5 text-xs font-medium rounded-lg border border-neutral-200 dark:border-slate-700 glass-panel text-neutral-800 dark:text-slate-200 hover:border-blue-600 transition-colors whitespace-nowrap"
               >
                 LinkedIn
               </a>
               <a
                 href={emailShareUrl}
-                className="px-3 py-1.5 text-xs font-medium rounded-lg border border-neutral-200 dark:border-slate-700 bg-[#FAFAFA] dark:bg-slate-800 text-neutral-800 dark:text-slate-200 hover:border-blue-600 transition-colors whitespace-nowrap"
+                className="px-3 py-1.5 text-xs font-medium rounded-lg border border-neutral-200 dark:border-slate-700 glass-panel text-neutral-800 dark:text-slate-200 hover:border-blue-600 transition-colors whitespace-nowrap"
               >
                 Email
               </a>
@@ -206,16 +209,17 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
 
       {/* Featured Image Viewer & Figure Caption */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 sm:mt-8">
-        <figure className="rounded-xl overflow-hidden border border-neutral-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+        <figure className="rounded-xl overflow-hidden border border-neutral-200 dark:border-slate-800 glass-card">
           <EditorialImage
             src={article.image}
+            webpSrc={article.webpImage}
             alt={article.imageAlt}
             category={article.category}
             title={article.title}
             aspectClass="aspect-[16/9]"
             priority
           />
-          <figcaption className="px-5 py-3.5 text-xs text-neutral-500 dark:text-slate-400 border-t border-neutral-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <figcaption className="px-5 py-3.5 text-xs text-neutral-500 dark:text-slate-400 border-t border-neutral-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <span>{article.imageCaption}</span>
             {article.imageCredit && (
               <span className="text-[11px] text-neutral-400 dark:text-slate-500 shrink-0">
@@ -248,7 +252,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Sticky Table of Contents & Metadata Sidebar (4 cols on desktop) */}
           <aside className="lg:col-span-4 lg:sticky lg:top-24 space-y-6 order-2 lg:order-1">
-            <div className="p-5 rounded-xl border border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#111827]">
+            <div className="p-5 rounded-xl border border-neutral-200/90 dark:border-slate-800/90 glass-card">
               <h2 className="text-xs font-bold uppercase tracking-wider text-neutral-900 dark:text-white mb-3.5">
                 Table of Contents
               </h2>
@@ -296,7 +300,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
 
             {/* Editorial Author Box */}
             {author && (
-              <div className="p-5 rounded-xl border border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#111827]">
+              <div className="p-5 rounded-xl border border-neutral-200/90 dark:border-slate-800/90 glass-card">
                 <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 mb-1">
                   About the Editorial Author
                 </p>
@@ -306,9 +310,16 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                 <p className="text-xs text-neutral-500 dark:text-slate-400 mb-3">
                   {author.role}
                 </p>
-                <p className="text-xs text-neutral-600 dark:text-slate-300 leading-relaxed">
+                <p className="text-xs text-neutral-600 dark:text-slate-300 leading-relaxed mb-3">
                   {author.bio}
                 </p>
+                <a
+                  href="/about"
+                  onClick={(e) => handleInternalLink(e, '/about')}
+                  className="text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline"
+                >
+                  Read our editorial standards →
+                </a>
               </div>
             )}
           </aside>
@@ -347,11 +358,79 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                     section.paragraphs.map((p, i) => (
                       <p
                         key={i}
-                        className="text-base sm:text-[17px] text-neutral-800 dark:text-slate-200 leading-[1.8]"
+                        className={`text-base sm:text-[17px] leading-[1.8] ${
+                          i === 0 && section.heading.endsWith('?')
+                            ? 'font-medium text-neutral-900 dark:text-slate-100'
+                            : 'text-neutral-800 dark:text-slate-200'
+                        }`}
                       >
                         {p}
                       </p>
                     ))}
+
+                  {/* Supporting Section Image (Responsive WebP + Lazy Loaded) */}
+                  {section.supportingImage && (
+                    <figure className="my-6 rounded-xl overflow-hidden border border-neutral-200 dark:border-slate-800 glass-card">
+                      <EditorialImage
+                        src={section.supportingImage.src}
+                        webpSrc={section.supportingImage.webpSrc}
+                        alt={section.supportingImage.alt}
+                        category={article.category}
+                        title={section.heading}
+                        aspectClass="aspect-[16/9]"
+                        width={960}
+                        height={540}
+                      />
+                      <figcaption className="px-4 py-3 text-xs text-neutral-500 dark:text-slate-400 border-t border-neutral-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90">
+                        {section.supportingImage.caption}
+                      </figcaption>
+                    </figure>
+                  )}
+
+                  {/* AEO Structured Comparison Table */}
+                  {section.comparisonTable && (
+                    <div className="my-6 overflow-x-auto rounded-xl border border-neutral-200 dark:border-slate-800 glass-card">
+                      <table className="w-full text-left border-collapse text-xs sm:text-sm">
+                        <caption className="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400 border-b border-neutral-200 dark:border-slate-800 bg-neutral-50/80 dark:bg-slate-900/80">
+                          {section.comparisonTable.caption}
+                        </caption>
+                        <thead>
+                          <tr className="border-b border-neutral-200 dark:border-slate-800 bg-neutral-100/60 dark:bg-slate-800/60">
+                            {section.comparisonTable.headers.map((header, hIdx) => (
+                              <th
+                                key={hIdx}
+                                scope="col"
+                                className="px-4 py-3 font-bold text-neutral-900 dark:text-white"
+                              >
+                                {header}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-neutral-200 dark:divide-slate-800">
+                          {section.comparisonTable.rows.map((row, rIdx) => (
+                            <tr
+                              key={rIdx}
+                              className="hover:bg-neutral-50/70 dark:hover:bg-slate-800/40 transition-colors"
+                            >
+                              {row.map((cell, cIdx) => (
+                                <td
+                                  key={cIdx}
+                                  className={`px-4 py-3 leading-relaxed ${
+                                    cIdx === 0
+                                      ? 'font-semibold text-neutral-900 dark:text-white'
+                                      : 'text-neutral-700 dark:text-slate-300'
+                                  }`}
+                                >
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
 
                   {/* H3 Subsections */}
                   {section.subSections &&
@@ -389,7 +468,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
 
                   {/* Practical Example Callout */}
                   {section.exampleBox && (
-                    <div className="my-6 p-6 rounded-xl border border-neutral-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+                    <div className="my-6 p-6 rounded-xl border border-neutral-200/90 dark:border-slate-800/90 glass-card">
                       <p className="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400 mb-2">
                         {section.exampleBox.title}
                       </p>
@@ -433,7 +512,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
               {/* Key Takeaways Box */}
               <section
                 id="key-takeaways"
-                className="scroll-mt-24 p-6 sm:p-8 rounded-xl border border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#111827] space-y-4"
+                className="scroll-mt-24 p-6 sm:p-8 rounded-xl border border-neutral-200/90 dark:border-slate-800/90 glass-card space-y-4"
               >
                 <div className="border-b border-neutral-200 dark:border-slate-800 pb-3">
                   <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 mb-1">
@@ -458,7 +537,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                 >
                   <div>
                     <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 mb-1">
-                      Common Reader Questions
+                      Answer Engine Optimization (AEO) &amp; Reader Q&amp;A
                     </p>
                     <h2 className="text-2xl font-bold text-neutral-950 dark:text-white">
                       Frequently Asked Questions
@@ -469,7 +548,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                     {article.faqs.map((faq, idx) => (
                       <div
                         key={idx}
-                        className="p-5 rounded-xl border border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#111827]"
+                        className="p-5 rounded-xl border border-neutral-200/90 dark:border-slate-800/90 glass-card"
                       >
                         <h3 className="text-base font-bold text-neutral-950 dark:text-white mb-2">
                           {faq.question}
@@ -505,7 +584,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                   {article.sources.map((source, idx) => (
                     <li
                       key={idx}
-                      className="p-4 rounded-xl border border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#111827] text-sm"
+                      className="p-4 rounded-xl border border-neutral-200/90 dark:border-slate-800/90 glass-card text-sm"
                     >
                       <div className="flex items-start justify-between gap-3">
                         <div>
@@ -529,10 +608,10 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                           href={source.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label={`Open ${source.title}`}
+                          aria-label={`Open external source: ${source.title} (${source.publisher})`}
                           className="text-blue-700 dark:text-blue-400 shrink-0 mt-0.5"
                         >
-                          <ArrowUpRight className="w-4 h-4" />
+                          <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                         </a>
                       </div>
                       {source.note && (
@@ -545,81 +624,64 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                 </ol>
               </section>
 
-              {/* Expandable SEO & Search Console Metadata Inspector */}
-              <section className="pt-4">
-                <div className="border border-neutral-200 dark:border-slate-800 rounded-xl bg-white dark:bg-[#111827] overflow-hidden">
-                  <button
-                    type="button"
-                    onClick={() => setShowSeoInspector((prev) => !prev)}
-                    className="w-full px-5 py-4 flex items-center justify-between text-left hover:bg-neutral-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer"
-                  >
-                    <div>
-                      <p className="text-xs font-semibold text-blue-700 dark:text-blue-400">
-                        Technical SEO &amp; Schema.org Metadata
-                      </p>
-                      <p className="text-sm font-bold text-neutral-900 dark:text-white">
-                        View On-Page SEO Data for This Article
-                      </p>
-                    </div>
-                    {showSeoInspector ? (
-                      <ChevronUp className="w-4 h-4 text-neutral-500" />
-                    ) : (
-                      <ChevronDown className="w-4 h-4 text-neutral-500" />
-                    )}
-                  </button>
+              {/* On-Page SEO & Keywords Summary (Always rendered in HTML DOM for crawlers) */}
+              <section
+                aria-labelledby="seo-summary-heading"
+                className="pt-4"
+              >
+                <div className="border border-neutral-200/90 dark:border-slate-800/90 rounded-xl glass-card p-5 space-y-3 text-xs">
+                  <div>
+                    <p className="text-xs font-semibold text-blue-700 dark:text-blue-400">
+                      Technical SEO &amp; Schema.org Metadata
+                    </p>
+                    <h2
+                      id="seo-summary-heading"
+                      className="text-sm font-bold text-neutral-900 dark:text-white"
+                    >
+                      On-Page SEO &amp; Keyword Architecture for This Article
+                    </h2>
+                  </div>
 
-                  {showSeoInspector && (
-                    <div className="px-5 pb-5 pt-2 border-t border-neutral-200 dark:border-slate-800 space-y-3 text-xs">
-                      <dl className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1.5 border-b border-neutral-100 dark:border-slate-800">
-                        <dt className="font-semibold text-neutral-500 dark:text-slate-400">
-                          SEO Title Tag:
-                        </dt>
-                        <dd className="sm:col-span-2 font-mono text-neutral-900 dark:text-white">
-                          {article.seoTitle}
-                        </dd>
-                      </dl>
-                      <dl className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1.5 border-b border-neutral-100 dark:border-slate-800">
-                        <dt className="font-semibold text-neutral-500 dark:text-slate-400">
-                          Meta Description:
-                        </dt>
-                        <dd className="sm:col-span-2 text-neutral-800 dark:text-slate-200">
-                          {article.metaDescription} ({article.metaDescription.length} chars)
-                        </dd>
-                      </dl>
-                      <dl className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1.5 border-b border-neutral-100 dark:border-slate-800">
-                        <dt className="font-semibold text-neutral-500 dark:text-slate-400">
-                          URL Slug &amp; Canonical:
-                        </dt>
-                        <dd className="sm:col-span-2 font-mono text-blue-700 dark:text-blue-400 break-all">
-                          {canonicalUrl}
-                        </dd>
-                      </dl>
-                      <dl className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1.5 border-b border-neutral-100 dark:border-slate-800">
-                        <dt className="font-semibold text-neutral-500 dark:text-slate-400">
-                          Primary Keyword:
-                        </dt>
-                        <dd className="sm:col-span-2 font-mono text-neutral-900 dark:text-white">
-                          {article.primaryKeyword}
-                        </dd>
-                      </dl>
-                      <dl className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1.5 border-b border-neutral-100 dark:border-slate-800">
-                        <dt className="font-semibold text-neutral-500 dark:text-slate-400">
-                          Secondary Keywords:
-                        </dt>
-                        <dd className="sm:col-span-2 text-neutral-800 dark:text-slate-200">
-                          {article.secondaryKeywords.join(' · ')}
-                        </dd>
-                      </dl>
-                      <dl className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1.5">
-                        <dt className="font-semibold text-neutral-500 dark:text-slate-400">
-                          Image Alt Text:
-                        </dt>
-                        <dd className="sm:col-span-2 text-neutral-800 dark:text-slate-200">
-                          {article.imageAlt}
-                        </dd>
-                      </dl>
-                    </div>
-                  )}
+                  <dl className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1.5 border-b border-neutral-100 dark:border-slate-800">
+                    <dt className="font-semibold text-neutral-500 dark:text-slate-400">
+                      SEO Title Tag ({article.seoTitle.length} chars):
+                    </dt>
+                    <dd className="sm:col-span-2 font-mono text-neutral-900 dark:text-white">
+                      {article.seoTitle}
+                    </dd>
+                  </dl>
+                  <dl className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1.5 border-b border-neutral-100 dark:border-slate-800">
+                    <dt className="font-semibold text-neutral-500 dark:text-slate-400">
+                      Meta Description ({article.metaDescription.length} chars):
+                    </dt>
+                    <dd className="sm:col-span-2 text-neutral-800 dark:text-slate-200">
+                      {article.metaDescription}
+                    </dd>
+                  </dl>
+                  <dl className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1.5 border-b border-neutral-100 dark:border-slate-800">
+                    <dt className="font-semibold text-neutral-500 dark:text-slate-400">
+                      Canonical URL:
+                    </dt>
+                    <dd className="sm:col-span-2 font-mono text-blue-700 dark:text-blue-400 break-all">
+                      {canonicalUrl}
+                    </dd>
+                  </dl>
+                  <dl className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1.5 border-b border-neutral-100 dark:border-slate-800">
+                    <dt className="font-semibold text-neutral-500 dark:text-slate-400">
+                      Main Keyword:
+                    </dt>
+                    <dd className="sm:col-span-2 font-mono text-neutral-900 dark:text-white">
+                      {article.primaryKeyword}
+                    </dd>
+                  </dl>
+                  <dl className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1.5">
+                    <dt className="font-semibold text-neutral-500 dark:text-slate-400">
+                      Related Keywords:
+                    </dt>
+                    <dd className="sm:col-span-2 text-neutral-800 dark:text-slate-200">
+                      {article.secondaryKeywords.join(' · ')}
+                    </dd>
+                  </dl>
                 </div>
               </section>
             </div>
@@ -636,7 +698,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                 Continue Reading
               </p>
               <h2 className="text-2xl font-bold tracking-tight text-neutral-950 dark:text-white">
-                Related Articles
+                Related Digital Marketing &amp; SEO Articles
               </h2>
             </div>
             <a
@@ -644,7 +706,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
               onClick={(e) => handleInternalLink(e, '/blog')}
               className="text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline"
             >
-              View all 10 articles
+              Browse all 10 articles in the Blog Archive
             </a>
           </div>
 

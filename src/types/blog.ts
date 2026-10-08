@@ -32,6 +32,19 @@ export interface ArticleInternalLink {
   slug: string;
 }
 
+export interface ArticleSupportingImage {
+  src: string;
+  webpSrc?: string;
+  alt: string;
+  caption: string;
+}
+
+export interface ArticleComparisonTable {
+  caption: string;
+  headers: string[];
+  rows: string[][];
+}
+
 export interface ArticleSection {
   id: string;
   heading: string; // Rendered as H2
@@ -44,6 +57,8 @@ export interface ArticleSection {
     context: string;
   };
   internalLink?: ArticleInternalLink;
+  supportingImage?: ArticleSupportingImage;
+  comparisonTable?: ArticleComparisonTable;
 }
 
 export interface ArticleSource {
@@ -81,6 +96,7 @@ export interface Article {
   featured?: boolean;
   popularRank?: number;
   image: string;
+  webpImage?: string;
   imageAlt: string;
   imageCaption: string;
   imageCredit?: ArticleImageCredit;

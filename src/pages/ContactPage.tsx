@@ -32,18 +32,19 @@ export const ContactPage: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="animate-fade-in">
       <section className="border-b border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#0E1420] py-14 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 mb-2">
-            Editorial Inquiries &amp; Feedback
+            Editorial Inquiries &amp; Reader Feedback
           </p>
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-950 dark:text-white mb-3">
-            Contact Digital Pulse
+            Contact the Digital Pulse Editorial Team
           </h1>
           <p className="text-base text-neutral-600 dark:text-slate-300 max-w-2xl leading-relaxed">
-            Have a question about one of our articles, want to suggest a digital marketing topic for
-            future coverage, or spotted a broken reference link? Send a note to our editorial desk.
+            Contact the Digital Pulse editorial team with reader feedback, marketing topic
+            suggestions for future guides, or source verification notes. We review every message and
+            respond within 24–48 hours.
           </p>
         </div>
       </section>
@@ -51,11 +52,11 @@ export const ContactPage: React.FC = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Contact Form (7 cols) */}
-          <div className="lg:col-span-7 border border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#111827] rounded-xl p-6 sm:p-8">
+          <div className="lg:col-span-7 border border-neutral-200/90 dark:border-slate-800/90 glass-card rounded-xl p-6 sm:p-8">
             {submitted ? (
               <div className="py-8 text-center space-y-4">
                 <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-6 h-6" />
+                  <CheckCircle2 className="w-6 h-6" aria-hidden="true" />
                 </div>
                 <h2 className="text-xl font-bold text-neutral-950 dark:text-white">
                   Message Received
@@ -77,7 +78,7 @@ export const ContactPage: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} noValidate className="space-y-5">
                 <h2 className="text-lg font-bold text-neutral-950 dark:text-white mb-2">
-                  Send a Message
+                  Send Reader Feedback or Marketing Topic Suggestions
                 </h2>
 
                 {error && (
@@ -173,13 +174,13 @@ export const ContactPage: React.FC = () => {
 
           {/* Editorial Desk Info (5 cols) */}
           <aside className="lg:col-span-5 space-y-6">
-            <div className="p-6 rounded-xl border border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#111827] space-y-5">
+            <div className="p-6 rounded-xl border border-neutral-200/90 dark:border-slate-800/90 glass-card space-y-5">
               <h2 className="text-base font-bold text-neutral-950 dark:text-white">
                 Editorial Desk Directory
               </h2>
 
               <div className="flex items-start gap-3.5 text-sm">
-                <Mail className="w-4 h-4 text-blue-700 dark:text-blue-400 shrink-0 mt-1" />
+                <Mail className="w-4 h-4 text-blue-700 dark:text-blue-400 shrink-0 mt-1" aria-hidden="true" />
                 <div>
                   <p className="font-semibold text-neutral-900 dark:text-white">
                     General &amp; Reader Inquiries
@@ -191,7 +192,7 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3.5 text-sm">
-                <Clock className="w-4 h-4 text-blue-700 dark:text-blue-400 shrink-0 mt-1" />
+                <Clock className="w-4 h-4 text-blue-700 dark:text-blue-400 shrink-0 mt-1" aria-hidden="true" />
                 <div>
                   <p className="font-semibold text-neutral-900 dark:text-white">
                     Response Timeframe
@@ -203,7 +204,7 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3.5 text-sm">
-                <MapPin className="w-4 h-4 text-blue-700 dark:text-blue-400 shrink-0 mt-1" />
+                <MapPin className="w-4 h-4 text-blue-700 dark:text-blue-400 shrink-0 mt-1" aria-hidden="true" />
                 <div>
                   <p className="font-semibold text-neutral-900 dark:text-white">
                     Corrections &amp; Fact-Checking Policy

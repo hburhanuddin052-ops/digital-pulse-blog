@@ -2,14 +2,14 @@ import React from 'react';
 
 export const TermsPage: React.FC = () => {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto bg-white dark:bg-[#111827] border border-neutral-200 dark:border-slate-800 rounded-xl p-8 sm:p-12 space-y-8">
+    <div className="py-16 px-4 sm:px-6 lg:px-8 animate-fade-in">
+      <div className="max-w-3xl mx-auto glass-card border border-neutral-200/90 dark:border-slate-800/90 rounded-xl p-8 sm:p-12 space-y-8">
         <div className="border-b border-neutral-200 dark:border-slate-800 pb-6">
           <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 mb-2">
             Editorial Terms of Use · Effective Date: January 1, 2026
           </p>
           <h1 className="text-3xl font-bold tracking-tight text-neutral-950 dark:text-white">
-            Terms &amp; Conditions
+            Digital Pulse Terms &amp; Conditions
           </h1>
           <p className="text-sm text-neutral-500 dark:text-slate-400 mt-2">
             Last updated: September 1, 2026
@@ -19,18 +19,19 @@ export const TermsPage: React.FC = () => {
         <div className="space-y-6 text-sm sm:text-base text-neutral-700 dark:text-slate-300 leading-relaxed">
           <section className="space-y-2">
             <h2 className="text-lg font-bold text-neutral-950 dark:text-white">
-              1. Acceptance of Terms
+              1. Acceptance of Digital Pulse Terms and Conditions
             </h2>
             <p>
               By accessing and reading Digital Pulse, you agree to comply with and be bound by these
-              Terms &amp; Conditions. If you do not agree with any part of these terms, please
-              discontinue use of the website.
+              Digital Pulse terms and conditions, including our editorial citation policy and
+              educational content disclaimer. If you do not agree with any part of these terms,
+              please discontinue use of the website.
             </p>
           </section>
 
           <section className="space-y-2">
             <h2 className="text-lg font-bold text-neutral-950 dark:text-white">
-              2. Educational &amp; Informational Purpose
+              2. Educational Content Disclaimer &amp; Informational Purpose
             </h2>
             <p>
               All articles, guides, examples, and case studies published on Digital Pulse are
@@ -44,7 +45,7 @@ export const TermsPage: React.FC = () => {
 
           <section className="space-y-2">
             <h2 className="text-lg font-bold text-neutral-950 dark:text-white">
-              3. Intellectual Property &amp; Fair Citation
+              3. Intellectual Property &amp; Editorial Citation Policy
             </h2>
             <p>
               Unless otherwise noted, all original article text, layout design, and custom visual

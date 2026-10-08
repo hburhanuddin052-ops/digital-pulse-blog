@@ -94,62 +94,79 @@ export default function App() {
     switch (currentPath) {
       case '/blog':
         updatePageSEO({
-          title: 'Blog Archive: 10 Complete Guides on Digital Marketing & SEO | Digital Pulse',
+          title: 'Digital Marketing Articles & SEO Guides | Digital Pulse',
           description:
-            'Explore all 10 long-form articles on digital marketing trends, social media algorithms, SEO for beginners, AI workflows, Instagram marketing, and brand trust.',
+            'Browse all 10 original digital marketing articles, step-by-step SEO tutorials, and social media guides written for students, founders, and small businesses.',
           keywords: [
-            'digital marketing blog',
-            'SEO guides',
-            'social media algorithms',
-            'online business articles',
+            'digital marketing articles',
+            'SEO tutorials',
+            'social media guides',
           ],
           pathname: '/blog',
         });
         break;
       case '/about':
         updatePageSEO({
-          title: 'About Digital Pulse — Editorial Mission, Audience & Standards',
+          title: 'About Our Digital Marketing Publication | Digital Pulse',
           description:
-            'Learn about Digital Pulse, our readership of students, entrepreneurs, and marketers, the topics we cover, and our primary-source editorial standards.',
+            'Learn about Digital Pulse, an independent digital marketing publication dedicated to primary-source editorial standards and marketing education for students.',
+          keywords: [
+            'digital marketing publication',
+            'editorial standards',
+            'marketing education for students',
+          ],
           pathname: '/about',
         });
         break;
       case '/contact':
         updatePageSEO({
-          title: 'Contact the Editorial Desk | Digital Pulse',
+          title: 'Contact Digital Pulse Editorial Team & Feedback Desk',
           description:
-            'Get in touch with the Digital Pulse editorial team with reader questions, topic suggestions, or source feedback.',
+            'Contact the Digital Pulse editorial team with reader feedback, marketing topic suggestions, press inquiries, or source corrections. We reply in 24–48 hours.',
+          keywords: [
+            'contact Digital Pulse editorial team',
+            'reader feedback',
+            'marketing topic suggestions',
+          ],
           pathname: '/contact',
         });
         break;
       case '/privacy-policy':
         updatePageSEO({
-          title: 'Privacy Policy | Digital Pulse',
+          title: 'Digital Pulse Privacy Policy & First-Party Data Terms',
           description:
-            'Read the Digital Pulse Privacy Policy covering first-party newsletter subscriptions, contact inquiries, and data transparency.',
+            'Read the official Digital Pulse privacy policy covering first-party data privacy, newsletter subscriber rights, contact inquiries, and search analytics.',
+          keywords: [
+            'Digital Pulse privacy policy',
+            'first-party data privacy',
+            'newsletter subscriber rights',
+          ],
           pathname: '/privacy-policy',
         });
         break;
       case '/terms-and-conditions':
         updatePageSEO({
-          title: 'Terms & Conditions | Digital Pulse',
+          title: 'Digital Pulse Terms and Conditions & Citation Guidelines',
           description:
-            'Review the Terms and Conditions for reading, citing, and interacting with Digital Pulse.',
+            'Review the Digital Pulse terms and conditions, including our editorial citation policy, intellectual property rules, and educational content disclaimer.',
+          keywords: [
+            'Digital Pulse terms and conditions',
+            'editorial citation policy',
+            'educational content disclaimer',
+          ],
           pathname: '/terms-and-conditions',
         });
         break;
       case '/':
       default:
         updatePageSEO({
-          title: 'Digital Pulse — Digital Marketing, SEO, Social Media & Online Business',
+          title: 'Digital Pulse: Digital Marketing Blog & SEO Strategy Hub',
           description:
-            'Practical, research-backed insights on digital marketing, search engine optimization, social media algorithms, technology, and online business strategy.',
+            'Digital Pulse is an independent digital marketing blog publishing research-backed social media strategy, beginner SEO guides, and online business insights.',
           keywords: [
-            'digital marketing',
-            'SEO for beginners',
-            'social media algorithms',
-            'online business',
-            'short-form video',
+            'digital marketing blog',
+            'social media strategy',
+            'online business insights',
           ],
           pathname: '/',
         });
@@ -256,7 +273,7 @@ export default function App() {
         onGlobalSearchChange={setSearchQuery}
       />
 
-      <main className="flex-1">{renderPage()}</main>
+      <main id="main-content" className="flex-1">{renderPage()}</main>
 
       <Footer
         onNavigate={navigate}
