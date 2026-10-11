@@ -4,7 +4,7 @@ export const ARTICLES_PART_3: Article[] = [
   {
     id: 7,
     slug: 'common-digital-marketing-mistakes-small-businesses',
-    title: '10 Common Mistakes Small Businesses Make With Digital Marketing',
+    title: '10 Small Business Digital Marketing Mistakes and How to Fix Them',
     seoTitle: '10 Small Business Digital Marketing Mistakes to Avoid',
     metaDescription:
       'Avoid the 10 most costly small business digital marketing mistakes, from buying fake followers to neglecting website conversion optimization and local search.',
@@ -178,7 +178,7 @@ export const ARTICLES_PART_3: Article[] = [
   {
     id: 8,
     slug: 'how-online-reviews-influence-customer-decisions',
-    title: 'How Online Reviews Influence Customer Decisions',
+    title: 'How Online Reviews Influence Customers and Buying Decisions',
     seoTitle: 'How Online Reviews Influence Customers & Build Trust',
     metaDescription:
       'Understand how online reviews influence customers through customer social proof, star rating credibility, FTC fake review rules, and responding to criticism.',
@@ -218,6 +218,11 @@ export const ARTICLES_PART_3: Article[] = [
           'Customer social proof reduces online buying risk by letting shoppers verify product quality, sizing accuracy, and shipping reliability through the documented experiences of independent peers. According to Pew Research Center surveys on e-commerce behavior, the vast majority of online shoppers consult customer ratings before buying a product for the first time.',
           'When shopping online, buyers cannot physically touch a garment or inspect a restaurant kitchen. Detailed reviews written by verified customers bridge that uncertainty gap by answering practical questions—such as whether shoes run narrow or whether a software tool’s customer support responds quickly.',
         ],
+        internalLink: {
+          contextPrefix: 'Learn how to showcase customer proof on social media in our',
+          anchorText: 'complete guide to Instagram marketing for small businesses',
+          slug: 'instagram-marketing-for-small-businesses',
+        },
       },
       {
         id: 'ratings-recency-and-volume',

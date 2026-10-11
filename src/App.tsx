@@ -2,7 +2,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { CategoryName } from './types/blog';
 import { getArticleBySlug, ALL_ARTICLES } from './data/articles';
-import { updatePageSEO } from './utils/seo';
+import {
+  updatePageSEO,
+  normalizeCanonicalPathname,
+  getArticleCanonicalImageUrl,
+} from './utils/seo';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
@@ -14,13 +18,7 @@ import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsPage } from './pages/TermsPage';
 
 function normalizePath(rawPath: string): string {
-  if (!rawPath || rawPath === '/') return '/';
-  const cleaned = rawPath
-    .trim()
-    .replace(/\/index\.html$/i, '')
-    .replace(/\.html$/i, '')
-    .replace(/\/+$/, '');
-  return cleaned || '/';
+  return normalizeCanonicalPathname(rawPath);
 }
 
 export default function App() {
@@ -89,11 +87,21 @@ export default function App() {
           keywords: [article.primaryKeyword, ...article.secondaryKeywords],
           pathname: `/blog/${article.slug}`,
           type: 'article',
-          image: article.image,
+          image: getArticleCanonicalImageUrl(article),
+          imageAlt: article.imageAlt,
           article,
         });
         return;
       }
+
+      updatePageSEO({
+        title: 'Article Not Found | Digital Pulse Blog',
+        description:
+          'The requested Digital Pulse article could not be found. Explore all 10 complete digital marketing, SEO, and social media guides in our blog archive.',
+        pathname: currentPath,
+        type: 'website',
+      });
+      return;
     }
 
     switch (currentPath) {
@@ -207,6 +215,7 @@ export default function App() {
       if (article) {
         return (
           <ArticlePage
+            key={article.slug}
             article={article}
             onNavigate={navigate}
             onSelectCategory={(cat) => setSelectedCategory(cat)}

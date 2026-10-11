@@ -8,8 +8,8 @@ export const ARTICLES_PART_1: Article[] = [
   {
     id: 1,
     slug: 'digital-marketing-trends-2026',
-    title: '10 Digital Marketing Trends Businesses Should Watch in 2026',
-    seoTitle: '10 Digital Marketing Trends 2026: Strategy Guide | DP',
+    title: '10 Digital Marketing Trends 2026 Businesses Should Watch',
+    seoTitle: '10 Digital Marketing Trends 2026: Full Strategy Guide',
     metaDescription:
       'Discover the top 10 digital marketing trends 2026 businesses need to watch, including first-party data strategy, social commerce growth, AI workflows, and SEO.',
     primaryKeyword: 'digital marketing trends 2026',
@@ -220,7 +220,7 @@ export const ARTICLES_PART_1: Article[] = [
   {
     id: 2,
     slug: 'how-social-media-algorithms-work',
-    title: 'How Social Media Algorithms Decide What You See',
+    title: 'How Social Media Algorithms Work: How Feeds Rank Content',
     seoTitle: 'How Social Media Algorithms Work & Rank Your Content',
     metaDescription:
       'Learn how social media algorithms work across Instagram, TikTok, and YouTube, including how feed recommendation systems score video watch time signals.',
@@ -334,6 +334,11 @@ export const ARTICLES_PART_1: Article[] = [
           'Content Information: Spoken words in audio transcripts, caption keywords, hashtags, audio tracks, and computer-vision topic labels.',
           'Account & Device Settings: Language preference, country location, and connection speed.',
         ],
+        internalLink: {
+          contextPrefix: 'See how feed changes connect to broader acquisition in our report on',
+          anchorText: '10 digital marketing trends 2026 businesses should watch',
+          slug: 'digital-marketing-trends-2026',
+        },
       },
       {
         id: 'why-content-goes-viral',
@@ -411,7 +416,7 @@ export const ARTICLES_PART_1: Article[] = [
   {
     id: 3,
     slug: 'seo-for-beginners-how-google-ranks-websites',
-    title: 'SEO for Beginners: How Google Finds and Ranks Websites',
+    title: 'SEO for Beginners: How Google Ranks Websites Step by Step',
     seoTitle: 'SEO for Beginners: How Google Ranks Websites Step by Step',
     metaDescription:
       'Master SEO for beginners with this step-by-step guide explaining how Google ranks websites through crawling, indexing, search intent optimization, and links.',
@@ -498,6 +503,11 @@ export const ARTICLES_PART_1: Article[] = [
           quote:
             'If a searcher wants a step-by-step tutorial and your page only offers a sales pitch, your page will struggle to rank—no matter how many times you repeat the keyword.',
           context: 'Matching Search Intent',
+        },
+        internalLink: {
+          contextPrefix: 'Apply search intent to your own portfolio with our guide on',
+          anchorText: 'how to build a personal brand from scratch with an SEO portfolio',
+          slug: 'how-to-build-a-personal-brand-from-scratch',
         },
       },
       {

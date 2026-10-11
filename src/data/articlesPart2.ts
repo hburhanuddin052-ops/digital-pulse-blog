@@ -10,7 +10,7 @@ export const ARTICLES_PART_2: Article[] = [
   {
     id: 4,
     slug: 'how-ai-is-changing-digital-marketing',
-    title: 'How AI Is Changing Digital Marketing',
+    title: 'AI in Digital Marketing: How Automation Changes Workflows',
     seoTitle: 'AI in Digital Marketing: Workflows, Benefits & Key Risks',
     metaDescription:
       'Explore how AI in digital marketing improves marketing workflow automation, ad targeting, and data analysis while still requiring human editorial oversight.',
@@ -62,6 +62,11 @@ export const ARTICLES_PART_2: Article[] = [
           'AI improves personalization in email and e-commerce by analyzing first-party purchase history, browsing context, and declared customer preferences to recommend relevant items at optimal send times. Small businesses can use built-in predictive blocks in standard email and e-commerce platforms without writing custom code.',
           'Instead of sending the exact same promotional blast to every subscriber at 9:00 AM on Tuesday, modern email tools predict when each individual reader is most likely to open their inbox and dynamically populate product recommendations based on past orders—such as reminding a customer to reorder water pitcher replacement filters 60 days after their initial purchase.',
         ],
+        internalLink: {
+          contextPrefix: 'Discover how privacy-safe personalization fits into',
+          anchorText: '10 digital marketing trends 2026 and first-party data strategy',
+          slug: 'digital-marketing-trends-2026',
+        },
       },
       {
         id: 'customer-service-and-triage',
@@ -277,6 +282,11 @@ export const ARTICLES_PART_2: Article[] = [
           'Reply to comments within the first hour of publishing to spark conversation.',
           'Use Instagram’s "Collab" post feature when partnering with local businesses or creators so the post shares unified engagement across both profiles.',
         ],
+        internalLink: {
+          contextPrefix: 'See why customer proof drives conversions in our breakdown of',
+          anchorText: 'how online reviews influence customers and build buyer trust',
+          slug: 'how-online-reviews-influence-customer-decisions',
+        },
       },
       {
         id: 'instagram-analytics',
@@ -342,12 +352,12 @@ export const ARTICLES_PART_2: Article[] = [
   {
     id: 6,
     slug: 'why-short-form-video-is-so-powerful',
-    title: 'Why Short-Form Video Has Become So Powerful',
+    title: 'Short-Form Video Marketing: Why Vertical Video Is So Powerful',
     seoTitle: 'Short-Form Video Marketing: Why Vertical Video Converts',
     metaDescription:
       'Learn why short-form video marketing dominates attention, how vertical video retention works on TikTok, Reels, and Shorts, and how to write strong video hooks.',
     primaryKeyword: 'short-form video marketing',
-    secondaryKeywords: ['vertical video retention', 'TikTok Reels Shorts hooks'],
+    secondaryKeywords: ['vertical video retention', 'TikTok Reels Shorts strategy'],
     category: 'Social Media',
     authorId: 'priya-patel',
     publishedAt: 'August 21, 2026',
@@ -445,6 +455,11 @@ export const ARTICLES_PART_2: Article[] = [
             ],
           },
         ],
+        internalLink: {
+          contextPrefix: 'Use short-form video to showcase your portfolio with our guide on',
+          anchorText: 'how to build a personal brand from scratch step by step',
+          slug: 'how-to-build-a-personal-brand-from-scratch',
+        },
       },
       {
         id: 'educational-vs-entertainment-content',

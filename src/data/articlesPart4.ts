@@ -8,7 +8,7 @@ export const ARTICLES_PART_4: Article[] = [
     seoTitle: 'How to Build a Personal Brand From Scratch: Step-by-Step',
     metaDescription:
       'Learn how to build a personal brand from scratch with this practical guide covering personal branding for students, content pillars, and portfolio strategy.',
-    primaryKeyword: 'build a personal brand from scratch',
+    primaryKeyword: 'how to build a personal brand',
     secondaryKeywords: ['personal branding for students', 'online portfolio strategy'],
     category: 'Brand & Business',
     authorId: 'maya-lin',
@@ -62,6 +62,11 @@ export const ARTICLES_PART_4: Article[] = [
           'Pillar 2: Industry Synthesis (What You Are Reading & Learning): Concise summaries of industry reports, technical documentation, or books paired with your takeaway.',
           'Pillar 3: Process & Career Reflection: Honest lessons learned from internships, client workflows, or tools you use daily.',
         ],
+        internalLink: {
+          contextPrefix: 'Understand how social feeds distribute your posts in our guide on',
+          anchorText: 'how social media algorithms work and rank your content',
+          slug: 'how-social-media-algorithms-work',
+        },
       },
       {
         id: 'choosing-the-right-platforms',
@@ -172,7 +177,7 @@ export const ARTICLES_PART_4: Article[] = [
   {
     id: 10,
     slug: 'fake-news-misinformation-brand-reputation',
-    title: "Fake News and Misinformation: How They Can Damage a Brand's Reputation",
+    title: 'Misinformation and Brand Reputation: How Fake News Damages Trust',
     seoTitle: 'Misinformation and Brand Reputation: Crisis Defense Guide',
     metaDescription:
       'Examine how misinformation and brand reputation intersect online, the difference between disinformation vs misinformation, and how to build a crisis plan.',
@@ -279,6 +284,11 @@ export const ARTICLES_PART_4: Article[] = [
           webpSrc: '/images/supporting/communications-team-monitoring-brand-mentions.webp',
           alt: 'Analytics dashboard displaying real-time digital monitoring charts on a laptop screen',
           caption: 'Fig. 10.1 — Monitoring branded search queries and mention velocity provides early warning before a rumor peaks.',
+        },
+        internalLink: {
+          contextPrefix: 'Examine how synthetic media and AI impact publishing in our guide to',
+          anchorText: 'AI in digital marketing workflows, benefits, and key risks',
+          slug: 'how-ai-is-changing-digital-marketing',
         },
       },
       {

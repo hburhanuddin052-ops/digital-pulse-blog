@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   ArrowLeft,
   ArrowUpRight,
@@ -8,6 +8,11 @@ import {
 } from 'lucide-react';
 import { Article, CategoryName } from '../types/blog';
 import { AUTHORS, estimateArticleWordCount, getRelatedArticles } from '../data/articles';
+import {
+  getCanonicalUrl,
+  getArticleCanonicalImageUrl,
+  updatePageSEO,
+} from '../utils/seo';
 import { EditorialImage } from '../components/EditorialImage';
 import { ArticleCard } from '../components/ArticleCard';
 import { NewsletterSection } from '../components/NewsletterSection';
@@ -29,11 +34,22 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
   const relatedArticles = getRelatedArticles(article);
   const wordCount = estimateArticleWordCount(article);
 
-  const origin =
-    typeof window !== 'undefined' && window.location.origin
-      ? window.location.origin
-      : 'https://digital-pulse-blog.vercel.app';
-  const canonicalUrl = `${origin}/blog/${article.slug}`;
+  const canonicalUrl = getCanonicalUrl(`/blog/${article.slug}`);
+  const canonicalImageUrl = getArticleCanonicalImageUrl(article);
+
+  // Ensure ArticlePage directly synchronizes its unique canonical, Open Graph, and Schema.org @id metadata
+  useEffect(() => {
+    updatePageSEO({
+      title: article.seoTitle,
+      description: article.metaDescription,
+      keywords: [article.primaryKeyword, ...article.secondaryKeywords],
+      pathname: `/blog/${article.slug}`,
+      type: 'article',
+      image: canonicalImageUrl,
+      imageAlt: article.imageAlt,
+      article,
+    });
+  }, [article, canonicalImageUrl]);
 
   const handleCopyUrl = async () => {
     try {
@@ -70,7 +86,15 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
   )}`;
 
   return (
-    <article className="bg-[#FAFAFA] dark:bg-[#0B0F17] animate-fade-in">
+    <article
+      id={`article-${article.slug}`}
+      data-article-id={article.id}
+      data-article-slug={article.slug}
+      data-canonical-url={canonicalUrl}
+      itemScope
+      itemType="https://schema.org/BlogPosting"
+      className="bg-[#FAFAFA] dark:bg-[#0B0F17] animate-fade-in"
+    >
       {/* Top Article Header */}
       <header className="border-b border-neutral-200/80 dark:border-slate-800/80 bg-white dark:bg-[#0E1420] pt-8 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
