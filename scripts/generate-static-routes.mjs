@@ -433,6 +433,19 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;');
 }
 
+const ARTICLE_SLUG_ID_MAP = {
+  'digital-marketing-trends-2026': 1,
+  'how-social-media-algorithms-work': 2,
+  'seo-for-beginners-how-google-ranks-websites': 3,
+  'how-ai-is-changing-digital-marketing': 4,
+  'instagram-marketing-for-small-businesses': 5,
+  'why-short-form-video-is-so-powerful': 6,
+  'common-digital-marketing-mistakes-small-businesses': 7,
+  'how-online-reviews-influence-customer-decisions': 8,
+  'how-to-build-a-personal-brand-from-scratch': 9,
+  'fake-news-misinformation-brand-reputation': 10,
+};
+
 function buildSchemaJson(route, canonicalUrl, imageUrl) {
   const organizationId = `${SITE_ORIGIN}/#organization`;
   const websiteId = `${SITE_ORIGIN}/#website`;
@@ -442,8 +455,10 @@ function buildSchemaJson(route, canonicalUrl, imageUrl) {
 
   if (route.type === 'article') {
     const slug = route.routePath.replace('/blog/', '');
+    const articleId = ARTICLE_SLUG_ID_MAP[slug] || 1;
     const authorSlug = route.author.toLowerCase().replace(/\s+/g, '-');
     const articleIdUri = `${canonicalUrl}#article`;
+    const globalIdentifier = `digital-pulse-article-${articleId}-${slug}`;
 
     return JSON.stringify(
       {
@@ -472,6 +487,8 @@ function buildSchemaJson(route, canonicalUrl, imageUrl) {
             url: imageUrl,
             contentUrl: imageUrl,
             caption: route.imageAlt,
+            width: 1200,
+            height: 630,
           },
           {
             '@type': 'WebPage',
@@ -488,13 +505,16 @@ function buildSchemaJson(route, canonicalUrl, imageUrl) {
             breadcrumb: {
               '@id': breadcrumbId,
             },
+            mainEntity: {
+              '@id': articleIdUri,
+            },
             datePublished: route.publishedAt,
             dateModified: route.publishedAt,
           },
           {
             '@type': 'BlogPosting',
             '@id': articleIdUri,
-            identifier: `digital-pulse-article-${slug}`,
+            identifier: globalIdentifier,
             url: canonicalUrl,
             isPartOf: {
               '@id': webpageId,
@@ -512,6 +532,7 @@ function buildSchemaJson(route, canonicalUrl, imageUrl) {
             dateModified: route.publishedAt,
             articleSection: route.category,
             keywords: route.keywords,
+            inLanguage: 'en-US',
             author: {
               '@type': 'Person',
               '@id': `${SITE_ORIGIN}/#author-${authorSlug}`,
@@ -642,10 +663,6 @@ function buildRouteHtml(route) {
     `<meta name="description" content="${safeDesc}" />`
   );
   html = html.replace(
-    /<meta\s+name="keywords"\s+content="[^"]*"\s*\/>/,
-    `<meta name="keywords" content="${safeKeywords}" />`
-  );
-  html = html.replace(
     /<link\s+rel="canonical"\s+href="[^"]*"\s+id="canonical-link"\s*\/>/,
     `<link rel="canonical" href="${canonicalUrl}" id="canonical-link" />`
   );
@@ -671,7 +688,11 @@ function buildRouteHtml(route) {
   );
   html = html.replace(
     /<meta\s+property="og:image:alt"\s+content="[^"]*"\s*\/>/,
-    `<meta property="og:image:alt" content="${safeImageAlt}" />${articleOgMeta}`
+    `<meta property="og:image:alt" content="${safeImageAlt}" />
+    <meta property="og:image:secure_url" content="${imageUrl}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />${articleOgMeta}`
   );
   html = html.replace(
     /<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/>/,
@@ -679,11 +700,13 @@ function buildRouteHtml(route) {
   );
   html = html.replace(
     /<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/>/,
-    `<meta name="twitter:description" content="${safeDesc}" />`
+    `<meta name="twitter:description" content="${safeDesc}" />
+    <meta name="twitter:url" content="${canonicalUrl}" />`
   );
   html = html.replace(
     /<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/>/,
-    `<meta name="twitter:image" content="${imageUrl}" />`
+    `<meta name="twitter:image" content="${imageUrl}" />
+    <meta name="twitter:image:alt" content="${safeImageAlt}" />`
   );
   html = html.replace(
     /<script type="application\/ld\+json" id="schema-jsonld">[\s\S]*?<\/script>/,

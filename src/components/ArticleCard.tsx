@@ -24,6 +24,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({ article, onNavigate })
         <a
           href={articlePath}
           onClick={handleCardClick}
+          aria-label={`Read article: ${article.title}`}
           className="block focus-visible:outline-2 focus-visible:outline-blue-600"
         >
           <EditorialImage

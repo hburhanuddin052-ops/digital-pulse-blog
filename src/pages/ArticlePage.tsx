@@ -9,8 +9,10 @@ import {
 import { Article, CategoryName } from '../types/blog';
 import { AUTHORS, estimateArticleWordCount, getRelatedArticles } from '../data/articles';
 import {
-  getCanonicalUrl,
+  getArticleCanonicalUrl,
   getArticleCanonicalImageUrl,
+  getArticleSchemaId,
+  getArticleGlobalIdentifier,
   updatePageSEO,
 } from '../utils/seo';
 import { EditorialImage } from '../components/EditorialImage';
@@ -34,8 +36,10 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
   const relatedArticles = getRelatedArticles(article);
   const wordCount = estimateArticleWordCount(article);
 
-  const canonicalUrl = getCanonicalUrl(`/blog/${article.slug}`);
+  const canonicalUrl = getArticleCanonicalUrl(article);
   const canonicalImageUrl = getArticleCanonicalImageUrl(article);
+  const articleSchemaId = getArticleSchemaId(article);
+  const globalIdentifier = getArticleGlobalIdentifier(article);
 
   // Ensure ArticlePage directly synchronizes its unique canonical, Open Graph, and Schema.org @id metadata
   useEffect(() => {
@@ -91,10 +95,20 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
       data-article-id={article.id}
       data-article-slug={article.slug}
       data-canonical-url={canonicalUrl}
+      data-identifier={globalIdentifier}
       itemScope
       itemType="https://schema.org/BlogPosting"
+      itemID={articleSchemaId}
       className="bg-[#FAFAFA] dark:bg-[#0B0F17] animate-fade-in"
     >
+      {/* Microdata identifiers strictly aligned with canonical URL and Schema.org @id */}
+      <link itemProp="url" href={canonicalUrl} />
+      <link itemProp="mainEntityOfPage" href={canonicalUrl} />
+      <meta itemProp="identifier" content={globalIdentifier} />
+      <meta itemProp="headline" content={article.title} />
+      <meta itemProp="datePublished" content={article.isoDate} />
+      <meta itemProp="dateModified" content={article.isoDate} />
+      <link itemProp="image" href={canonicalImageUrl} />
       {/* Top Article Header */}
       <header className="border-b border-neutral-200/80 dark:border-slate-800/80 bg-white dark:bg-[#0E1420] pt-8 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
@@ -208,6 +222,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                 href={xShareUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Share "${article.title}" on X / Twitter`}
                 className="px-3 py-1.5 text-xs font-medium rounded-lg border border-neutral-200 dark:border-slate-700 glass-panel text-neutral-800 dark:text-slate-200 hover:border-blue-600 transition-colors whitespace-nowrap"
               >
                 X / Twitter
@@ -216,12 +231,14 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                 href={linkedInShareUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Share "${article.title}" on LinkedIn`}
                 className="px-3 py-1.5 text-xs font-medium rounded-lg border border-neutral-200 dark:border-slate-700 glass-panel text-neutral-800 dark:text-slate-200 hover:border-blue-600 transition-colors whitespace-nowrap"
               >
                 LinkedIn
               </a>
               <a
                 href={emailShareUrl}
+                aria-label={`Share "${article.title}" via Email`}
                 className="px-3 py-1.5 text-xs font-medium rounded-lg border border-neutral-200 dark:border-slate-700 glass-panel text-neutral-800 dark:text-slate-200 hover:border-blue-600 transition-colors whitespace-nowrap"
               >
                 Email
@@ -346,6 +363,38 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                 </a>
               </div>
             )}
+
+            {/* Stored Editorial SEO Keywords Data */}
+            <div className="p-5 rounded-xl border border-neutral-200/90 dark:border-slate-800/90 glass-card">
+              <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 mb-2">
+                Editorial SEO Focus
+              </p>
+              <div className="space-y-2.5 text-xs">
+                <div>
+                  <span className="font-semibold text-neutral-900 dark:text-white block mb-1">
+                    Primary Keyword:
+                  </span>
+                  <span className="inline-block text-neutral-800 dark:text-slate-200 font-mono text-[11px] bg-neutral-100 dark:bg-slate-800/80 px-2 py-0.5 rounded border border-neutral-200/70 dark:border-slate-700">
+                    {article.primaryKeyword}
+                  </span>
+                </div>
+                <div>
+                  <span className="font-semibold text-neutral-900 dark:text-white block mb-1">
+                    Related Keywords:
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {article.secondaryKeywords.map((kw) => (
+                      <span
+                        key={kw}
+                        className="text-neutral-700 dark:text-slate-300 font-mono text-[11px] bg-neutral-100 dark:bg-slate-800/80 px-2 py-0.5 rounded border border-neutral-200/70 dark:border-slate-700"
+                      >
+                        {kw}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </aside>
 
           {/* Right Main Reading Column (8 cols, constrained to max-w-2xl for comfortable reading) */}

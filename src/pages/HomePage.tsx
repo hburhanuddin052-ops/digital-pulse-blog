@@ -66,6 +66,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectCategory
               <a
                 href={`/blog/${featuredArticle.slug}`}
                 onClick={(e) => handleArticleLink(e, featuredArticle.slug)}
+                aria-label={`Read featured article: ${featuredArticle.title}`}
                 className="block rounded-xl overflow-hidden border border-neutral-200 dark:border-slate-800 mb-2"
               >
                 <EditorialImage
