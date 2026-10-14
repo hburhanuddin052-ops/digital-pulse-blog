@@ -7,6 +7,7 @@ import {
   normalizeCanonicalPathname,
   getArticleCanonicalImageUrl,
 } from './utils/seo';
+import { getEditorialSEOByPath } from './data/seoEditorialData';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
@@ -80,10 +81,12 @@ export default function App() {
     if (currentPath.startsWith('/blog/')) {
       const slug = currentPath.replace('/blog/', '');
       const article = getArticleBySlug(slug);
+      const editorial = getEditorialSEOByPath(currentPath);
+
       if (article) {
         updatePageSEO({
-          title: article.seoTitle,
-          description: article.metaDescription,
+          title: editorial ? editorial.seoTitle : article.seoTitle,
+          description: editorial ? editorial.metaDescription : article.metaDescription,
           keywords: [article.primaryKeyword, ...article.secondaryKeywords],
           pathname: `/blog/${article.slug}`,
           type: 'article',
@@ -104,86 +107,28 @@ export default function App() {
       return;
     }
 
-    switch (currentPath) {
-      case '/blog':
-        updatePageSEO({
-          title: 'Digital Marketing Articles & SEO Guides | Digital Pulse',
-          description:
-            'Browse all 10 original digital marketing articles, step-by-step SEO tutorials, and social media guides written for students, founders, and small businesses.',
-          keywords: [
-            'digital marketing articles',
-            'SEO tutorials',
-            'social media guides',
-          ],
-          pathname: '/blog',
-        });
-        break;
-      case '/about':
-        updatePageSEO({
-          title: 'About Our Digital Marketing Publication | Digital Pulse',
-          description:
-            'Learn about Digital Pulse, an independent digital marketing publication dedicated to primary-source editorial standards and marketing education for students.',
-          keywords: [
-            'digital marketing publication',
-            'editorial standards',
-            'marketing education for students',
-          ],
-          pathname: '/about',
-        });
-        break;
-      case '/contact':
-        updatePageSEO({
-          title: 'Contact Digital Pulse Editorial Team & Feedback Desk',
-          description:
-            'Contact the Digital Pulse editorial team with reader feedback, marketing topic suggestions, press inquiries, or source corrections. We reply in 24–48 hours.',
-          keywords: [
-            'contact Digital Pulse editorial team',
-            'reader feedback',
-            'marketing topic suggestions',
-          ],
-          pathname: '/contact',
-        });
-        break;
-      case '/privacy-policy':
-        updatePageSEO({
-          title: 'Digital Pulse Privacy Policy & First-Party Data Terms',
-          description:
-            'Read the official Digital Pulse privacy policy covering first-party data privacy, newsletter subscriber rights, contact inquiries, and search analytics.',
-          keywords: [
-            'Digital Pulse privacy policy',
-            'first-party data privacy',
-            'newsletter subscriber rights',
-          ],
-          pathname: '/privacy-policy',
-        });
-        break;
-      case '/terms-and-conditions':
-        updatePageSEO({
-          title: 'Digital Pulse Terms and Conditions & Citation Guidelines',
-          description:
-            'Review the Digital Pulse terms and conditions, including our editorial citation policy, intellectual property rules, and educational content disclaimer.',
-          keywords: [
-            'Digital Pulse terms and conditions',
-            'editorial citation policy',
-            'educational content disclaimer',
-          ],
-          pathname: '/terms-and-conditions',
-        });
-        break;
-      case '/':
-      default:
-        updatePageSEO({
-          title: 'Digital Pulse: Digital Marketing Blog & SEO Strategy Hub',
-          description:
-            'Digital Pulse is an independent digital marketing blog publishing research-backed social media strategy, beginner SEO guides, and online business insights.',
-          keywords: [
-            'digital marketing blog',
-            'social media strategy',
-            'online business insights',
-          ],
-          pathname: '/',
-        });
-        break;
+    const editorial = getEditorialSEOByPath(currentPath);
+    if (editorial) {
+      updatePageSEO({
+        title: editorial.seoTitle,
+        description: editorial.metaDescription,
+        keywords: [editorial.primaryKeyword, ...editorial.secondaryKeywords],
+        pathname: editorial.pathname,
+        type: 'website',
+      });
+    } else {
+      updatePageSEO({
+        title: 'Digital Pulse: Digital Marketing Blog & SEO Strategy Hub',
+        description:
+          'Digital Pulse is an independent digital marketing blog publishing research-backed social media strategy, beginner SEO guides, and online business insights.',
+        keywords: [
+          'digital marketing blog',
+          'social media strategy',
+          'online business insights',
+        ],
+        pathname: '/',
+        type: 'website',
+      });
     }
   }, [currentPath]);
 
