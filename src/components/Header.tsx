@@ -70,6 +70,7 @@ export const Header: React.FC<HeaderProps> = ({
           <a
             href="/"
             onClick={(e) => handleLinkClick(e, '/')}
+            aria-label="Digital Pulse — Return to Homepage"
             className="text-xl font-bold tracking-tight text-neutral-950 dark:text-white whitespace-nowrap shrink-0"
           >
             Digital Pulse

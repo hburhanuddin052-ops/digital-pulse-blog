@@ -70,6 +70,12 @@ export const ARTICLES_PART_3: Article[] = [
           anchorText: 'step-by-step tutorial on SEO for beginners',
           slug: 'seo-for-beginners-how-google-ranks-websites',
         },
+        outboundLink: {
+          contextPrefix: 'Claim and manage your local presence using the official',
+          anchorText: 'Google Business Profile guidelines for representing your business on Google',
+          url: 'https://support.google.com/business/answer/3038063',
+          publisher: 'Google Official Support',
+        },
       },
       {
         id: 'mistake-4-buying-followers',
@@ -78,6 +84,12 @@ export const ARTICLES_PART_3: Article[] = [
           'Buying followers hurts your social media reach because purchased bot accounts never watch, share, or save your posts, signaling to recommendation algorithms that your content is unengaging. Furthermore, the U.S. Federal Trade Commission explicitly prohibits misrepresenting commercial influence through fake social media indicators.',
           'When you publish a new post and 98% of your purchased followers ignore it, the platform’s ranking system concludes the post is low quality and restricts distribution to real non-followers. Five hundred real local buyers who engage with your business are worth far more than 50,000 inactive bots.',
         ],
+        outboundLink: {
+          contextPrefix: 'Learn about federal regulations against fake engagement in the',
+          anchorText: 'FTC final rule banning fake consumer reviews, testimonials, and commercial indicators',
+          url: 'https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials',
+          publisher: 'Federal Trade Commission',
+        },
       },
       {
         id: 'mistake-5-poor-website-experience',
@@ -223,6 +235,12 @@ export const ARTICLES_PART_3: Article[] = [
           anchorText: 'complete guide to Instagram marketing for small businesses',
           slug: 'instagram-marketing-for-small-businesses',
         },
+        outboundLink: {
+          contextPrefix: 'Review extensive empirical data on consumer shopping habits in the',
+          anchorText: 'Pew Research Center study on online reviews and e-commerce trust',
+          url: 'https://www.pewresearch.org/internet/2016/12/19/online-reviews/',
+          publisher: 'Pew Research Center',
+        },
       },
       {
         id: 'ratings-recency-and-volume',
@@ -289,6 +307,12 @@ export const ARTICLES_PART_3: Article[] = [
           contextPrefix: 'Explore how coordinated false claims impact companies in our research guide on',
           anchorText: 'misinformation and brand reputation crisis defense',
           slug: 'fake-news-misinformation-brand-reputation',
+        },
+        outboundLink: {
+          contextPrefix: 'Read the official regulatory rules for businesses in the',
+          anchorText: 'FTC business guidance on soliciting and paying for customer reviews',
+          url: 'https://www.ftc.gov/business-guidance/resources/soliciting-paying-online-reviews-guide-marketers',
+          publisher: 'Federal Trade Commission',
         },
       },
       {

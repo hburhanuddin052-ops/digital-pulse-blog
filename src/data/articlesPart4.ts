@@ -89,6 +89,12 @@ export const ARTICLES_PART_4: Article[] = [
           anchorText: 'short-form video marketing and vertical video retention',
           slug: 'why-short-form-video-is-so-powerful',
         },
+        outboundLink: {
+          contextPrefix: 'Consult comprehensive research on professional audience demographics in the',
+          anchorText: 'Pew Research Center social media demographic fact sheet',
+          url: 'https://www.pewresearch.org/internet/fact-sheet/social-media/',
+          publisher: 'Pew Research Center',
+        },
       },
       {
         id: 'building-credibility-and-portfolio',
@@ -112,6 +118,12 @@ export const ARTICLES_PART_4: Article[] = [
           quote:
             'Anyone can claim to be "detail-oriented and strategic" on a resume. Publishing three documented case studies proves it without you having to say a word.',
           context: 'Proof of Work Over Claims',
+        },
+        outboundLink: {
+          contextPrefix: 'Ensure your personal portfolio adheres to global web standards via the',
+          anchorText: 'W3C Web Content Accessibility Guidelines (WCAG) overview',
+          url: 'https://www.w3.org/WAI/standards-guidelines/wcag/',
+          publisher: 'World Wide Web Consortium (W3C)',
         },
       },
       {
@@ -234,6 +246,12 @@ export const ARTICLES_PART_4: Article[] = [
             ],
           },
         ],
+        outboundLink: {
+          contextPrefix: 'Review the international definition and policy framework in the',
+          anchorText: 'UNESCO handbook on journalism, fake news, and disinformation education',
+          url: 'https://unesdoc.unesco.org/ark:/48223/pf0000265552',
+          publisher: 'UNESCO',
+        },
       },
       {
         id: 'how-misinformation-spreads-online',
@@ -256,6 +274,12 @@ export const ARTICLES_PART_4: Article[] = [
           contextPrefix: 'See how engagement velocity powers feed distribution in our breakdown of',
           anchorText: 'how social media algorithms work across recommendation feeds',
           slug: 'how-social-media-algorithms-work',
+        },
+        outboundLink: {
+          contextPrefix: 'Read the foundational peer-reviewed scientific paper in',
+          anchorText: 'Science / MIT research study on the spread of true and false news online',
+          url: 'https://www.science.org/doi/10.1126/science.aap9559',
+          publisher: 'Science / MIT Initiative',
         },
       },
       {

@@ -158,6 +158,10 @@ const ROUTES = [
       { href: '/blog/seo-for-beginners-how-google-ranks-websites', text: 'SEO for beginners and how Google crawls, indexes, and ranks websites' },
       { href: '/blog/how-online-reviews-influence-customer-decisions', text: 'how online reviews influence customers and purchasing decisions' },
     ],
+    outboundLinks: [
+      { href: 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content', text: 'Google Search Central documentation on creating helpful people-first content', publisher: 'Google Search Central' },
+      { href: 'https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers', text: 'FTC Disclosures 101 guide for social media influencers and marketers', publisher: 'Federal Trade Commission' },
+    ],
   },
   {
     routePath: '/blog/how-social-media-algorithms-work',
@@ -187,6 +191,10 @@ const ROUTES = [
       { href: '/blog/digital-marketing-trends-2026', text: '10 digital marketing trends 2026 businesses should watch' },
       { href: '/blog/instagram-marketing-for-small-businesses', text: 'practical guide to Instagram marketing for small businesses' },
     ],
+    outboundLinks: [
+      { href: 'https://transparency.fb.com/features/explaining-ranking/', text: 'Meta Transparency Center documentation on feed recommendation algorithms', publisher: 'Meta Transparency Center' },
+      { href: 'https://newsroom.tiktok.com/en-us/how-tiktok-recommends-videos-for-you', text: 'TikTok Newsroom technical report on how content recommends to users', publisher: 'TikTok Newsroom' },
+    ],
   },
   {
     routePath: '/blog/seo-for-beginners-how-google-ranks-websites',
@@ -215,6 +223,10 @@ const ROUTES = [
       { href: '/blog/how-to-build-a-personal-brand-from-scratch', text: 'how to build a personal brand from scratch with an SEO portfolio' },
       { href: '/blog/common-digital-marketing-mistakes-small-businesses', text: '10 small business digital marketing mistakes and how to fix them' },
       { href: '/blog/digital-marketing-trends-2026', text: '10 digital marketing trends 2026 businesses should watch' },
+    ],
+    outboundLinks: [
+      { href: 'https://developers.google.com/search/docs/fundamentals/how-search-works', text: 'Google Search Central technical guide on how Google search works', publisher: 'Google Search Central' },
+      { href: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide', text: 'Google SEO Starter Guide on essential site optimization best practices', publisher: 'Google Search Central' },
     ],
   },
   {
@@ -246,6 +258,10 @@ const ROUTES = [
       { href: '/blog/digital-marketing-trends-2026', text: '10 digital marketing trends 2026 and first-party data strategy' },
       { href: '/blog/fake-news-misinformation-brand-reputation', text: 'misinformation and brand reputation crisis defense' },
     ],
+    outboundLinks: [
+      { href: 'https://www.ftc.gov/business-guidance/blog/2023/02/keep-your-ai-claims-check', text: 'FTC business guidance on keeping your artificial intelligence claims in check', publisher: 'Federal Trade Commission' },
+      { href: 'https://www.nist.gov/itl/ai-risk-management-framework', text: 'NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0)', publisher: 'National Institute of Standards and Technology' },
+    ],
   },
   {
     routePath: '/blog/instagram-marketing-for-small-businesses',
@@ -275,6 +291,10 @@ const ROUTES = [
       { href: '/blog/how-online-reviews-influence-customer-decisions', text: 'how online reviews influence customers and build buyer trust' },
       { href: '/blog/common-digital-marketing-mistakes-small-businesses', text: '10 small business digital marketing mistakes to avoid' },
     ],
+    outboundLinks: [
+      { href: 'https://business.instagram.com/getting-started', text: 'Instagram for Business getting started and profile optimization guide', publisher: 'Instagram Business' },
+      { href: 'https://help.instagram.com/116947042301556', text: 'Instagram Help Center branded content policies and partnership labels', publisher: 'Instagram Help Center' },
+    ],
   },
   {
     routePath: '/blog/why-short-form-video-is-so-powerful',
@@ -303,6 +323,10 @@ const ROUTES = [
       { href: '/blog/how-social-media-algorithms-work', text: 'how social media algorithms work across feeds and video' },
       { href: '/blog/how-to-build-a-personal-brand-from-scratch', text: 'how to build a personal brand from scratch step by step' },
       { href: '/blog/instagram-marketing-for-small-businesses', text: 'guide to Instagram marketing for small businesses' },
+    ],
+    outboundLinks: [
+      { href: 'https://www.pewresearch.org/internet/', text: 'Pew Research Center report on mobile and social media adoption', publisher: 'Pew Research Center' },
+      { href: 'https://support.google.com/youtube/answer/10059070', text: 'YouTube Shorts official creator guide and optimization best practices', publisher: 'YouTube Official Help' },
     ],
   },
   {
@@ -335,6 +359,10 @@ const ROUTES = [
       { href: '/blog/seo-for-beginners-how-google-ranks-websites', text: 'step-by-step tutorial on SEO for beginners' },
       { href: '/blog/how-online-reviews-influence-customer-decisions', text: 'how online reviews influence customers and how to reply to criticism' },
     ],
+    outboundLinks: [
+      { href: 'https://support.google.com/business/answer/3038063', text: 'Google Business Profile guidelines for representing your business on Google', publisher: 'Google Official Support' },
+      { href: 'https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials', text: 'FTC final rule banning fake consumer reviews, testimonials, and commercial indicators', publisher: 'Federal Trade Commission' },
+    ],
   },
   {
     routePath: '/blog/how-online-reviews-influence-customer-decisions',
@@ -363,6 +391,10 @@ const ROUTES = [
       { href: '/blog/instagram-marketing-for-small-businesses', text: 'complete guide to Instagram marketing for small businesses' },
       { href: '/blog/fake-news-misinformation-brand-reputation', text: 'misinformation and brand reputation crisis defense' },
       { href: '/blog/common-digital-marketing-mistakes-small-businesses', text: 'guide to 10 small business digital marketing mistakes' },
+    ],
+    outboundLinks: [
+      { href: 'https://www.pewresearch.org/internet/2016/12/19/online-reviews/', text: 'Pew Research Center study on online reviews and e-commerce trust', publisher: 'Pew Research Center' },
+      { href: 'https://www.ftc.gov/business-guidance/resources/soliciting-paying-online-reviews-guide-marketers', text: 'FTC business guidance on soliciting and paying for customer reviews', publisher: 'Federal Trade Commission' },
     ],
   },
   {
@@ -393,6 +425,10 @@ const ROUTES = [
       { href: '/blog/why-short-form-video-is-so-powerful', text: 'short-form video marketing and vertical video retention' },
       { href: '/blog/seo-for-beginners-how-google-ranks-websites', text: 'step-by-step guide to SEO for beginners' },
     ],
+    outboundLinks: [
+      { href: 'https://www.pewresearch.org/internet/fact-sheet/social-media/', text: 'Pew Research Center social media demographic fact sheet', publisher: 'Pew Research Center' },
+      { href: 'https://www.w3.org/WAI/standards-guidelines/wcag/', text: 'W3C Web Content Accessibility Guidelines (WCAG) overview', publisher: 'World Wide Web Consortium (W3C)' },
+    ],
   },
   {
     routePath: '/blog/fake-news-misinformation-brand-reputation',
@@ -421,6 +457,10 @@ const ROUTES = [
       { href: '/blog/how-social-media-algorithms-work', text: 'how social media algorithms work across recommendation feeds' },
       { href: '/blog/how-ai-is-changing-digital-marketing', text: 'AI in digital marketing workflows, benefits, and key risks' },
       { href: '/blog/how-online-reviews-influence-customer-decisions', text: 'how online reviews influence customers and build trust' },
+    ],
+    outboundLinks: [
+      { href: 'https://unesdoc.unesco.org/ark:/48223/pf0000265552', text: 'UNESCO handbook on journalism, fake news, and disinformation education', publisher: 'UNESCO' },
+      { href: 'https://www.science.org/doi/10.1126/science.aap9559', text: 'Science / MIT research study on the spread of true and false news online', publisher: 'Science / MIT Initiative' },
     ],
   },
 ];
@@ -624,6 +664,14 @@ function buildStaticBodyHtml(route) {
   const linksHtml = (route.internalLinks || [])
     .map((l) => `<li><a href="${l.href}">${escapeHtml(l.text)}</a></li>`)
     .join('\n            ');
+  const outboundLinksHtml = (route.outboundLinks || [])
+    .map(
+      (l) =>
+        `<li><a href="${l.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(
+          l.text
+        )}</a> (${escapeHtml(l.publisher || 'Official Documentation')})</li>`
+    )
+    .join('\n            ');
 
   return `<div id="root">
       <main id="main-content" class="max-w-4xl mx-auto py-12 px-4">
@@ -633,10 +681,21 @@ function buildStaticBodyHtml(route) {
           <img src="${route.image}" alt="${safeImageAlt}" width="1200" height="675" loading="eager" />
           ${headingsHtml}
           <nav aria-label="Related internal articles">
+            <h2>Related Internal Guides</h2>
             <ul>
               ${linksHtml}
             </ul>
           </nav>
+          ${
+            outboundLinksHtml
+              ? `<section aria-label="Authoritative outbound citations">
+            <h2>Authoritative Outbound Citations</h2>
+            <ul>
+              ${outboundLinksHtml}
+            </ul>
+          </section>`
+              : ''
+          }
         </article>
       </main>
     </div>`;

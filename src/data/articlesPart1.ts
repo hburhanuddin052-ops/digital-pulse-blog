@@ -59,6 +59,12 @@ export const ARTICLES_PART_1: Article[] = [
           anchorText: 'how AI in digital marketing improves workflows without replacing human judgment',
           slug: 'how-ai-is-changing-digital-marketing',
         },
+        outboundLink: {
+          contextPrefix: 'Read the official guidelines on content quality and search standards in the',
+          anchorText: 'Google Search Central documentation on creating helpful people-first content',
+          url: 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content',
+          publisher: 'Google Search Central',
+        },
       },
       {
         id: 'short-form-video',
@@ -176,6 +182,12 @@ export const ARTICLES_PART_1: Article[] = [
           anchorText: 'how online reviews influence customers and purchasing decisions',
           slug: 'how-online-reviews-influence-customer-decisions',
         },
+        outboundLink: {
+          contextPrefix: 'Review official endorsement and sponsorship requirements in the',
+          anchorText: 'FTC Disclosures 101 guide for social media influencers and marketers',
+          url: 'https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers',
+          publisher: 'Federal Trade Commission',
+        },
       },
     ],
     keyTakeaways: [
@@ -260,6 +272,12 @@ export const ARTICLES_PART_1: Article[] = [
           '3. Scoring & Predictions: Machine learning models evaluate signals about the post, the creator, and your past behavior to predict the likelihood that you will watch, share, save, comment, or skip.',
           '4. Ranking & Diversity Adjustments: Posts with the highest combined value score are ordered at the top of your feed, with rules preventing repetitive back-to-back posts from the same creator.',
         ],
+        outboundLink: {
+          contextPrefix: 'Learn how automated candidate generation and feed ranking operate in the',
+          anchorText: 'Meta Transparency Center documentation on feed recommendation algorithms',
+          url: 'https://transparency.fb.com/features/explaining-ranking/',
+          publisher: 'Meta Transparency Center',
+        },
       },
       {
         id: 'social-graph-vs-interest-graph',
@@ -320,6 +338,12 @@ export const ARTICLES_PART_1: Article[] = [
           quote:
             'A share in a direct message or a completed video view tells a recommendation engine far more about content quality than a quick double-tap.',
           context: 'Signal Hierarchy in Feed Ranking',
+        },
+        outboundLink: {
+          contextPrefix: 'Examine official engineering details on watch completion signals in the',
+          anchorText: 'TikTok Newsroom technical report on how content recommends to users',
+          url: 'https://newsroom.tiktok.com/en-us/how-tiktok-recommends-videos-for-you',
+          publisher: 'TikTok Newsroom',
         },
       },
       {
@@ -475,6 +499,12 @@ export const ARTICLES_PART_1: Article[] = [
           content:
             'Think of Google as a public library. Crawling is the acquisition team finding new books. Indexing is reading each book’s title, chapter headings, and summary to place it on the right catalog shelf. Ranking is the librarian handing you the three most relevant books when you ask a specific question.',
         },
+        outboundLink: {
+          contextPrefix: 'Verify how Google finds, parses, and serves search results in the',
+          anchorText: 'Google Search Central technical guide on how Google search works',
+          url: 'https://developers.google.com/search/docs/fundamentals/how-search-works',
+          publisher: 'Google Search Central',
+        },
       },
       {
         id: 'keywords-and-search-intent',
@@ -525,6 +555,12 @@ export const ARTICLES_PART_1: Article[] = [
           'Descriptive Image Alt Text: Describe what each image shows for screen readers and search engines without keyword stuffing.',
           'Internal Linking: Link to 2–3 related pages on your site using descriptive anchor text.',
         ],
+        outboundLink: {
+          contextPrefix: 'Review official recommendations on title tags and heading structure in the',
+          anchorText: 'Google SEO Starter Guide on essential site optimization best practices',
+          url: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide',
+          publisher: 'Google Search Central',
+        },
       },
       {
         id: 'technical-seo',

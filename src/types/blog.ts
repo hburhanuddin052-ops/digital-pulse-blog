@@ -32,6 +32,13 @@ export interface ArticleInternalLink {
   slug: string;
 }
 
+export interface ArticleOutboundLink {
+  contextPrefix: string;
+  anchorText: string;
+  url: string;
+  publisher: string;
+}
+
 export interface ArticleSupportingImage {
   src: string;
   webpSrc?: string;
@@ -57,6 +64,7 @@ export interface ArticleSection {
     context: string;
   };
   internalLink?: ArticleInternalLink;
+  outboundLink?: ArticleOutboundLink;
   supportingImage?: ArticleSupportingImage;
   comparisonTable?: ArticleComparisonTable;
 }

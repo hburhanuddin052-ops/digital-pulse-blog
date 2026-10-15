@@ -54,6 +54,12 @@ export const ARTICLES_PART_2: Article[] = [
           anchorText: 'SEO for beginners and Google’s helpful content standards',
           slug: 'seo-for-beginners-how-google-ranks-websites',
         },
+        outboundLink: {
+          contextPrefix: 'Review official regulatory warnings regarding unsubstantiated automation in the',
+          anchorText: 'FTC business guidance on keeping your artificial intelligence claims in check',
+          url: 'https://www.ftc.gov/business-guidance/blog/2023/02/keep-your-ai-claims-check',
+          publisher: 'Federal Trade Commission',
+        },
       },
       {
         id: 'personalization-and-recommendation-engines',
@@ -134,6 +140,12 @@ export const ARTICLES_PART_2: Article[] = [
           contextPrefix: 'Examine how synthetic falsehoods affect public trust in our research guide on',
           anchorText: 'misinformation and brand reputation crisis defense',
           slug: 'fake-news-misinformation-brand-reputation',
+        },
+        outboundLink: {
+          contextPrefix: 'Consult the federal standards for AI governance and validity in the',
+          anchorText: 'NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0)',
+          url: 'https://www.nist.gov/itl/ai-risk-management-framework',
+          publisher: 'National Institute of Standards and Technology',
         },
       },
       {
@@ -228,6 +240,12 @@ export const ARTICLES_PART_2: Article[] = [
           'Three Pinned Posts: Pin (1) a founder or brand story introduction, (2) your flagship product breakdown, and (3) verified customer testimonials.',
           'Story Highlights: Organize 4 to 5 clean Highlights covering FAQs, Pricing, Reviews, and Behind the Scenes.',
         ],
+        outboundLink: {
+          contextPrefix: 'Follow official recommendations for business account configuration in the',
+          anchorText: 'Instagram for Business getting started and profile optimization guide',
+          url: 'https://business.instagram.com/getting-started',
+          publisher: 'Instagram Business',
+        },
       },
       {
         id: 'reels-stories-carousels',
@@ -314,6 +332,12 @@ export const ARTICLES_PART_2: Article[] = [
           'Small businesses do not need five-figure celebrity budgets to run effective creator campaigns. Partnering with local micro-creators, campus club leaders, or neighboring businesses through co-hosted events, product gifting, and shared Instagram Collab posts introduces your shop to warm local audiences.',
           'Whenever you provide free products, discounts, or payment to a creator in exchange for a post, require them to use Instagram’s built-in "Paid partnership" label and a clear "#ad" disclosure in compliance with FTC endorsement guidelines.',
         ],
+        outboundLink: {
+          contextPrefix: 'Ensure compliance with sponsored content policies by reviewing the',
+          anchorText: 'Instagram Help Center branded content policies and partnership labels',
+          url: 'https://help.instagram.com/116947042301556',
+          publisher: 'Instagram Help Center',
+        },
       },
     ],
     keyTakeaways: [
@@ -386,6 +410,12 @@ export const ARTICLES_PART_2: Article[] = [
           'Short-form vertical videos hold attention better than static posts because they occupy 100% of the mobile screen and engage sight, hearing, and reading simultaneously. Watching a 20-second demonstration of a product in motion builds faster comprehension and buyer confidence than reading a block of text.',
           'People hold their smartphones vertically more than 90% of the time. Full-screen 9:16 video eliminates competing sidebar distractions, while spoken voice tone, facial expressions, and on-screen subtitles reinforce the message even if the viewer is in a noisy environment.',
         ],
+        outboundLink: {
+          contextPrefix: 'Explore empirical data on mobile video consumption in the',
+          anchorText: 'Pew Research Center report on mobile and social media adoption',
+          url: 'https://www.pewresearch.org/internet/',
+          publisher: 'Pew Research Center',
+        },
       },
       {
         id: 'tiktok-reels-shorts-comparison',
@@ -407,6 +437,12 @@ export const ARTICLES_PART_2: Article[] = [
           contextPrefix: 'Understand how recommendation pipelines rank these clips in our guide on',
           anchorText: 'how social media algorithms work across feeds and video',
           slug: 'how-social-media-algorithms-work',
+        },
+        outboundLink: {
+          contextPrefix: 'Review official guidelines for creating high-performing vertical clips in the',
+          anchorText: 'YouTube Shorts official creator guide and optimization best practices',
+          url: 'https://support.google.com/youtube/answer/10059070',
+          publisher: 'YouTube Official Help',
         },
       },
       {

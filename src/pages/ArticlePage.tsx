@@ -118,6 +118,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
               <a
                 href="/"
                 onClick={(e) => handleInternalLink(e, '/')}
+                aria-label="Digital Pulse Homepage"
                 className="hover:text-neutral-900 dark:hover:text-white transition-colors"
               >
                 Home
@@ -126,6 +127,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
               <a
                 href="/blog"
                 onClick={(e) => handleInternalLink(e, '/blog')}
+                aria-label="Digital Pulse Blog Archive"
                 className="hover:text-neutral-900 dark:hover:text-white transition-colors"
               >
                 Blog
@@ -134,6 +136,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
               <a
                 href="/blog"
                 onClick={handleCategoryClick}
+                aria-label={`Browse all articles in the ${article.category} category desk`}
                 className="font-semibold text-blue-700 dark:text-blue-400 hover:underline"
               >
                 {article.category}
@@ -143,10 +146,11 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
             <a
               href="/blog"
               onClick={(e) => handleInternalLink(e, '/blog')}
+              aria-label="Return to all 10 digital marketing articles in the blog archive"
               className="inline-flex items-center gap-1.5 font-medium text-neutral-600 dark:text-slate-300 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
             >
               <ArrowLeft className="w-3.5 h-3.5" aria-hidden="true" />
-              <span>All Articles</span>
+              <span>All 10 Articles</span>
             </a>
           </div>
 
@@ -357,9 +361,10 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                 <a
                   href="/about"
                   onClick={(e) => handleInternalLink(e, '/about')}
+                  aria-label="Read Digital Pulse editorial standards, authorship policy, and fact-checking principles"
                   className="text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline"
                 >
-                  Read our editorial standards →
+                  Read Digital Pulse editorial standards and fact-checking policy →
                 </a>
               </div>
             )}
@@ -566,6 +571,9 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                   {/* Contextual Internal Link */}
                   {section.internalLink && (
                     <div className="p-4 rounded-lg bg-blue-50/70 dark:bg-blue-950/30 border border-blue-200/70 dark:border-blue-900/50 text-sm text-neutral-800 dark:text-slate-200">
+                      <span className="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400 block mb-1">
+                        Related Digital Pulse Guide:
+                      </span>
                       <span>{section.internalLink.contextPrefix} </span>
                       <a
                         href={`/blog/${section.internalLink.slug}`}
@@ -577,6 +585,30 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                         {section.internalLink.anchorText}
                       </a>
                       <span>.</span>
+                    </div>
+                  )}
+
+                  {/* Contextual Outbound Link */}
+                  {section.outboundLink && (
+                    <div className="p-4 rounded-lg bg-neutral-100/80 dark:bg-slate-900/60 border border-neutral-200/90 dark:border-slate-800/90 text-sm text-neutral-800 dark:text-slate-200">
+                      <span className="text-xs font-bold uppercase tracking-wider text-neutral-600 dark:text-slate-400 block mb-1">
+                        Official Primary Citation:
+                      </span>
+                      <span>{section.outboundLink.contextPrefix} </span>
+                      <a
+                        href={section.outboundLink.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Official documentation: ${section.outboundLink.anchorText} (${section.outboundLink.publisher}) opens in a new tab`}
+                        className="inline-flex items-center gap-1 font-semibold text-blue-700 dark:text-blue-400 underline underline-offset-4 hover:text-blue-900 dark:hover:text-blue-300"
+                      >
+                        <span>{section.outboundLink.anchorText}</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                      </a>
+                      <span className="text-neutral-500 dark:text-slate-400">
+                        {' '}
+                        — {section.outboundLink.publisher}.
+                      </span>
                     </div>
                   )}
                 </section>
@@ -777,6 +809,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
             <a
               href="/blog"
               onClick={(e) => handleInternalLink(e, '/blog')}
+              aria-label="Browse all 10 digital marketing articles and SEO tutorials in the archive"
               className="text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline"
             >
               Browse all 10 articles in the Blog Archive

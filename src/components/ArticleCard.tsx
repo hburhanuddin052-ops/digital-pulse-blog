@@ -75,10 +75,12 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({ article, onNavigate })
         <a
           href={articlePath}
           onClick={handleCardClick}
-          aria-label={`Read Article: ${article.title}`}
+          aria-label={`Read full article: ${article.title}`}
           className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-blue-200/80 dark:border-blue-800/70 group-hover:bg-blue-700 group-hover:text-white group-hover:border-blue-700 transition-colors whitespace-nowrap shrink-0"
         >
+          <span className="sr-only">Read full article: </span>
           <span>Read Article</span>
+          <span className="sr-only"> — {article.title}</span>
           <ArrowRight
             className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-0.5"
             aria-hidden="true"
