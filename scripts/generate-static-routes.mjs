@@ -129,18 +129,18 @@ const ROUTES = [
   {
     routePath: '/blog/digital-marketing-trends-2026',
     type: 'article',
-    title: '10 Digital Marketing Trends 2026: Full Strategy Guide',
+    title: '10 Digital Marketing Trends 2026: Future of Digital Marketing',
     h1: '10 Digital Marketing Trends 2026 Businesses Should Watch',
     description:
-      'Discover the top 10 digital marketing trends 2026 businesses need to watch, including first-party data strategy, social commerce growth, AI workflows, and SEO.',
-    keywords: 'digital marketing trends 2026, first-party data strategy, social commerce growth',
+      'Explore the future of digital marketing and top digital marketing trends 2026 for small business, including first-party data, video search, and AI workflows.',
+    keywords: 'digital marketing trends 2026, future of digital marketing, digital marketing trends for small business',
     publishedAt: '2026-09-24',
     author: 'Maya Lin',
     category: 'Digital Marketing',
     image: '/images/photos/digital-marketing-trends-2026.jpg',
     imageAlt: 'Laptop on a wooden desk displaying website traffic charts and campaign analytics',
     intro:
-      'Evaluating the most effective digital marketing trends 2026 has to offer starts with recognizing a fundamental shift: third-party tracking cookies and generic blog posts no longer guarantee customer acquisition.',
+      'Evaluating the future of digital marketing and the most effective digital marketing trends 2026 has to offer starts with recognizing a fundamental shift: third-party tracking cookies and generic blog posts no longer guarantee customer acquisition.',
     headings: [
       'How Do AI Tools Support Digital Marketing Workflows Without Replacing Humans?',
       'Why Is Short-Form Video Still the Fastest Organic Discovery Channel?',
@@ -166,11 +166,11 @@ const ROUTES = [
   {
     routePath: '/blog/how-social-media-algorithms-work',
     type: 'article',
-    title: 'How Social Media Algorithms Work & Rank Your Content',
+    title: 'Social Media Algorithms: Ranking Factors & Organic Reach',
     h1: 'How Social Media Algorithms Work: How Feeds Rank Content',
     description:
-      'Learn how social media algorithms work across Instagram, TikTok, and YouTube, including how feed recommendation systems score video watch time signals.',
-    keywords: 'how social media algorithms work, feed recommendation systems, video watch time signals',
+      'Learn how social media algorithms work, discover core social media algorithm ranking factors, and find out how to increase organic social media reach in 2026.',
+    keywords: 'social media algorithms, social media algorithm ranking factors, how to increase organic social media reach',
     publishedAt: '2026-09-19',
     author: 'Priya Patel',
     category: 'Social Media',
@@ -181,10 +181,10 @@ const ROUTES = [
     headings: [
       'How Do Feed Recommendation Systems Filter Billions of Social Posts?',
       'What Is the Difference Between Follower Feeds and Discovery Feeds?',
-      'Which Engagement and Video Watch Time Signals Matter Most?',
+      'Which Social Media Algorithm Ranking Factors Matter Most?',
       'How Does Your Personal Browsing Behavior Shape Your Feed?',
       'Why Does Content Go Viral on Social Media?',
-      'Practical Checklist for Improving Organic Social Reach',
+      'How to Increase Organic Social Media Reach Across Feeds',
     ],
     internalLinks: [
       { href: '/blog/why-short-form-video-is-so-powerful', text: 'short-form video marketing and vertical video retention' },
@@ -202,8 +202,8 @@ const ROUTES = [
     title: 'SEO for Beginners: How Google Ranks Websites Step by Step',
     h1: 'SEO for Beginners: How Google Ranks Websites Step by Step',
     description:
-      'Master SEO for beginners with this step-by-step guide explaining how Google ranks websites through crawling, indexing, search intent optimization, and links.',
-    keywords: 'SEO for beginners, how Google ranks websites, search intent optimization',
+      'Master SEO for beginners with this step-by-step guide explaining how Google ranks websites, on-page SEO for beginners, search intent, and indexing essentials.',
+    keywords: 'SEO for beginners, how Google ranks websites, on-page SEO for beginners',
     publishedAt: '2026-09-14',
     author: 'Lucas Vance',
     category: 'SEO & Search',
@@ -214,7 +214,7 @@ const ROUTES = [
     headings: [
       'How Does Google Search Crawl, Index, and Rank Websites?',
       'What Is Search Intent Optimization and Why Does It Matter?',
-      'Which On-Page SEO Elements Should Every Webpage Include?',
+      'On-Page SEO for Beginners: Which Elements Should Every Webpage Include?',
       'What Is Technical SEO and How Does It Help Search Crawlers?',
       'How Do Backlinks and Helpful Content Influence Google Rankings?',
       'Setting Up Google Search Console to Monitor SEO Performance',

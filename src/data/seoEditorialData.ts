@@ -13,8 +13,9 @@ export interface PageEditorialSEO {
   pageName: string;
   primaryKeyword: string;
   secondaryKeywords: [string, string];
-  searchIntent: SearchIntent;
+  searchIntent: SearchIntent | string;
   mainQuestionAnswered: string;
+  searchVolume?: string;
   seoTitle: string;
   metaDescription: string;
   h1: string;
@@ -37,9 +38,10 @@ export const EDITORIAL_SEO_REGISTRY: Record<string, PageEditorialSEO> = {
     pageName: 'Homepage',
     primaryKeyword: 'digital marketing blog',
     secondaryKeywords: ['social media strategy', 'online business insights'],
-    searchIntent: 'Informational',
+    searchIntent: 'Visit / Know',
+    searchVolume: '6.2k',
     mainQuestionAnswered:
-      'Where can students, young founders, and marketers find research-backed digital marketing strategies and beginner SEO guides?',
+      'Where can students and small business owners find practical, research-backed digital marketing and SEO guides?',
     seoTitle: 'Digital Pulse: Digital Marketing Blog & SEO Strategy Hub',
     metaDescription:
       'Digital Pulse is an independent digital marketing blog publishing research-backed social media strategy, beginner SEO guides, and online business insights.',
@@ -140,33 +142,41 @@ export const EDITORIAL_SEO_REGISTRY: Record<string, PageEditorialSEO> = {
     canonicalUrl: `${CANONICAL_ORIGIN}/blog/digital-marketing-trends-2026`,
     pageName: 'Article 1 — Digital Marketing Trends 2026',
     primaryKeyword: 'digital marketing trends 2026',
-    secondaryKeywords: ['first-party data strategy', 'social commerce growth'],
-    searchIntent: 'Informational',
+    secondaryKeywords: [
+      'future of digital marketing',
+      'digital marketing trends for small business',
+    ],
+    searchIntent: 'Know',
+    searchVolume: '7.7k',
     mainQuestionAnswered:
-      'Which digital marketing trends should businesses and marketers prioritize in 2026 to grow sustainable reach?',
-    seoTitle: '10 Digital Marketing Trends 2026: Full Strategy Guide',
+      'Which 10 digital marketing trends should businesses prioritize in 2026 to grow without relying on third-party cookies?',
+    seoTitle: '10 Digital Marketing Trends 2026: Future of Digital Marketing',
     metaDescription:
-      'Discover the top 10 digital marketing trends 2026 businesses need to watch, including first-party data strategy, social commerce growth, AI workflows, and SEO.',
+      'Explore the future of digital marketing and top digital marketing trends 2026 for small business, including first-party data, video search, and AI workflows.',
     h1: '10 Digital Marketing Trends 2026 Businesses Should Watch',
-    titleCharCount: 53,
-    descriptionCharCount: 160,
+    titleCharCount: 61,
+    descriptionCharCount: 159,
   },
   '/blog/how-social-media-algorithms-work': {
     id: 'article-2',
     pathname: '/blog/how-social-media-algorithms-work',
     canonicalUrl: `${CANONICAL_ORIGIN}/blog/how-social-media-algorithms-work`,
     pageName: 'Article 2 — How Social Media Algorithms Work',
-    primaryKeyword: 'how social media algorithms work',
-    secondaryKeywords: ['feed recommendation systems', 'video watch time signals'],
-    searchIntent: 'Informational',
+    primaryKeyword: 'social media algorithms',
+    secondaryKeywords: [
+      'social media algorithm ranking factors',
+      'how to increase organic social media reach',
+    ],
+    searchIntent: 'Know',
+    searchVolume: '5.6k',
     mainQuestionAnswered:
-      'How do social media recommendation algorithms rank posts, videos, and feeds across Instagram, TikTok, and YouTube in 2026?',
-    seoTitle: 'How Social Media Algorithms Work: 2026 Ranking Guide',
+      'How do social media algorithms filter, score, and rank posts across Instagram, and YouTube feeds?',
+    seoTitle: 'Social Media Algorithms: Ranking Factors & Organic Reach',
     metaDescription:
-      'Learn how social media algorithms work across Instagram, TikTok, and YouTube, including how feed recommendation systems score video watch time signals.',
+      'Learn how social media algorithms work, discover core social media algorithm ranking factors, and find out how to increase organic social media reach in 2026.',
     h1: 'How Social Media Algorithms Work: How Feeds Rank Content',
-    titleCharCount: 53,
-    descriptionCharCount: 153,
+    titleCharCount: 56,
+    descriptionCharCount: 160,
   },
   '/blog/seo-for-beginners-how-google-ranks-websites': {
     id: 'article-3',
@@ -174,16 +184,16 @@ export const EDITORIAL_SEO_REGISTRY: Record<string, PageEditorialSEO> = {
     canonicalUrl: `${CANONICAL_ORIGIN}/blog/seo-for-beginners-how-google-ranks-websites`,
     pageName: 'Article 3 — SEO for Beginners',
     primaryKeyword: 'SEO for beginners',
-    secondaryKeywords: ['how Google ranks websites', 'search intent optimization'],
-    searchIntent: 'Informational',
-    mainQuestionAnswered:
-      'How does Google crawl, index, and rank websites, and how do beginners start optimizing content for organic search?',
-    seoTitle: 'SEO for Beginners: How Google Ranks Websites in 2026',
+    secondaryKeywords: ['how Google ranks websites', 'on-page SEO for beginners'],
+    searchIntent: 'Know / Do',
+    searchVolume: '9.5k',
+    mainQuestionAnswered: 'how can I start SEO as a beginner?',
+    seoTitle: 'SEO for Beginners: How Google Ranks Websites Step by Step',
     metaDescription:
-      'Master SEO for beginners with this step-by-step guide explaining how Google ranks websites through crawling, indexing, search intent optimization, and links.',
+      'Master SEO for beginners with this step-by-step guide explaining how Google ranks websites, on-page SEO for beginners, search intent, and indexing essentials.',
     h1: 'SEO for Beginners: How Google Ranks Websites Step by Step',
-    titleCharCount: 51,
-    descriptionCharCount: 159,
+    titleCharCount: 58,
+    descriptionCharCount: 160,
   },
   '/blog/how-ai-is-changing-digital-marketing': {
     id: 'article-4',

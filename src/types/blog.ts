@@ -115,4 +115,7 @@ export interface Article {
   faqs?: ArticleFAQ[];
   sources: ArticleSource[];
   relatedSlugs: string[];
+  searchIntent?: string;
+  searchVolume?: string;
+  mainQuestionAnswered?: string;
 }

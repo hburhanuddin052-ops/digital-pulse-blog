@@ -374,7 +374,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
               <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 mb-2">
                 Editorial SEO Focus
               </p>
-              <div className="space-y-2.5 text-xs">
+              <div className="space-y-3 text-xs">
                 <div>
                   <span className="font-semibold text-neutral-900 dark:text-white block mb-1">
                     Primary Keyword:
@@ -398,6 +398,36 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                     ))}
                   </div>
                 </div>
+                {article.searchIntent && (
+                  <div>
+                    <span className="font-semibold text-neutral-900 dark:text-white block mb-0.5">
+                      Search Intent:
+                    </span>
+                    <span className="inline-block text-[11px] font-medium text-neutral-700 dark:text-slate-300 bg-neutral-100 dark:bg-slate-800/80 px-2 py-0.5 rounded">
+                      {article.searchIntent}
+                    </span>
+                  </div>
+                )}
+                {article.searchVolume && (
+                  <div>
+                    <span className="font-semibold text-neutral-900 dark:text-white block mb-0.5">
+                      Search Volume:
+                    </span>
+                    <span className="inline-block text-[11px] font-bold text-emerald-700 dark:text-emerald-400">
+                      {article.searchVolume} searches / mo
+                    </span>
+                  </div>
+                )}
+                {article.mainQuestionAnswered && (
+                  <div>
+                    <span className="font-semibold text-neutral-900 dark:text-white block mb-0.5">
+                      Main Question Answered:
+                    </span>
+                    <p className="text-neutral-600 dark:text-slate-400 text-[11px] leading-relaxed italic border-l-2 border-blue-600/70 pl-2 mt-1">
+                      "{article.mainQuestionAnswered}"
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </aside>
