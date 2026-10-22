@@ -818,7 +818,81 @@ const homeFallbackHtml = baseHtml.replace(
 );
 fs.writeFileSync(templatePath, homeFallbackHtml, 'utf-8');
 
-// 4. Create dist/404.html SPA fallback
-fs.writeFileSync(path.join(distDir, '404.html'), baseHtml, 'utf-8');
+// 4. Create dist/404.html with noindex, custom 404 title, and branded Oops message
+let notFoundHtml = baseHtml;
+notFoundHtml = notFoundHtml.replace(/<title>[\s\S]*?<\/title>/, '<title>404: Page Not Found | Digital Pulse</title>');
+notFoundHtml = notFoundHtml.replace(
+  /<meta\s+name="description"\s+content="[^"]*"\s*\/>/,
+  '<meta name="description" content="Oops! This page could not be found. Return to the Digital Pulse homepage or explore our top digital marketing guides." />'
+);
+notFoundHtml = notFoundHtml.replace(
+  /<meta\s+name="robots"\s+content="[^"]*"\s*\/>/,
+  '<meta name="robots" content="noindex, nofollow" />'
+);
+notFoundHtml = notFoundHtml.replace(/<link\s+rel="canonical"[^>]*\/>/, '');
 
-console.log(`Generated ${ROUTES.length} static route HTML bundles (5 core pages + 10 blog routes) + 404.html in dist/`);
+const static404Body = `<div id="root">
+  <div class="min-h-screen flex flex-col bg-[#FAFAFA] dark:bg-[#0B0F17] text-[#111827] dark:text-[#F9FAFB]">
+    <header class="border-b border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#0E1420] py-4 px-6">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <a href="/" class="font-bold text-lg text-neutral-900 dark:text-white flex items-center gap-2">
+          <span class="w-7 h-7 rounded bg-blue-700 text-white flex items-center justify-center font-bold text-sm">DP</span>
+          Digital Pulse
+        </a>
+        <a href="/blog" class="text-sm font-medium text-blue-700 dark:text-blue-400 hover:underline">All Articles</a>
+      </div>
+    </header>
+    <main class="flex-1 max-w-5xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-red-100 text-red-700 mb-6">
+          <span>Error 404</span>
+          <span>•</span>
+          <span>Page Not Found</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mb-4">
+          Oops! This page could not be found.
+        </h1>
+        <p class="text-base sm:text-lg text-neutral-600 dark:text-slate-300 mb-8 leading-relaxed">
+          The URL you requested does not exist on Digital Pulse. It may have been moved, mistyped,
+          or archived. Use the options below to return to our homepage or explore our most popular marketing guides.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="/" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-700 text-white font-medium text-sm hover:bg-blue-800 transition-colors">
+            Return to Homepage
+          </a>
+          <a href="/blog" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-neutral-300 dark:border-slate-700 bg-white dark:bg-[#111827] text-neutral-800 dark:text-slate-200 font-medium text-sm hover:bg-neutral-50 transition-colors">
+            Browse All 10 Articles
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-neutral-200 dark:border-slate-800 pt-12">
+        <h2 class="text-xl font-bold text-neutral-950 dark:text-white mb-2">Popular Marketing &amp; SEO Articles</h2>
+        <p class="text-sm text-neutral-500 dark:text-slate-400 mb-8">Start with these research-backed guides recommended by our editorial team:</p>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 list-none p-0">
+          <li class="p-6 rounded-xl border border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#111827]">
+            <a href="/blog/digital-marketing-trends-2026" class="font-bold text-lg text-blue-700 dark:text-blue-400 hover:underline">10 Digital Marketing Trends 2026 Businesses Should Watch</a>
+            <p class="text-sm text-neutral-600 dark:text-slate-300 mt-2">Explore the future of digital marketing, first-party data strategies, and AI workflow automation.</p>
+          </li>
+          <li class="p-6 rounded-xl border border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#111827]">
+            <a href="/blog/how-social-media-algorithms-work" class="font-bold text-blue-700 dark:text-blue-400 hover:underline">How Social Media Algorithms Work: How Feeds Rank Content</a>
+            <p class="text-sm text-neutral-600 dark:text-slate-300 mt-2">Learn core social media algorithm ranking factors and how to increase organic social reach.</p>
+          </li>
+          <li class="p-6 rounded-xl border border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#111827]">
+            <a href="/blog/seo-for-beginners-how-google-ranks-websites" class="font-bold text-blue-700 dark:text-blue-400 hover:underline">SEO for Beginners: How Google Ranks Websites Step by Step</a>
+            <p class="text-sm text-neutral-600 dark:text-slate-300 mt-2">Master SEO for beginners with this step-by-step guide explaining crawling, indexing, and ranking.</p>
+          </li>
+          <li class="p-6 rounded-xl border border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#111827]">
+            <a href="/blog/how-ai-is-changing-digital-marketing" class="font-bold text-blue-700 dark:text-blue-400 hover:underline">AI in Digital Marketing: How Automation Changes Workflows</a>
+            <p class="text-sm text-neutral-600 dark:text-slate-300 mt-2">Explore how AI in digital marketing improves marketing workflow automation while maintaining oversight.</p>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </div>
+</div>`;
+
+notFoundHtml = notFoundHtml.replace(/<div id="root"><\/div>/, static404Body);
+fs.writeFileSync(path.join(distDir, '404.html'), notFoundHtml, 'utf-8');
+
+console.log(`Generated ${ROUTES.length} static route HTML bundles (5 core pages + 10 blog routes) + branded 404.html in dist/`);
+

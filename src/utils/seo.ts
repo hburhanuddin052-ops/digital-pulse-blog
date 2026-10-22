@@ -12,6 +12,7 @@ export interface PageSEOConfig {
   image?: string;
   imageAlt?: string;
   article?: Article;
+  noindex?: boolean;
 }
 
 /**
@@ -166,12 +167,17 @@ export function updatePageSEO(config: PageSEOConfig) {
   // 2. Standard Meta Tags (Keywords are stored as editorial SEO data; keywords meta tag is omitted per search engine standards)
   setMetaTag('name', 'description', config.description);
   setMetaTag('name', 'author', article ? (AUTHORS[article.authorId]?.name || 'Digital Pulse Editorial Team') : 'Digital Pulse Editorial Team');
-  setMetaTag('name', 'robots', 'index, follow');
+  setMetaTag('name', 'robots', config.noindex ? 'noindex, nofollow' : 'index, follow');
   const existingKeywordsMeta = document.head.querySelectorAll('meta[name="keywords"]');
   existingKeywordsMeta.forEach((el) => el.parentNode?.removeChild(el));
 
-  // 3. Single Authoritative Canonical Link (strictly prevents canonical overlap across routes)
-  setCanonicalLinkTag(fullCanonicalUrl);
+  // 3. Single Authoritative Canonical Link (strictly prevents canonical overlap across routes; omitted on 404 pages)
+  if (config.noindex) {
+    const existingCanonical = document.querySelectorAll('link[rel="canonical"]');
+    existingCanonical.forEach((el) => el.parentNode?.removeChild(el));
+  } else {
+    setCanonicalLinkTag(fullCanonicalUrl);
+  }
 
   // 4. Open Graph Metadata with Unique Identifiers
   setMetaTag('property', 'og:site_name', 'Digital Pulse');

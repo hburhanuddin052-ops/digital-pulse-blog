@@ -17,6 +17,7 @@ import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsPage } from './pages/TermsPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
 function normalizePath(rawPath: string): string {
   return normalizeCanonicalPathname(rawPath);
@@ -98,11 +99,12 @@ export default function App() {
       }
 
       updatePageSEO({
-        title: 'Article Not Found | Digital Pulse Blog',
+        title: '404: Page Not Found | Digital Pulse Blog',
         description:
-          'The requested Digital Pulse article could not be found. Explore all 10 complete digital marketing, SEO, and social media guides in our blog archive.',
+          'Oops! This page could not be found. Explore our 10 complete digital marketing, SEO, and social media guides or return to the homepage.',
         pathname: currentPath,
         type: 'website',
+        noindex: true,
       });
       return;
     }
@@ -116,7 +118,7 @@ export default function App() {
         pathname: editorial.pathname,
         type: 'website',
       });
-    } else {
+    } else if (currentPath === '/') {
       updatePageSEO({
         title: 'Digital Pulse: Digital Marketing Blog & SEO Strategy Hub',
         description:
@@ -128,6 +130,15 @@ export default function App() {
         ],
         pathname: '/',
         type: 'website',
+      });
+    } else {
+      updatePageSEO({
+        title: '404: Page Not Found | Digital Pulse Blog',
+        description:
+          'Oops! This page could not be found. Explore our 10 complete digital marketing, SEO, and social media guides or return to the homepage.',
+        pathname: currentPath,
+        type: 'website',
+        noindex: true,
       });
     }
   }, [currentPath]);
@@ -168,33 +179,8 @@ export default function App() {
         );
       }
 
-      // Clean fallback if an unknown /blog/ slug is visited
-      return (
-        <div className="max-w-4xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-          <div className="p-8 rounded-xl border border-neutral-200 dark:border-slate-800 bg-white dark:bg-[#111827] space-y-6">
-            <h1 className="text-2xl font-bold text-neutral-950 dark:text-white">
-              Article Not Found
-            </h1>
-            <p className="text-sm text-neutral-600 dark:text-slate-300">
-              The article URL you requested could not be found. Choose one of our 10 complete
-              articles below:
-            </p>
-            <ul className="space-y-2.5 text-sm">
-              {ALL_ARTICLES.map((art) => (
-                <li key={art.id}>
-                  <button
-                    type="button"
-                    onClick={() => navigate(`/blog/${art.slug}`)}
-                    className="text-left font-medium text-blue-700 dark:text-blue-400 hover:underline cursor-pointer"
-                  >
-                    {art.id}. {art.title}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      );
+      // Branded 404 page if an unknown /blog/ slug is visited
+      return <NotFoundPage onNavigate={navigate} />;
     }
 
     if (currentPath === '/about') {
@@ -213,12 +199,8 @@ export default function App() {
       return <TermsPage />;
     }
 
-    return (
-      <HomePage
-        onNavigate={navigate}
-        onSelectCategory={(cat) => setSelectedCategory(cat)}
-      />
-    );
+    // Default fallback for any undefined route: branded 404 page
+    return <NotFoundPage onNavigate={navigate} />;
   };
 
   return (
