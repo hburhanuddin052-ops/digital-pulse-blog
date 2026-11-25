@@ -5,7 +5,7 @@ export const ARTICLES_PART_3: Article[] = [
     id: 7,
     slug: 'common-digital-marketing-mistakes-small-businesses',
     title: '10 Small Business Digital Marketing Mistakes and How to Fix Them',
-    seoTitle: '10 Small Business Digital Marketing Mistakes to Avoid',
+    seoTitle: 'Small Business Digital Marketing Mistakes: 10 Fixes',
     metaDescription:
       'Avoid the 10 most costly small business digital marketing mistakes, from buying fake followers to neglecting website conversion optimization and local search.',
     primaryKeyword: 'small business digital marketing mistakes',
@@ -191,7 +191,7 @@ export const ARTICLES_PART_3: Article[] = [
     id: 8,
     slug: 'how-online-reviews-influence-customer-decisions',
     title: 'How Online Reviews Influence Customers and Buying Decisions',
-    seoTitle: 'How Online Reviews Influence Customers & Build Trust',
+    seoTitle: 'Online Reviews & Social Proof: How Ratings Drive Sales',
     metaDescription:
       'Understand how online reviews influence customers through customer social proof, star rating credibility, FTC fake review rules, and responding to criticism.',
     primaryKeyword: 'how online reviews influence customers',

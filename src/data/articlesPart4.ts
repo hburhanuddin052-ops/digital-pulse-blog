@@ -5,7 +5,7 @@ export const ARTICLES_PART_4: Article[] = [
     id: 9,
     slug: 'how-to-build-a-personal-brand-from-scratch',
     title: 'How to Build a Personal Brand From Scratch',
-    seoTitle: 'How to Build a Personal Brand From Scratch: Step-by-Step',
+    seoTitle: 'Personal Branding Guide: Build a Personal Brand Today',
     metaDescription:
       'Learn how to build a personal brand from scratch with this practical guide covering personal branding for students, content pillars, and portfolio strategy.',
     primaryKeyword: 'how to build a personal brand',
@@ -190,7 +190,7 @@ export const ARTICLES_PART_4: Article[] = [
     id: 10,
     slug: 'fake-news-misinformation-brand-reputation',
     title: 'Misinformation and Brand Reputation: How Fake News Damages Trust',
-    seoTitle: 'Misinformation and Brand Reputation: Crisis Defense Guide',
+    seoTitle: 'Brand Reputation & Misinformation: Crisis Defense Guide',
     metaDescription:
       'Examine how misinformation and brand reputation intersect online, the difference between disinformation vs misinformation, and how to build a crisis plan.',
     primaryKeyword: 'misinformation and brand reputation',

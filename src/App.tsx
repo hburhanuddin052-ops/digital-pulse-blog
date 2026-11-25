@@ -23,22 +23,39 @@ function normalizePath(rawPath: string): string {
   return normalizeCanonicalPathname(rawPath);
 }
 
-export default function App() {
-  const [currentPath, setCurrentPath] = useState<string>(() =>
-    typeof window !== 'undefined' ? normalizePath(window.location.pathname) : '/'
-  );
+export interface AppProps {
+  initialPath?: string;
+}
+
+export default function App({ initialPath }: AppProps = {}) {
+  const [currentPath, setCurrentPath] = useState<string>(() => {
+    if (initialPath) return normalizePath(initialPath);
+    return typeof window !== 'undefined' ? normalizePath(window.location.pathname) : '/';
+  });
   const [selectedCategory, setSelectedCategory] = useState<CategoryName | 'All'>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [darkMode, setDarkMode] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('digital_pulse_theme') === 'dark';
-    }
-    return false;
-  });
+  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [themeHydrated, setThemeHydrated] = useState<boolean>(false);
   const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
+
+  // Hydrate theme preference and ?q= search query safely after mount (prevents SSR hydration mismatch)
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('digital_pulse_theme');
+    if (savedTheme === 'dark') {
+      setDarkMode(true);
+    }
+    setThemeHydrated(true);
+
+    const params = new URLSearchParams(window.location.search);
+    const qParam = params.get('q');
+    if (qParam) {
+      setSearchQuery(qParam);
+    }
+  }, []);
 
   // Sync dark mode class on <html>
   useEffect(() => {
+    if (!themeHydrated) return;
     const root = document.documentElement;
     if (darkMode) {
       root.classList.add('dark');
@@ -47,12 +64,14 @@ export default function App() {
       root.classList.remove('dark');
       localStorage.setItem('digital_pulse_theme', 'light');
     }
-  }, [darkMode]);
+  }, [darkMode, themeHydrated]);
 
   // Listen to browser back/forward buttons
   useEffect(() => {
     const handlePopState = () => {
       setCurrentPath(normalizePath(window.location.pathname));
+      const params = new URLSearchParams(window.location.search);
+      setSearchQuery(params.get('q') || '');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
     window.addEventListener('popstate', handlePopState);
@@ -110,6 +129,8 @@ export default function App() {
     }
 
     const editorial = getEditorialSEOByPath(currentPath);
+    const shouldIncludeArticleList = currentPath === '/' || currentPath === '/blog';
+
     if (editorial) {
       updatePageSEO({
         title: editorial.seoTitle,
@@ -117,12 +138,13 @@ export default function App() {
         keywords: [editorial.primaryKeyword, ...editorial.secondaryKeywords],
         pathname: editorial.pathname,
         type: 'website',
+        listedArticles: shouldIncludeArticleList ? ALL_ARTICLES : undefined,
       });
     } else if (currentPath === '/') {
       updatePageSEO({
-        title: 'Digital Pulse: Digital Marketing Blog & SEO Strategy Hub',
+        title: 'Digital Pulse: Digital Marketing, SEO & Social Media Blog',
         description:
-          'Digital Pulse is an independent digital marketing blog publishing research-backed social media strategy, beginner SEO guides, and online business insights.',
+          'Digital Pulse is an independent digital marketing blog covering SEO, social media marketing, AI tools, and online business strategy for founders and students.',
         keywords: [
           'digital marketing blog',
           'social media strategy',
@@ -130,6 +152,7 @@ export default function App() {
         ],
         pathname: '/',
         type: 'website',
+        listedArticles: ALL_ARTICLES,
       });
     } else {
       updatePageSEO({

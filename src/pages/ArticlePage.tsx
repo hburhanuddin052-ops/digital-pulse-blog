@@ -168,7 +168,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
           </div>
 
           {/* Main H1 Headline */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-950 dark:text-white leading-[1.14] mb-5">
+          <h1 className="article-headline text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-950 dark:text-white leading-[1.14] mb-5">
             {article.title}
           </h1>
 
@@ -436,7 +436,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
           <div className="lg:col-span-8 order-1 lg:order-2">
             <div className="max-w-2xl space-y-10">
               {/* Article Introduction */}
-              <div className="space-y-5 text-base sm:text-[17px] text-neutral-800 dark:text-slate-200 leading-[1.8]">
+              <div className="article-intro space-y-5 text-base sm:text-[17px] text-neutral-800 dark:text-slate-200 leading-[1.8]">
                 {article.introduction.map((para, idx) => (
                   <p
                     key={idx}

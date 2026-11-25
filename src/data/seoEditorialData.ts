@@ -42,12 +42,12 @@ export const EDITORIAL_SEO_REGISTRY: Record<string, PageEditorialSEO> = {
     searchVolume: '6.2k',
     mainQuestionAnswered:
       'Where can students and small business owners find practical, research-backed digital marketing and SEO guides?',
-    seoTitle: 'Digital Pulse: Digital Marketing Blog & SEO Strategy Hub',
+    seoTitle: 'Digital Pulse: Digital Marketing, SEO & Social Media Blog',
     metaDescription:
-      'Digital Pulse is an independent digital marketing blog publishing research-backed social media strategy, beginner SEO guides, and online business insights.',
-    h1: 'An independent digital marketing blog for search, social media strategy, and online business.',
+      'Digital Pulse is an independent digital marketing blog covering SEO, social media marketing, AI tools, and online business strategy for founders and students.',
+    h1: 'Digital marketing, SEO, and social media strategy for modern online business.',
     titleCharCount: 57,
-    descriptionCharCount: 156,
+    descriptionCharCount: 158,
   },
   '/blog': {
     id: 'page-blog-archive',
@@ -59,11 +59,11 @@ export const EDITORIAL_SEO_REGISTRY: Record<string, PageEditorialSEO> = {
     searchIntent: 'Navigational',
     mainQuestionAnswered:
       'What tutorials, long-form articles, and practical guides does Digital Pulse publish across digital marketing, SEO, and social platforms?',
-    seoTitle: 'Digital Marketing Articles & SEO Guides | Digital Pulse',
+    seoTitle: 'Digital Marketing & SEO Articles Archive | Digital Pulse',
     metaDescription:
-      'Browse all 10 original digital marketing articles, step-by-step SEO tutorials, and social media guides written for students, founders, and small businesses.',
+      'Explore 10 in-depth digital marketing, SEO, social media algorithms, AI marketing, and personal branding guides written for founders, students, and marketers.',
     h1: 'All Digital Marketing Articles, SEO Tutorials & Social Media Guides',
-    titleCharCount: 55,
+    titleCharCount: 56,
     descriptionCharCount: 156,
   },
   '/about': {
@@ -150,11 +150,11 @@ export const EDITORIAL_SEO_REGISTRY: Record<string, PageEditorialSEO> = {
     searchVolume: '7.7k',
     mainQuestionAnswered:
       'Which 10 digital marketing trends should businesses prioritize in 2026 to grow without relying on third-party cookies?',
-    seoTitle: '10 Digital Marketing Trends 2026: Future of Digital Marketing',
+    seoTitle: 'Digital Marketing Trends 2026: Future of Digital Marketing',
     metaDescription:
       'Explore the future of digital marketing and top digital marketing trends 2026 for small business, including first-party data, video search, and AI workflows.',
     h1: '10 Digital Marketing Trends 2026 Businesses Should Watch',
-    titleCharCount: 61,
+    titleCharCount: 58,
     descriptionCharCount: 159,
   },
   '/blog/how-social-media-algorithms-work': {
@@ -205,11 +205,11 @@ export const EDITORIAL_SEO_REGISTRY: Record<string, PageEditorialSEO> = {
     searchIntent: 'Informational',
     mainQuestionAnswered:
       'How is artificial intelligence transforming digital marketing workflows, and where is human editorial oversight required?',
-    seoTitle: 'AI in Digital Marketing: Workflows, Benefits & Risks',
+    seoTitle: 'AI in Digital Marketing: Workflows, Benefits & Key Risks',
     metaDescription:
       'Explore how AI in digital marketing improves marketing workflow automation, ad targeting, and data analysis while still requiring human editorial oversight.',
     h1: 'AI in Digital Marketing: How Automation Changes Workflows',
-    titleCharCount: 53,
+    titleCharCount: 57,
     descriptionCharCount: 157,
   },
   '/blog/instagram-marketing-for-small-businesses': {
@@ -222,11 +222,11 @@ export const EDITORIAL_SEO_REGISTRY: Record<string, PageEditorialSEO> = {
     searchIntent: 'Informational / Commercial',
     mainQuestionAnswered:
       'How can small businesses optimize profiles, balance Reels vs. Carousels vs. Stories, and gain customers on Instagram?',
-    seoTitle: 'Instagram Marketing for Small Businesses: 2026 Guide',
+    seoTitle: 'Instagram Marketing for Small Businesses: Complete Guide',
     metaDescription:
       'A practical guide to Instagram marketing for small businesses covering bio optimization, Instagram Reels strategy, carousel engagement tips, UGC, and Insights.',
     h1: 'Instagram Marketing for Small Businesses: A Practical Guide',
-    titleCharCount: 53,
+    titleCharCount: 56,
     descriptionCharCount: 160,
   },
   '/blog/why-short-form-video-is-so-powerful': {
@@ -239,11 +239,11 @@ export const EDITORIAL_SEO_REGISTRY: Record<string, PageEditorialSEO> = {
     searchIntent: 'Informational',
     mainQuestionAnswered:
       'Why does short-form vertical video dominate organic social media discovery and viewer retention across platforms?',
-    seoTitle: 'Short-Form Video Marketing: Why Vertical Video Works',
+    seoTitle: 'Short-Form Video Marketing: Why Vertical Video Converts',
     metaDescription:
       'Learn why short-form video marketing dominates attention, how vertical video retention works on TikTok, Reels, and Shorts, and how to write strong video hooks.',
     h1: 'Short-Form Video Marketing: Why Vertical Video Is So Powerful',
-    titleCharCount: 53,
+    titleCharCount: 57,
     descriptionCharCount: 158,
   },
   '/blog/common-digital-marketing-mistakes-small-businesses': {
@@ -256,11 +256,11 @@ export const EDITORIAL_SEO_REGISTRY: Record<string, PageEditorialSEO> = {
     searchIntent: 'Informational',
     mainQuestionAnswered:
       'What are the 10 most common digital marketing mistakes small businesses make and how can founders fix them with direct action?',
-    seoTitle: '10 Small Business Digital Marketing Mistakes to Avoid',
+    seoTitle: 'Small Business Digital Marketing Mistakes: 10 Fixes',
     metaDescription:
       'Avoid the 10 most costly small business digital marketing mistakes, from buying fake followers to neglecting website conversion optimization and local search.',
     h1: '10 Small Business Digital Marketing Mistakes and How to Fix Them',
-    titleCharCount: 53,
+    titleCharCount: 52,
     descriptionCharCount: 158,
   },
   '/blog/how-online-reviews-influence-customer-decisions': {
@@ -273,11 +273,11 @@ export const EDITORIAL_SEO_REGISTRY: Record<string, PageEditorialSEO> = {
     searchIntent: 'Informational / Commercial',
     mainQuestionAnswered:
       'How do customer reviews, star ratings, and owner responses influence buying decisions and build trust online?',
-    seoTitle: 'How Online Reviews Influence Customers & Buying Decisions',
+    seoTitle: 'Online Reviews & Social Proof: How Ratings Drive Sales',
     metaDescription:
       'Understand how online reviews influence customers through customer social proof, star rating credibility, FTC fake review rules, and responding to criticism.',
     h1: 'How Online Reviews Influence Customers and Buying Decisions',
-    titleCharCount: 57,
+    titleCharCount: 54,
     descriptionCharCount: 158,
   },
   '/blog/how-to-build-a-personal-brand-from-scratch': {
@@ -290,11 +290,11 @@ export const EDITORIAL_SEO_REGISTRY: Record<string, PageEditorialSEO> = {
     searchIntent: 'Informational',
     mainQuestionAnswered:
       'How can college students, freelancers, and professionals build an authentic personal brand and portfolio from scratch?',
-    seoTitle: 'How to Build a Personal Brand From Scratch: Full Guide',
+    seoTitle: 'Personal Branding Guide: Build a Personal Brand Today',
     metaDescription:
       'Learn how to build a personal brand from scratch with this practical guide covering personal branding for students, content pillars, and portfolio strategy.',
     h1: 'How to Build a Personal Brand From Scratch',
-    titleCharCount: 55,
+    titleCharCount: 53,
     descriptionCharCount: 158,
   },
   '/blog/fake-news-misinformation-brand-reputation': {
@@ -307,11 +307,11 @@ export const EDITORIAL_SEO_REGISTRY: Record<string, PageEditorialSEO> = {
     searchIntent: 'Informational / Commercial',
     mainQuestionAnswered:
       'How can businesses protect their brand reputation from online misinformation, viral rumors, and deceptive synthetic media?',
-    seoTitle: 'Misinformation and Brand Reputation: Crisis Defense Guide',
+    seoTitle: 'Brand Reputation & Misinformation: Crisis Defense Guide',
     metaDescription:
       'Examine how misinformation and brand reputation intersect online, the difference between disinformation vs misinformation, and how to build a crisis plan.',
     h1: 'Misinformation and Brand Reputation: How Fake News Damages Trust',
-    titleCharCount: 57,
+    titleCharCount: 56,
     descriptionCharCount: 154,
   },
 };

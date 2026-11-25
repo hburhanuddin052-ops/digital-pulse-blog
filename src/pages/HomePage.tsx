@@ -50,12 +50,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectCategory
               Independent Digital Marketing Blog · 2026 Edition
             </p>
             <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 dark:text-white leading-[1.12] mb-4">
-              An independent digital marketing blog for search, social media strategy, and online business.
+              Digital marketing, SEO, and social media strategy for modern online business.
             </h1>
             <p className="text-base sm:text-lg text-neutral-600 dark:text-slate-300 leading-relaxed">
-              Digital Pulse is a research-backed digital marketing blog delivering actionable social
-              media strategy, beginner SEO tutorials, and online business insights for college
-              students, young entrepreneurs, digital marketers, and small business owners.
+              Digital Pulse is a research-backed digital marketing blog covering SEO, social media
+              marketing, AI workflows, and online business growth for college students, young
+              entrepreneurs, digital marketers, and small business owners.
             </p>
           </div>
 

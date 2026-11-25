@@ -9,7 +9,7 @@ export const ARTICLES_PART_1: Article[] = [
     id: 1,
     slug: 'digital-marketing-trends-2026',
     title: '10 Digital Marketing Trends 2026 Businesses Should Watch',
-    seoTitle: '10 Digital Marketing Trends 2026: Future of Digital Marketing',
+    seoTitle: 'Digital Marketing Trends 2026: Future of Digital Marketing',
     metaDescription:
       'Explore the future of digital marketing and top digital marketing trends 2026 for small business, including first-party data, video search, and AI workflows.',
     primaryKeyword: 'digital marketing trends 2026',

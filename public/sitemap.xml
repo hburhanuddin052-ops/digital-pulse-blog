@@ -4,13 +4,13 @@
   <!-- Core Website Pages -->
   <url>
     <loc>https://digital-pulse-blog.vercel.app/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://digital-pulse-blog.vercel.app/blog</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -39,8 +39,7 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- All 10 Digital Marketing & SEO Blog Articles -->
-  <!-- 1. Digital Marketing Trends 2026 -->
+  <!-- Published Digital Marketing & SEO Blog Articles (10) -->
   <url>
     <loc>https://digital-pulse-blog.vercel.app/blog/digital-marketing-trends-2026</loc>
     <lastmod>2026-09-24</lastmod>
@@ -52,8 +51,6 @@
       <image:caption>Laptop on a wooden desk displaying website traffic charts and campaign analytics</image:caption>
     </image:image>
   </url>
-
-  <!-- 2. How Social Media Algorithms Work -->
   <url>
     <loc>https://digital-pulse-blog.vercel.app/blog/how-social-media-algorithms-work</loc>
     <lastmod>2026-09-19</lastmod>
@@ -62,11 +59,9 @@
     <image:image>
       <image:loc>https://digital-pulse-blog.vercel.app/images/photos/how-social-media-algorithms-work.jpg</image:loc>
       <image:title>How Social Media Algorithms Work: How Feeds Rank Content</image:title>
-      <image:caption>Person holding smartphone showing dynamic social media notification feeds and real-time user engagement graphs</image:caption>
+      <image:caption>Person holding a smartphone browsing mobile social media applications and feed notifications</image:caption>
     </image:image>
   </url>
-
-  <!-- 3. SEO for Beginners: How Google Ranks Websites -->
   <url>
     <loc>https://digital-pulse-blog.vercel.app/blog/seo-for-beginners-how-google-ranks-websites</loc>
     <lastmod>2026-09-14</lastmod>
@@ -75,11 +70,9 @@
     <image:image>
       <image:loc>https://digital-pulse-blog.vercel.app/images/photos/seo-for-beginners-how-google-ranks-websites.jpg</image:loc>
       <image:title>SEO for Beginners: How Google Ranks Websites Step by Step</image:title>
-      <image:caption>Search engine optimization audit dashboard on a desktop monitor illustrating keyword rankings and organic traffic growth</image:caption>
+      <image:caption>Marketer working on a laptop displaying Google Analytics and search engine traffic data</image:caption>
     </image:image>
   </url>
-
-  <!-- 4. How AI Is Changing Digital Marketing -->
   <url>
     <loc>https://digital-pulse-blog.vercel.app/blog/how-ai-is-changing-digital-marketing</loc>
     <lastmod>2026-09-08</lastmod>
@@ -88,11 +81,9 @@
     <image:image>
       <image:loc>https://digital-pulse-blog.vercel.app/images/photos/how-ai-is-changing-digital-marketing.jpg</image:loc>
       <image:title>AI in Digital Marketing: How Automation Changes Workflows</image:title>
-      <image:caption>Designer collaborating on artificial intelligence neural network diagrams on modern dual-monitor workspace</image:caption>
+      <image:caption>High-resolution monitor displaying data dashboards, predictive metrics, and performance graphs</image:caption>
     </image:image>
   </url>
-
-  <!-- 5. Instagram Marketing for Small Businesses -->
   <url>
     <loc>https://digital-pulse-blog.vercel.app/blog/instagram-marketing-for-small-businesses</loc>
     <lastmod>2026-08-29</lastmod>
@@ -101,11 +92,9 @@
     <image:image>
       <image:loc>https://digital-pulse-blog.vercel.app/images/photos/instagram-marketing-for-small-businesses.jpg</image:loc>
       <image:title>Instagram Marketing for Small Businesses: A Practical Guide</image:title>
-      <image:caption>Local boutique owner arranging handcrafted pottery merchandise while taking smartphone photos for Instagram marketing</image:caption>
+      <image:caption>Small business owner holding a tablet at a retail counter while managing online store orders and social media</image:caption>
     </image:image>
   </url>
-
-  <!-- 6. Why Short-Form Video Is So Powerful -->
   <url>
     <loc>https://digital-pulse-blog.vercel.app/blog/why-short-form-video-is-so-powerful</loc>
     <lastmod>2026-08-21</lastmod>
@@ -114,11 +103,9 @@
     <image:image>
       <image:loc>https://digital-pulse-blog.vercel.app/images/photos/why-short-form-video-is-so-powerful.jpg</image:loc>
       <image:title>Short-Form Video Marketing: Why Vertical Video Is So Powerful</image:title>
-      <image:caption>Content creator filming a vertical smartphone video with professional ring light and studio microphone</image:caption>
+      <image:caption>Video creator holding a professional camera rig while filming studio video content</image:caption>
     </image:image>
   </url>
-
-  <!-- 7. Common Digital Marketing Mistakes Small Businesses Make -->
   <url>
     <loc>https://digital-pulse-blog.vercel.app/blog/common-digital-marketing-mistakes-small-businesses</loc>
     <lastmod>2026-08-12</lastmod>
@@ -127,11 +114,9 @@
     <image:image>
       <image:loc>https://digital-pulse-blog.vercel.app/images/photos/common-digital-marketing-mistakes-small-businesses.jpg</image:loc>
       <image:title>10 Small Business Digital Marketing Mistakes and How to Fix Them</image:title>
-      <image:caption>Small business entrepreneur reviewing financial spreadsheets and diagnostic notes at coffee shop desk</image:caption>
+      <image:caption>Small business team collaborating around a whiteboard with strategy notes during a marketing planning session</image:caption>
     </image:image>
   </url>
-
-  <!-- 8. How Online Reviews Influence Customer Decisions -->
   <url>
     <loc>https://digital-pulse-blog.vercel.app/blog/how-online-reviews-influence-customer-decisions</loc>
     <lastmod>2026-07-30</lastmod>
@@ -140,11 +125,9 @@
     <image:image>
       <image:loc>https://digital-pulse-blog.vercel.app/images/photos/how-online-reviews-influence-customer-decisions.jpg</image:loc>
       <image:title>How Online Reviews Influence Customers and Buying Decisions</image:title>
-      <image:caption>Shopper comparing 5-star customer ratings and verified buyer testimonials on a tablet while shopping</image:caption>
+      <image:caption>Two people reviewing customer feedback and online store ratings together on a laptop screen</image:caption>
     </image:image>
   </url>
-
-  <!-- 9. How to Build a Personal Brand From Scratch -->
   <url>
     <loc>https://digital-pulse-blog.vercel.app/blog/how-to-build-a-personal-brand-from-scratch</loc>
     <lastmod>2026-07-18</lastmod>
@@ -153,11 +136,9 @@
     <image:image>
       <image:loc>https://digital-pulse-blog.vercel.app/images/photos/how-to-build-a-personal-brand-from-scratch.jpg</image:loc>
       <image:title>How to Build a Personal Brand From Scratch</image:title>
-      <image:caption>Professional working at clean laptop setup designing personal portfolio and digital identity assets</image:caption>
+      <image:caption>Minimalist creative workspace with a laptop, notebook, and coffee mug for writing and personal portfolio building</image:caption>
     </image:image>
   </url>
-
-  <!-- 10. Fake News, Misinformation, and Brand Reputation -->
   <url>
     <loc>https://digital-pulse-blog.vercel.app/blog/fake-news-misinformation-brand-reputation</loc>
     <lastmod>2026-07-06</lastmod>
